@@ -1,0 +1,13 @@
+---
+categories:
+- home
+comments: true
+date: 2005-05-10T15:56:04Z
+slug: update
+title: Update
+url: /2005/05/10/update/
+wordpress_id: 61
+---
+
+Atualizei o Wordpress para a versão 1.5.1. Essa versão corrige um monte de bugs e tem algumas melhoras internas. Não curti muito o novo template padrão, por isso fiz algumas alterações.
+Espero que as coisas fiquem mais estáveis agora.

@@ -1,0 +1,392 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* inter-100 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 100;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-100.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-100.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-200 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 200;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-200.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-200.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-300 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-300.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-regular - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-regular.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-500 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 500;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-500.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-600 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-600.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-700 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-700.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-800 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 800;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-800.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-900 - latin */
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 900;
+        src:
+            local(""),
+            url("../fonts/inter-v12-latin-900.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/inter-v12-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    body {
+        @apply bg-white text-justify text-lg text-gray-700 dark:bg-gray-900 dark:text-gray-300;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply mb-5 pt-2 font-bold text-gray-900 dark:text-gray-300;
+    }
+
+    h1 {
+        @apply text-4xl leading-10;
+    }
+
+    h2 {
+        @apply text-3xl leading-10;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    h4 {
+        @apply text-xl;
+    }
+
+    h5 {
+        @apply text-lg;
+    }
+
+    h6 {
+        @apply text-base;
+    }
+
+    hr {
+        @apply border-gray-200 dark:border-gray-700;
+    }
+
+    p,
+    hr,
+    pre,
+    dl {
+        @apply mb-5 text-justify;
+    }
+
+    article > h1 {
+        @apply mb-1;
+    }
+
+    code {
+        @apply rounded-lg border bg-gray-100 px-2 py-1 text-sm dark:border-gray-700 dark:bg-gray-800;
+    }
+
+    pre {
+        @apply overflow-auto rounded-lg border p-5 text-base dark:border-gray-700;
+    }
+
+    pre code {
+        @apply border-0 bg-transparent px-0;
+    }
+
+    figure {
+        @apply mb-5;
+    }
+
+    figcaption {
+        @apply mt-2 text-base text-gray-500 dark:text-gray-400;
+    }
+
+    blockquote {
+        @apply mb-5 border-l-4 border-gray-300 pl-4 text-xl italic text-gray-500 dark:border-gray-700 dark:text-gray-400;
+    }
+
+    ul,
+    ol {
+        @apply mb-5 ml-6;
+    }
+
+    ol {
+        @apply list-decimal;
+    }
+
+    ul {
+        @apply list-disc;
+    }
+
+    nav ul,
+    footer ul {
+        @apply ml-0 list-none;
+    }
+
+    header h1 {
+        @apply mb-0;
+    }
+
+    table {
+        @apply mb-5 w-full border-separate border-spacing-0 rounded-md border;
+    }
+
+    thead th {
+        @apply border-b-2 border-r px-3 py-2 last:border-r-0;
+    }
+
+    tbody td {
+        @apply border-b border-r px-3 py-2 text-base last:border-r-0;
+    }
+
+    tbody tr:last-child td {
+        @apply border-b-0;
+    }
+
+    dt {
+        @apply font-bold italic;
+    }
+
+    dd {
+        @apply pl-10;
+    }
+
+    header nav > ul {
+        @apply flex flex-wrap justify-center gap-7 text-xs font-semibold uppercase;
+    }
+
+    nav a,
+    footer a {
+        @apply font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100;
+    }
+
+    footer {
+        @apply flex flex-col items-center justify-between text-xs sm:flex-col-reverse md:flex-col-reverse;
+    }
+}
+
+@layer utilities {
+    nav a.active {
+        @apply text-gray-900 dark:text-gray-100;
+    }
+
+    /* Content overrides */
+    #content {
+        @apply px-4 leading-normal lg:px-0;
+    }
+
+    #content a {
+        @apply font-bold text-emerald-700 underline hover:text-emerald-600 dark:text-emerald-300 dark:hover:text-emerald-200;
+    }
+
+    #content .date {
+        @apply py-2 text-sm font-semibold text-gray-400;
+    }
+
+    #content h1 > a {
+        @apply text-xl font-bold text-gray-900 no-underline hover:text-gray-900 hover:underline dark:text-gray-300 dark:hover:text-gray-100;
+    }
+
+    #content .meta {
+        @apply mt-2 flex gap-3 text-sm font-semibold text-gray-500 dark:text-gray-400;
+    }
+
+    #content .meta a {
+        @apply no-underline;
+    }
+
+    #content .description {
+        @apply text-base text-gray-600 dark:text-gray-300;
+    }
+
+    #content .read-more {
+        @apply inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 no-underline hover:text-emerald-600 dark:text-emerald-300 dark:hover:text-emerald-200;
+    }
+
+    #content .footnotes {
+        @apply text-sm;
+    }
+
+    #content .footnotes p {
+        @apply mb-0 inline-block;
+    }
+
+    #content .footnotes ol {
+        @apply block;
+    }
+
+    #content .footnotes li {
+        @apply mb-3;
+    }
+
+    #content .alert-box {
+        @apply mb-5 border-t-4 px-4 pb-1 pt-4;
+    }
+
+    #content .alert-box .alert-title {
+        @apply mb-2 px-0 py-0 text-lg font-semibold text-inherit;
+    }
+
+    #content .alert-box a {
+        @apply text-inherit hover:text-inherit;
+    }
+
+    #content .alert-box .alert-icon {
+        @apply mr-2 h-7 w-7;
+    }
+
+    #content .alert-box.warning {
+        @apply border-yellow-500 bg-yellow-100 text-yellow-900;
+    }
+
+    #content .alert-box.info {
+        @apply border-blue-500 bg-blue-100 text-blue-900;
+    }
+
+    #content .alert-box.success {
+        @apply border-green-500 bg-green-100 text-green-900;
+    }
+
+    #content .alert-box.error {
+        @apply border-red-500 bg-red-100 text-red-900;
+    }
+
+    #content .table-of-contents {
+        @apply rounded-lg border bg-gray-100 p-4 text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300;
+    }
+
+    #content .table-of-contents #TableOfContents ul {
+        @apply ml-4 list-inside list-decimal;
+    }
+
+    #content .table-of-contents #TableOfContents ul li {
+        @apply my-2 text-base;
+    }
+
+    #content .table-of-contents #TableOfContents ul li a {
+        @apply font-normal text-gray-700 no-underline hover:text-emerald-600 hover:underline dark:text-gray-300 dark:hover:text-emerald-200;
+    }
+
+    #content .pagination-button {
+        @apply inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 no-underline hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100;
+    }
+
+    #content .taxonomy-list {
+        @apply ml-0 flex list-none flex-row flex-wrap gap-x-2 gap-y-6;
+    }
+
+    #content .taxonomy-list a {
+        @apply rounded-lg bg-gray-100 px-3 py-2 text-base font-normal text-gray-800 no-underline hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700;
+    }
+
+    #content .tags-list {
+        @apply gap-y-2;
+    }
+
+    #content span.task-list + ul {
+        @apply list-none;
+    }
+
+    /* Misc */
+    #site-title {
+        @apply text-center text-4xl font-extrabold text-gray-800 sm:text-left dark:text-gray-100;
+    }
+
+    .header {
+        @apply flex flex-row items-center justify-between;
+    }
+
+    .header .toggle-theme {
+        @apply h-6 w-6;
+    }
+
+    .title-large {
+        @apply text-balance text-left text-4xl font-bold leading-snug text-gray-900 dark:text-gray-300;
+    }
+
+    .title-small {
+        @apply text-2xl font-extrabold text-gray-900 dark:text-gray-300;
+    }
+}

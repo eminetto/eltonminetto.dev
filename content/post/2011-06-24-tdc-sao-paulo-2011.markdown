@@ -1,0 +1,15 @@
+---
+categories:
+- coderockr
+- palestras
+comments: true
+date: 2011-06-24T16:04:45Z
+slug: tdc-sao-paulo-2011
+title: TDC São Paulo 2011
+url: /2011/06/24/tdc-sao-paulo-2011/
+wordpress_id: 752
+---
+
+Em Julho acontece mais um The Developers Conference, em São Paulo. Ano passado eu palestrei na edição de Florianópolis e gostei muito da organização e do nível das palestras, palestrantes e participantes.
+Este ano eu vou para São Paulo com um desafio novo. Vai ser a primeira palestra não-técnica que vou apresentar, na trilha de empreendedorismo. Vou falar sobre alguns conceitos que usamos na Coderockr, principalmente defender a idéia de que "programadores são rock stars". O título da palestra é "Programadores, guitarras e negócios".
+Os detalhes do evento estão no [site oficial do evento ](http://www.thedevelopersconference.com.br:80/tdc/2011/saopaulo/trilha-empreendedorismo#programacao)

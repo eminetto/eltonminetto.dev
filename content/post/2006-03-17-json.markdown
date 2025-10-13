@@ -1,0 +1,18 @@
+---
+categories:
+- home
+comments: true
+date: 2006-03-17T21:02:06Z
+slug: json
+title: JSON
+url: /2006/03/17/json/
+wordpress_id: 119
+---
+
+Graças ao comentário do Robson Junior no meu [post](/?p=115) anterior sobre retornar multiplos valores com AJAX eu descobri o [JSON](http://www.json.org). E novamente percebi que estava tentando reinventar a roda.  Segundo o site, JSON é "um formato leve para troca de informações. É facil para humanos lerem e escreverem. E é fácil para as máquinas processar e gerar." Uma espécie de XML ligth. É baseado na notação de objetos do JavaScript, o que cai como uma luva para usar com o XMLHttpRequest.
+
+Fiz alguns testes.
+
+[Página html](/codes/showphp.php?file=multiplo_json.htm)
+
+[Código PHP](/codes/showphp.php?file=multiplo_json.php)

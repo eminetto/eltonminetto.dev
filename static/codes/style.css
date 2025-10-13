@@ -1,0 +1,76 @@
+html { min-width: 600px; }
+
+body, div, td, th { 
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	color: #333;
+}  
+
+body {
+	background: #fff;
+	background-attachment: fixed;
+	color: #333;
+	padding: 10px;
+	margin: 0;
+}
+
+
+#datExample {
+	border: 1px solid #ccc;
+	padding: 30px;
+	background: #f3f3f3;
+	margin-top: 20px;
+}
+
+.dynaInput {
+	border: none;
+	background: #ffc;
+}
+
+.dynaDiv {
+	display: inline;
+	width: 100%;
+}
+
+
+/* tableGrid */
+.dynatab {
+	font: 14px/28px Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+.dynatab th {
+	padding: 0 0.5em;
+	text-align: left;	
+}
+
+.dynatab tr.yellow td {
+	font: 15px/28px Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #009900;
+
+	background: #DFFFDF;
+	
+}
+
+.dynatab td.point {
+	cursor: pointer;
+	cursor: hand;
+	background: #fff;
+}
+
+.dynatab td {
+	padding: 0 0.5em;
+	background: #e3e3e3;
+}
+
+.dynatab td.width {
+	width: 190px;
+}
+
+
+.update {
+  font-size: .9em;
+  font-weight: bold;
+  color: #660000;    
+}

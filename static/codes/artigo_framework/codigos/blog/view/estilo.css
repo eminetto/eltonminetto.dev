@@ -1,0 +1,43 @@
+h2 {
+	border-style:solid;
+	border-color:#000000;
+      border-width:1px;
+  outline-width:10px;
+  outline-style:solid;
+  outline-color:#FFCC00;
+    }
+.input {
+    border-style:solid;
+      border-color:#FFCC00;
+      border-width:1px;
+  
+}
+
+.titulo {
+	background-color: #CCCCCC	;
+	font-family:Arial;
+	font-size:30px;	
+}
+.data {
+	font-family:Arial;
+	font-size:10px;	
+}
+.categoria {
+	font-family:Arial;
+	font-size:10px;	
+}
+
+.comentario {
+	font-family:Arial;
+	font-size:10px;	
+}
+
+#login {
+	position:absolute;
+	left:           400px;
+	top:            100px;
+	width:          500px;
+	height:         80px;
+	padding:        10px;
+	background-color: #CCCCCC;
+}

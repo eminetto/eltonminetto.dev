@@ -1,0 +1,16 @@
+---
+categories:
+- palestras
+comments: true
+date: 2010-11-01T14:37:47Z
+slug: latinoware-2010
+title: Latinoware 2010
+url: /2010/11/01/latinoware-2010/
+wordpress_id: 478
+---
+
+Para fechar o ano com chave de ouro, vou palestrar em mais um evento legal. Além do [PHP Conference](/blog/2010/10/15/phpconference-2010) vou participar do Latinoware.
+
+A minha palestra vai ocorrer no dia 12/12/2010, as 10:00hr no "Espaço Bolívia". O título da palestra é " Para o alto e avante! PHP, Memcached e Gearman. O céu é o limite".  A programação completa está no [site do evento](http://www.latinoware.org/sites/all/files/files/grade%20latinoware%20ULTIMVA%20VERSAO.pdf).
+
+Espero encontrar novamente a galera do PHP e fazer alguns novos amigos.

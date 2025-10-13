@@ -1,0 +1,39 @@
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6205WZZT80"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6205WZZT80');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>
+        {{ if not .IsHome }}
+        {{ with .Title }}{{ . }} {{ end }}
+        {{ end }}
+        {{ if .IsHome }}
+        {{ .Site.Title }}
+        {{ end }}
+    </title>
+    <meta name="description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }}">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="shortcut icon" type="image/png" href="/assets/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!--Owlcarousel CSS -->
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+</head>

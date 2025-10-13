@@ -1,0 +1,105 @@
+.positivo {
+	font-family:Arial;
+	font-size:10px;	
+	color: blue;
+}
+
+.negativo {
+	font-family:Arial;
+	font-size:10px;	
+	color: red;	
+}
+
+#itens tr {
+	border-bottom: 1px solid #f0f0f0;
+ }
+ 
+#itens tr:hover {
+	text-decoration:		none;
+	color:	  	 #FFFFFF;
+	background-color: #669966;
+}
+
+#itens tr td div {
+	display: none;
+}
+
+#itens tr td:hover > div {
+	display: inline;
+}
+
+#itens a {
+	font-weight: bold;
+}
+
+body {
+	background-color:		#FFFFFF;
+	color:							#666666;
+	font-family:				arial, sans;
+	font-size:					100%;
+	line-height:				1.7em;
+	margin:							1em 2em;
+}
+
+h1 {
+	font-size: 					2.18em;
+	letter-spacing:			-0.01em;
+}			
+			
+h2 {
+	font-size: 					1.45em;
+	letter-spacing:			-0.02em;
+}
+
+a:link {
+	color:							#669966;
+}
+
+a:visited {
+	color:							#003300;
+}
+
+a:hover {
+	text-decoration:		none;
+	color:							#FFFFFF;
+	background-color:		#669966;
+}
+
+table {
+ font-size:0.9em;
+ font-family: Arial, Helvetica, verdana sans-serif;
+ background-color:#fff;
+ border-collapse: collapse;
+ width: 100%;
+}
+
+.oculto {
+	visibility:hidden; 
+	position:absolute;
+}
+
+.normal {
+	visibility:visible; 
+	position:relative;
+}
+
+#head {
+	font-size: 					2.18em;
+	font-family: Arial, Helvetica, verdana sans-serif;
+}
+
+#login {
+	font-family: Arial, Helvetica, verdana sans-serif;
+	border: 1px solid #f0f0f0;
+	position:absolute;
+	left:           450px;
+	top:            5px;
+	width:          500px;
+	height:         100px;
+	padding:        10px;
+}
+
+#foot {
+	font-family:				arial, sans;
+	font-size:					70%;
+}

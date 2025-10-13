@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>Enscript Output</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#1F00FF" ALINK="#FF0000" VLINK="#9900DD">
+<A NAME="top">
+<A NAME="file1">
+<H1>cliente.py</H1>
+
+<PRE>
+<B><FONT COLOR="#A020F0">from</FONT></B> socket <B><FONT COLOR="#A020F0">import</FONT></B> *
+<B><FONT COLOR="#A020F0">import</FONT></B> sys
+<B><FONT COLOR="#A020F0">import</FONT></B> time
+<B><FONT COLOR="#A020F0">from</FONT></B> threading <B><FONT COLOR="#A020F0">import</FONT></B> Thread
+
+PORT = 2343
+
+<I><FONT COLOR="#B22222">#subclasse da classe Thread. essa classe conecta com o servidor e envia os dados para serem calculados
+</FONT></I><B><FONT COLOR="#A020F0">class</FONT></B> cliente(Thread):
+	<B><FONT COLOR="#A020F0">def</FONT></B> <B><FONT COLOR="#0000FF">__init__ </FONT></B>(self,ip,trials): <I><FONT COLOR="#B22222">#construtor da classe
+</FONT></I>		Thread.__init__(self) <I><FONT COLOR="#B22222">#chama o construtor da classe pai
+</FONT></I>		self.ip = ip <I><FONT COLOR="#B22222">#o ip que deve conectar
+</FONT></I>		self.hits = -1 <I><FONT COLOR="#B22222">#armazena o resultado 
+</FONT></I>		self.trials = str(trials) <I><FONT COLOR="#B22222">#numero de tentativas 
+</FONT></I>	<B><FONT COLOR="#A020F0">def</FONT></B> <B><FONT COLOR="#0000FF">run</FONT></B>(self): <I><FONT COLOR="#B22222">#essa eh a parte que serah executada
+</FONT></I>		<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;trhread do ip &quot;</FONT></B>+str(self.ip)+<B><FONT COLOR="#BC8F8F">&quot; iniciou&quot;</FONT></B>
+		<I><FONT COLOR="#B22222">#abre a conexao com o servidor
+</FONT></I>		s = socket(AF_INET,SOCK_STREAM)
+		s.connect((self.ip,PORT))
+		<I><FONT COLOR="#B22222">#envia para o servidor o numero de tentativas
+</FONT></I>		s.send(self.trials)
+		<I><FONT COLOR="#B22222">#fica esperando o resultado do calculo do servidor
+</FONT></I>		self.hits = s.recv(1024)
+		s.close()
+		<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;trhread do ip &quot;</FONT></B>+str(self.ip)+<B><FONT COLOR="#BC8F8F">&quot; finalizou com o resultado=&quot;</FONT></B>+str(self.hits)
+
+<I><FONT COLOR="#B22222">#funcao que verifica se os servidores estao ativos
+</FONT></I><B><FONT COLOR="#A020F0">def</FONT></B> <B><FONT COLOR="#0000FF">ativos</FONT></B>(servidores):
+	ativos = []<I><FONT COLOR="#B22222">#lista com os servidores ativos
+</FONT></I>	<B><FONT COLOR="#A020F0">for</FONT></B> ip <B><FONT COLOR="#A020F0">in</FONT></B> servidores:
+		<B><FONT COLOR="#A020F0">try</FONT></B>:
+			<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;testando &quot;</FONT></B>+str(ip)
+			s = socket(AF_INET,SOCK_STREAM)
+			s.connect((ip,PORT))
+			s.send(<B><FONT COLOR="#BC8F8F">&quot;PING&quot;</FONT></B>)<I><FONT COLOR="#B22222">#manda um comando ping para ver se o servidor ainda esta ativo
+</FONT></I>			s.close()
+			ativos.append(ip)
+		<B><FONT COLOR="#A020F0">except</FONT></B>:
+			<I><FONT COLOR="#B22222">#print &quot;Unexpected error:&quot;, sys.exc_info()[0]
+</FONT></I>			<B><FONT COLOR="#A020F0">pass</FONT></B>
+	<B><FONT COLOR="#A020F0">return</FONT></B> ativos
+	
+trials = sys.argv[1] <I><FONT COLOR="#B22222">#recebe do parametro do usuario o numero maximo de tentativas
+</FONT></I><B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;Verificando servidores ativos&quot;</FONT></B>
+<I><FONT COLOR="#B22222">#verifica o numero de servidores ativos
+</FONT></I>servidores = ativos([<B><FONT COLOR="#BC8F8F">'192.168.200.14'</FONT></B>, <B><FONT COLOR="#BC8F8F">'200.135.240.1'</FONT></B>, <B><FONT COLOR="#BC8F8F">'192.168.200.11'</FONT></B>, <B><FONT COLOR="#BC8F8F">'192.168.200.5'</FONT></B>])
+<B><FONT COLOR="#A020F0">if</FONT></B> len(servidores) == 0:
+	<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;Nao existem servidores ativos&quot;</FONT></B>
+	sys.exit()
+<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;Servidores ativos:&quot;</FONT></B>+str(servidores)
+<I><FONT COLOR="#B22222">#calcula o numero de tentativas que cada servidor deve executar
+</FONT></I>trials_por_servidor = int(trials) / len(servidores)
+resultado = [] <I><FONT COLOR="#B22222">#lista com as threads em execucao
+</FONT></I>t0=time.time() <I><FONT COLOR="#B22222">#usado para o calculo do tempo de execucao
+</FONT></I>
+<B><FONT COLOR="#A020F0">for</FONT></B> ip <B><FONT COLOR="#A020F0">in</FONT></B> servidores:
+	atual = cliente(ip, trials_por_servidor) <I><FONT COLOR="#B22222">#cria uma nova thread
+</FONT></I>	resultado.append(atual) <I><FONT COLOR="#B22222">#adiciona a thread na lista de threads 
+</FONT></I>	atual.start() <I><FONT COLOR="#B22222">#inicia a thread
+</FONT></I>	
+total_hits = 0 <I><FONT COLOR="#B22222">#total dos resultados
+</FONT></I><B><FONT COLOR="#A020F0">for</FONT></B> r <B><FONT COLOR="#A020F0">in</FONT></B> resultado:
+	r.join()<I><FONT COLOR="#B22222">#espera ate a thread terminar
+</FONT></I>	total_hits += int(r.hits)
+
+<I><FONT COLOR="#B22222">#faz o calculo do pi usando os resultados enviados por cada servidor
+</FONT></I>pi = 4.0 * int(total_hits) / int(trials)
+
+<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;Pi :&quot;</FONT></B> + str(pi)
+tf=time.time()
+<B><FONT COLOR="#A020F0">print</FONT></B> <B><FONT COLOR="#BC8F8F">'O tempo gasto na execucao eh: '</FONT></B>,tf-t0,<B><FONT COLOR="#BC8F8F">'[s]'</FONT></B>
+</PRE>
+<HR>
+<ADDRESS>Generated by <A HREF="http://www.iki.fi/~mtr/genscript/">GNU enscript 1.6.4</A>.</ADDRESS>
+</BODY>
+</HTML>

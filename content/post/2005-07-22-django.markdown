@@ -1,0 +1,418 @@
+---
+categories:
+- home
+- python
+comments: true
+date: 2005-07-22T17:20:58Z
+slug: django
+title: Django
+url: /2005/07/22/django/
+wordpress_id: 74
+---
+
+[Django](http://www.djangoproject.com/) é um framework para desenvolvimento web para Python, nos mesmos moldes do Ruby on Rails.
+Fiz alguns testes e achei muito interessante. Aproveitei e traduzi para o português a primeira parte do tutorial, publicado logo abaixo. Estou trabalhando na tradução das outras duas partes. Se encontrar algum erro me avise.
+
+=====================================
+Escrevendo seu primeiro aplicativo com Django, parte 1
+=====================================
+
+By Adrian Holovaty
+Traduzido por Elton Minetto
+
+Vamos aprender usando um exemplo.
+
+Através deste tutorial vamos demonstrar os passos necessários para a criação
+de uma simples aplicação Web de uma pesquisa.
+
+Ela vai consistir de duas partes:
+
+* Um site público que irá permitir que usuários votem na pesquisa e vizualizem seus resultados.
+* Um site administrativo que permitirá você adicionar, alterar e excluir pesquisas
+
+Vamos assumir que você já tem o Django instalado.
+
+Instalação do Django : http://www.djangoproject.com/documentation/install/
+
+Configurações iniciais
+=============
+
+Se esta é sua primeira vez usando o Django você precisará realizar algumas tarefas de
+configuração inicial.
+
+Execute o comando
+`django-admin.py startproject myproject`
+
+Isto irá criar um  diretório ``myproject`` em seu diretório correte.
+
+(``django-admin.py`` deve estar em seu path se você instalou o Django usando
+seu utilitário setup.py. Se ele não está em seu path, você pode encontrá-lo em
+``site-packages/django/bin``; considere a criação de um link simbólico para ele em
+algum lugar de seu path, como /usr/local/bin.)
+
+Um projeto é uma coleção de configurações para uma instância do Django -- incluindo
+configuração da base de dados, opções específicas do Django e configurações
+específicas das aplicações.
+Vamos dar uma olhada no diretório ``myproject`` criado::
+`
+$ cd myproject/
+$ ls
+apps/  __init__.py  settings/
+$ ls settings/
+__init__.py  admin.py  main.py  urls/
+$ ls settings/urls/
+__init__.py  admin.py  main.py
+$ ls apps/
+__init__.py
+`
+Primeiro, edite o arquivo ``myproject/settings/main.py``. Ele é um módulo Python normal
+com algumas variáveis em nível de módulo representando configurações do Django. Edite o arquivo
+e altere estas configurações para refletirem os parâmetros de sua conexão com a base de dados:
+
+* ``DATABASE_ENGINE`` -- Escolha entre 'postgresql' or 'mysql'. Mais opções estarão disponíveis em breve.
+* ``DATABASE_NAME`` -- O nome de sua base de dados.
+* ``DATABASE_USER`` -- Seu usuário da base de dados.
+* ``DATABASE_PASSWORD`` -- Sua senha da base de dados.
+* ``DATABASE_HOST`` -- O host onde sua base de dados está. Deixe este campo em branco no caso da sua base de
+dados estar na mesma máquina física  (localhost).
+
+(Tenha certeza de já ter criado a base de dados dentro do PostgreSQL ou MySQL neste ponto.
+Faça isso com "``CREATE DATABASE database_name;``" dentro do prompt interativo de sua base de dados.)
+
+Note que o suporte ao MySQL é um desenvolvimento recente e o Django ainda não foi
+testado suficientemente com esta base de dados. Se você encontrar algum bug nos
+bindings do Django para MySQL, por favor notifique-os no `Django's ticket system`_ para que
+possamos corrigí-los imediatamente.
+
+Agora, tome um segundo para garantir que ``myproject`` está em seu path do Python. Você
+pode fazer isso copiando ``myproject`` para o diretório ``site-packages`` do Python, ou
+pode tentar fazer isso alterando a variável de ambiente ``PYTHONPATH``. Veja o
+`Python path documentation`_ para maiores informações.
+
+Execute o seguinte comando::
+
+`    django-admin.py init --settings=myproject.settings.main`
+
+O utilitário ``django-admin.py`` geralmente precisa saber qual é o módulo
+de configurações que você está utilizando. Aqui estamos fazendo isso especificando
+``settings=`` na linha de comando, mas isto pode se tornar tedioso. Se você não quer
+digitar ``settings=`` toda vez você pode configurar a variável de ambiente
+``DJANGO_SETTINGS_MODULE``. Abaixo está como você pode fazer isso no shell Bash no Unix:
+
+`    export DJANGO_SETTINGS_MODULE=myproject.settings.main`
+
+No Windows pode-se usar ``set``::
+
+` set DJANGO_SETTINGS_MODULE=myproject.settings.main`
+
+Se você não visualizar nenhum erro após executar ``django-admin.py init``, significa
+que está funcionando. Este comando inicializa sua base de dados com as tabelas
+principais do Django. Se você tiver interesse, execute o cliente em linha de comando
+do PostgreSQL ou MySQL e digite "\dt" (PostgreSQL) ou "SHOW TABLES;" (MySQL) para mostrar
+as tabelas.
+
+Agora você está pronto para iniciar o trabalho. Você não precisará se preocupar
+com estas tarefas administrativas massantes novamente.
+
+.. _`Python path documentation`: http://docs.python.org/tut/node8.html#SECTION008110000000000000000
+.. _Django's ticket system: http://code.djangoproject.com/report/1
+
+Criando modelos
+===============
+
+Mude para o diretório ``myproject/apps`` e execute o seguinte comando::
+
+` django-admin.py startapp polls`
+
+(De agora em diante, este tutorial vai abandonar o parametro ``--settings`` e assumirá que você
+configurou a variável de ambiente ``DJANGO_SETTINGS_MODULE`` ou incluiu a opção ``--settings``
+na sua chamada do comando.)
+
+Isto irá criar uma estrutura de diretórios como esta:::
+`
+polls/
+__init__.py
+models/
+__init__.py
+polls.py
+urls/
+__init__.py
+polls.py
+views/
+__init__.py
+`
+Esta estrutura de diretórios irá hospedar sua aplicação de pesquisa.
+
+O primeiro passo para escrever uma aplicação Web no Django é definir seus modelos
+-- essencialmente, o layout da sua base de dados, com metadados adicionais..
+
+:: Filosofia
+
+Um modelo é uma origem de dados simples e definitiva sobre seus dados.
+Ela contém os campos essenciais e os comportamentos dos dados que você está
+armazenando. Django segue o `DRY Principle`_. O objetivo é definir seu modelo
+de dados em um lugar e automaticamente derivar as coisas apartir disto.
+
+Em nosso aplicativo simples de pesquisa nós iremos criar dois modelos: pesquisas (Poll) e
+escolhas (Choise).Uma pesquisa tem uma questão e uma data de publicação. Uma escolha tem dois
+campos:o texto da escolha e o registro dos votos. Cada escolha é associada a uma pesquisa.
+
+Altere o arquivo ``polls/models/polls.py`` de forma que ele se pareça com isto::
+`
+from django.core import meta`
+
+class Poll(meta.Model):
+fields = (
+meta.CharField('question', maxlength=200),
+meta.DateTimeField('pub_date', 'date published'),
+)
+
+class Choice(meta.Model):
+fields = (
+meta.ForeignKey(Poll),
+meta.CharField('choice', maxlength=200),
+meta.IntegerField('votes'),
+)
+
+O código é direto e auto-explicativo. Cada modelo é representado por uma classe
+que é subclasse de ``django.core.meta.Model``. Cada modelo tem uma variável
+de classe simples,``fields``, que é uma tupla dos campos da base de dados
+no modelo.
+
+Cada campo é representado por uma instância da classe ``meta.*Field``
+-- por exemplo ,``meta.CharField`` para campos caracter e ``meta.DateTimeField`` para
+datetimes. Isto informa ao Django qual é o tipo de dado de cada campo.
+
+O primeiro argumento de cada chamada ``Field``  é o nome do campo, em um formato
+amigável-para-maquina. Você irá usar este valor em seu código Python e sua base de
+dados irá usar isto como seu nome de coluna.
+
+O segundo argumento, opcional, é o nome ``mais amigável para humanos`` do campo.
+Este é usado em algumas partes introspectivas do Django, e ajuda como documentação.
+Se esta informação não é fornecida, Django irá usar o nome fornecido no primeiro
+parâmetro. Neste exemplo nós apenas fornecemos esta informação para ``Poll.pub_date``.
+Para todos os outros campos neste modelo o nome fornecido no primeiro parametro será
+utilizado.
+
+Algumas classes ``meta.*Field`` possuem elementos adicionais requeridos.
+``meta.CharField``, por exemplo, requer que você forneça um ``maxlength``.
+Isto será usado não somente no esquema da base de dados, mas na validação,
+como veremos em breve.
+
+Finalmente, note que um relacionamento é definido, usando ``meta.ForeignKey``.
+Isto informa ao Django que cada Choice é relacionada a uma única Poll.
+Django suporta todos os relacionamentos comuns em uma base de dados:
+muitos-para-um, muitos-para-muios e um-para-um.
+
+.. _DRY Principle: http://c2.com/cgi/wiki?DontRepeatYourself
+
+Ativando modelos
+=================
+
+Cada pequena parte do código do modelo fornece ao Django muita informação.
+Com isto, Django é capaz de:
+
+* Criar um esquema de base de dados (``CREATE TABLE`` statements) para cada aplicativo.
+* Criar uma API Python para o acesso a base de dados, acessando os objetos Poll and Choice.
+
+Mas primeiro precisamos informar ao nosso projeto que a aplicação ``polls`` está instalada.
+
+:: Filosofia
+
+Aplicativos Django são "plugáveis": Você pode usar um aplicativo em múltiplos
+projetos e prode distribuí-los, porque eles não estão amarrados a nenhuma
+instalação do Django.
+
+Altere o arquivo myproject/settings/main.py novamente, e troque a configuração ``INSTALLED_APPS``
+para incluir a string "myproject.apps.polls". Então, ele ficará parecido com isto::
+`
+INSTALLED_APPS = (
+'myproject.apps.polls',
+)
+`
+(Não se esqueça da vírgula devido as regras do Python sobre tuplas com valor simples.)
+
+Agora Django sabe que myproject inclui o aplicativo polls. Vamos executar outro comando::
+
+` django-admin.py sql polls`
+
+Você deverá ver o seguinte (as cláusulas SQL CREATE TABLE SQL para o aplicativo polls)::
+`
+BEGIN;
+CREATE TABLE polls_polls (
+id serial NOT NULL PRIMARY KEY,
+question varchar(200) NOT NULL,
+pub_date timestamp with time zone NOT NULL
+);
+CREATE TABLE polls_choices (
+id serial NOT NULL PRIMARY KEY,
+poll_id integer NOT NULL REFERENCES polls_polls (id),
+choice varchar(200) NOT NULL,
+votes integer NOT NULL
+);
+COMMIT;
+`
+Note o seguinte:
+
+* Nomes de tabelas são automaticamente gerados pela combinação do nome do aplicativo  (polls)
+com o plural do nome do objeto (polls e choices). (Você pode sobrepor este comportamento.)
+* Chaves primárias (IDs) são adicionadas automaticamente. (Você pode sobrepor isto também.)
+* O relacionamento de chave estrangeira (foreign key) é feito explicitamente pela cláusula ``REFERENCES``.
+* Isto é amarrado a base de dados que estão usando, então tipos de campos específicos das bases de
+dados, como ``auto_increment`` (MySQL) vs. ``serial`` (PostgreSQL) são tratados para você
+automaticamente. O autor deste tutorial usa PostgreSQL, então a saída de exemplo é na
+sintaxe PostgreSQL.
+
+Se você está interessado também pode executar os seguintes comandos:
+
+* ``django-admin.py sqlinitialdata polls`` -- Mostra as inserções de dados iniciais requeridos
+pelo framework de administração do Django.
+* ``django-admin.py sqlclear polls`` -- Mostra as cláusulas ``DROP TABLE`` necessárias para este
+aplicativo, de acordo com as tabelas já existentes em sua base de dados (se existentes).
+* ``django-admin.py sqlindexes polls`` -- Mostra as cláusulas ``CREATE INDEX`` para este aplicativo.
+* ``django-admin.py sqlall polls`` -- Uma combinação de 'sql' e 'sqlinitialdata'.
+
+Olhando a saída destes comandos pode ajudá-lo a entender o que realmente ocorre por baixo dos panos.
+
+Agora execute o seguinte comando::
+
+` django-admin.py install polls`
+
+Este comando automaticamente cria as tabelas da base de dados para o aplicativo polls.
+Por trás das cenas, o que é feito é pegar a saída de ``django-admin.py sqlall polls``
+e executar isto na base de dados apontada pelo seu arquivo de configurações do Django.
+
+Brincando com a API
+====================
+
+Agora abra o shell interativo do Python interactive shell, e iremos brincar com a API Python que
+Django lhe fornece::
+`
+# Módulos são dinamicamente criados dentro de django.models.
+# Seus nomes são plurais dos nomes das classes de modelo.
+>>> from django.models.polls import polls, choices`
+
+# Nenhuma pesquisa está no sistema ainda.
+>>> polls.get_list()
+[]
+
+# Cria uma nova Poll (pesquisa).
+>>> from datetime import datetime
+>>> p = polls.Poll(id=None, question="What's up?", pub_date=datetime.now())
+
+# Salva o objeto na base de dados. Você precisa chamar save() explicitamente.
+>>> p.save()
+
+# Agora ela tem um ID.
+>>> p.id
+1
+
+# Acesse as colunas da base de dados atravéz de atributos Python.
+>>> p.question
+"What's up?"
+>>> p.pub_date
+datetime.datetime(2005, 7, 15, 12, 00, 53)
+
+# Mude o valor mudando os atributos e então chamando save().
+>>> p.pub_date = datetime(2005, 4, 1, 0, 0)
+>>> p.save()
+
+# get_list() mostra todas as pesquisas na base.
+>>> polls.get_list()
+[
+]
+
+Espere um minuto. ``poll object`` É definitivamente uma representação pouco útil deste objeto.
+Vamos corrigir isto editando o modelo polls e adicionando um método ``__repr__()``
+para ambas, ``Poll`` e ``Choice``::
+`
+class Poll(meta.Model):
+# ...
+def __repr__(self):
+return self.question`
+
+class Choice(meta.Model):
+# ...
+def __repr__(self):
+return self.choice
+
+É importante adicionar métodos ``__repr__()`` em seus modelos, não somente para
+ajudá-lo quando tratando com o prompt interativo, mas também porque as
+representações dos objetos são usadas na interface administrativa gerada automaticamente
+pelo Django.
+
+Note que eles são métodos Python normais. Vamos adicionar um método customizado, apenas para demonstração::
+`
+class Poll(meta.Model):
+# ...
+def was_published_today(self):
+return self.pub_date.date() == datetime.date.today()
+`
+Note que ``import datetime`` não é necessário. Cada método do modelo tem acesso a um
+conjunto de variáveis usados comumente para conveniência, incluindo o modulo
+``datetime`` da biblioteca padrão do Python.
+
+Vamos voltar ao shell interativo do Python::
+`
+>>> from django.models.polls import polls, choices
+# Ter certeza que nossa adição do __repr__() funcionou.
+>>> polls.get_list()
+[What's up?]`
+
+# Django fornece uma rica API para acesso a base de dados atravéz de
+# argumentos chave.
+>>> polls.get_object(id__exact=1)
+What's up
+>>> polls.get_object(question__startswith='What')
+What's up
+>>> polls.get_object(pub_date__year=2005)
+What's up
+>>> polls.get_object(id__exact=2)
+Traceback (most recent call last):
+...
+PollDoesNotExist: Poll does not exist for {'id__exact': 2}
+>>> polls.get_list(question__startswith='What')
+[What's up]
+
+# Testar se nosso método customizado está funcionando.
+>>> p = polls.get_object(id__exact=1)
+>>> p.was_published_today()
+False
+
+# Dar a pesquisa algumas escolhas. Cada um destas chamadas de método realiza uma
+# cláusula INSERT por trÃ¡s das cenas e retorna o novo objeto Choice.
+>>> p = polls.get_object(id__exact=1)
+>>> p.add_choice(choice='Not much', votes=0)
+Not much
+>>> p.add_choice(choice='The sky', votes=0)
+The sky
+>>> c = p.add_choice(choice='Just hacking again', votes=0)
+
+# Objetos Choice tem acesso via API ao objeto Poll relacionado.
+>>> c.get_poll()
+What's up
+
+# E vice versa: objetos Poll tem acesso aos objetos Choice.
+>>> p.get_choice_list()
+[Not much, The sky, Just hacking again]
+>>> p.get_choice_count()
+3
+
+# A API automaticamente segue os relacionamentos conforme necessário.
+# Use duplos underscores para separar relacionamentos.
+# Isto funciona quantos níveis de profundidade você quiser. Não há limite.
+# Encontre todos os Choices para qualquer pesquisa onde a data de publicação está no ano 2005.
+>>> choices.get_list(poll__pub_date__year=2005)
+[Not much, The sky, Just hacking again]
+
+# Vamos excluir uma das escolhas. Usamos delete() para isso.
+>>> c = p.get_choice(choice__startswith='Just hacking')
+>>> c.delete()
+
+Para detalhes completos sobre a API da base de dados, veja nossa `Database API reference`_.
+
+Quando você estiver confortável com a API, leia a parte 2 deste tutorial para ter a interface de administração
+do Django funcionando.
+
+.. _Database API reference: http://www.djangoproject.com/documentation/db_api/
+.. _Parte 2 deste tutorial: http://www.djangoproject.com/documentation/tutorial2/

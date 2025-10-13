@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="main-content-area clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 offset-md-2 offset-lg-2">
+                <div class="blog-list">
+                    {{ range .Pages }}
+                    <ul>
+                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    </ul>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

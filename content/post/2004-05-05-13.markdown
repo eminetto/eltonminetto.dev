@@ -1,0 +1,13 @@
+---
+categories:
+- home
+comments: true
+date: 2004-05-05T19:09:30Z
+slug: "13"
+title: None
+url: /2004/05/05/13/
+wordpress_id: 13
+---
+
+Adicionei em /codes um exemplo de webservice usando python.
+Publicado também em [PythonBrasil](http://www.pythonbrasil.com.br/)

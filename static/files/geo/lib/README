@@ -1,0 +1,71 @@
+Biblioteca de Acesso - Apontador API
+====================================
+
+Esta é uma biblioteca minimalista de acesso à Apontador API. Ela encapsula as chamadas existentes
+à API, simplificando o acesso (seja Basic ou OAuth) através de funções específicas para cada método.
+
+Exemplo de uso (buscando informações de um local específico):
+
+    $apontadorApi = new ApontadorApi(
+                          "consumer_key",
+                          "consumer_secret",
+                          "http://endereco.do.site/pagina/de/callback.php ");
+    $place_id = "C4015454280A6U0A62";
+    $place = $apontadorApi->getPlaceById($place_id);
+    echo $place['name'];
+
+É possível tratar erros de forma fácil:
+
+    try {
+        $place = $apontadorApi->getPlaceById($place_id);
+    } catch (ApontadorApiException $e) {
+        if ($e->status_code == "405" || $e->status_code == "404") {
+            $resultado = "Erro: Informe o ID";
+        }
+    }
+
+
+Aplicativo-Exemplo
+------------------
+
+Este aplicativo ilustra como efetuar a autorização e executar chamadas. Para colocar no ar você deve:
+
+1) Cadastrar seu aplicativo no Apontador: http://www.apontador.com.br/accounts/app/create.html
+   (o consumer key e consumer secret estarão disponíveis ao clicar no aplicativo após o cadastro)
+2) Editar o config.php, seguindo as instruções nele
+3) Copiar para o servidor e acessar o <url do servidor>/exemplo/index.php
+
+Quando o usuário autoriza o uso dos seus dados via OAuth, ele guarda o token em um cookie (vide callback.php).
+Você pode preferir associar este token ao cadastro do seu usuário (por exemplo, armazenando no banco de
+dados ou em uma sessão PHP).
+
+          
+Arquivos
+--------
+
+API:
+  ApontadorApi.php - Contém as classes ApontadorApi e ApontadorApiException
+  OAuth.php        - Biblioteca OAuth, vide http://code.google.com/p/oauth/
+
+Aplicativo-Exemplo:
+  exemplo/index.php    - Tela principal (disponibiliza ações, executa e mostra seu resultado)
+  exemplo/callback.php - Chamado no final da autorização (OAuth)
+  exemplo/config.php   - Dados de configuração do seu aplicativo.
+
+
+Informação Legal
+----------------
+
+Copyright 2010 LBS Local/Apontador
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

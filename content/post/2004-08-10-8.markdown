@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2004-08-10T19:03:53Z
+slug: "8"
+title: None
+url: /2004/08/10/8/
+wordpress_id: 8
+---
+
+Adicionei em /docs os materiais do curso de Redes que estou ministrando

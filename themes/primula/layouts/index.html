@@ -1,0 +1,121 @@
+{{ define "main" }}
+<!-- ======================== START HERO AREA HERE ====================================== -->
+<div class="bannner-area pb-100 pt-85 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <!-- <div class="banner" style="background-image:url(/images/authors/eminetto.png)">
+                </div> -->
+            </div>
+            <div class="col-lg-10">
+                <div class="banner-text d-flex justify-content-center">
+                    <div class="banner-text-wrap">
+                        <div class="title-text mb-4">
+                            <h2 class="wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1s"
+                                style=" animation-duration: 2s; animation-delay: 300ms;">
+                                {{- $lang := .Lang}}
+                                {{ if eq $lang "en" }}<a href="/about"> {{ end }}
+                                    {{ if eq $lang "pt" }}<a href="/sobre/">{{ end }}
+                                        {{ .Site.Title }}
+                                    </a>
+                            </h2>
+                        </div>
+                        <p class="wow fadeInUp animated btn-read" data-wow-delay="1s" data-wow-duration="1s"
+                            style=" animation-duration: 2s; animation-delay: 300ms;">
+                            {{ if eq $lang "en" }} I'm a software developer, teacher, speaker and writer {{ end }}
+                            {{ if eq $lang "pt" }} Sou desenvolvedor de software, professor, <a href="/talks"
+                                target="_blank">palestrante</a>
+                            e <a href="https://leanpub.com/u/eminetto" target="_blank">escritor</a> {{
+                            end }}
+                        </p>
+                        {{ if eq $lang "en" }}
+                        <div class="wow fadeInUp animated btn-read" data-wow-duration="1s"
+                            style=" animation-duration: 2s; animation-delay: 300ms;"><a href="/about">Read More</a>
+                        </div>
+                        {{end}}
+                        {{ if eq $lang "pt" }}
+                        <div class="wow fadeInUp animated btn-read" data-wow-duration="1s"
+                            style=" animation-duration: 2s; animation-delay: 300ms;">
+                            Assine as minhas newsletters: a <a href="https://eltonminetto.substack.com" target="
+                            ">deste site</a>, <a href="https://asemanago.substack.com/" target="_blank">A Semana
+                                Go</a> e <a href="https://maisquesenior.substack.com/"
+                                target="_blank">maisquesenior.dev</a> ou <a href="/sobre">leia mais
+                                sobre mim</a>
+                        </div>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======================== END HERO AREA HERE ====================================== -->
+
+{{.Content}}
+<div class="main-content-area clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 offset-md-2 offset-lg-2">
+                <div class="blog-list">
+                    {{ range $index, $element := (.Paginator).Pages }}
+                    <div class="list-block block-{{add $index 1}} wow fadeIn" data-wow-duration="2s">
+                        <span>
+                            {{ if eq $lang "en" }}
+                            {{ .PublishDate.Format "January 2, 2006" }}
+                            {{end}}
+                            {{ if eq $lang "pt" }}
+                            {{ .PublishDate.Format "02/01/2006" }}
+                            {{end}}
+                        </span>
+                        <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+                        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }} </p>
+                        {{ if eq $lang "en" }}
+                        <div class="btn-read"><a href="{{.Permalink}}">Read more</a></div>
+                        {{end}}
+                        {{ if eq $lang "pt" }}
+                        <div class="btn-read"><a href="{{.Permalink}}">Leia mais</a></div>
+                        {{end}}
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{- $pages := union .RegularPages .Sections }}
+
+{{- if .IsHome }}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- end }}
+
+
+{{- $paginator := .Paginate $pages }}
+{{- if gt $paginator.TotalPages 1 }}
+<div class="pagination-area mt-5 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 offset-lg-1">
+                <div class="post-pagination d-flex justify-content-between clearfix">
+                    {{- if $paginator.HasPrev }}
+                    <p><a href="{{ $paginator.Prev.URL | absURL }}">
+                            << </a>
+                    </p>
+                    {{- end }}
+                    {{ if eq $lang "en" }}
+                    <p class="ml-auto page-count">page {{$paginator.PageNumber}} of {{$paginator.TotalPages}}</p>
+                    {{end}}
+                    {{ if eq $lang "pt" }}
+                    <p class="ml-auto page-count">página {{$paginator.PageNumber}} de {{$paginator.TotalPages}}</p>
+                    {{end}}
+                    {{- if $paginator.HasNext }}
+                    <p class="ml-auto"><a href="{{ $paginator.Next.URL | absURL }}"> >> </a></p>
+                    {{- end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{- end }}
+
+{{ end }}

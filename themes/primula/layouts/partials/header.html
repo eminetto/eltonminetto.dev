@@ -1,0 +1,44 @@
+{{- $lang := .Lang}}
+{{$home := "/"}}
+{{ if eq $lang "en" }}
+{{ $home = "/en"}}
+{{ end }}
+
+<header class="head-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar navbar-dark box-shadow">
+                    <div class="main-nav d-flex justify-content-between">
+                        <a href="{{$home}}" class="navbar-brand">
+                            <img src="/assets/images/logo.png" alt="" />
+                        </a>
+                        {{ if eq $lang "en" }}
+                        <a href="/">🇧🇷</a>
+                        {{end}}
+                        {{ if eq $lang "pt" }}
+                        <a href="/en">🇺🇸</a>
+                        {{end}}
+
+                        <a class="nav-button ml-auto"><span
+                                id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--navbar end-->
+
+    <div class="fixed-top main-menu">
+        <div class="flex-center p-5">
+            <ul class="nav flex-column">
+                {{- $currentPage := . -}}
+                {{ range $index, $item := .Site.Menus.main -}}
+                <li class="nav-item delay-{{$index}}"><a class="nav-link" href="{{ .URL | absLangURL }}">{{.Name}}</a>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+    </div>
+    <!--main-menu end-->
+</header>

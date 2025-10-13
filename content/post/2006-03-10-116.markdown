@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-03-10T15:08:41Z
+slug: "116"
+title: None
+url: /2006/03/10/116/
+wordpress_id: 116
+---
+
+Meu texto sobre PHP, Eclipse e CVS foi publicado no site [Tecnociência](http://tecnociencia.com.br/revista/index.php?option=com_content&task=view&id=491&Itemid=1)

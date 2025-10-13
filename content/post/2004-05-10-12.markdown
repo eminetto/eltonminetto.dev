@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2004-05-10T19:08:09Z
+slug: "12"
+title: None
+url: /2004/05/10/12/
+wordpress_id: 12
+---
+
+Adicionei em /docs os materiais do curso de Linux que estou ministrando

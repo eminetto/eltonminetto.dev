@@ -1,0 +1,90 @@
+{{- $lang := .Lang}}
+
+<footer>
+    <div class="footer-area pt-100 clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-logo pb-100 text-center">
+                        <a href="index.html"><img src="assets/images/logo.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-widget">
+                        <div class="widget-title">
+                            <h4>
+                                {{ if eq $lang "en" }}About{{end}}
+                                {{ if eq $lang "pt" }}Sobre{{end}}
+                            </h4>
+                        </div>
+                        <div class="widget-text">
+                            <p>
+                                {{ if eq $lang "en" }} I'm a software developer, teacher, speaker and writer {{ end }}
+                                {{ if eq $lang "pt" }} Sou desenvolvedor de software, professor, palestrante e escritor
+                                {{end }}
+                            </p>
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://twitter.com/eminetto" target="_blank"><i
+                                                class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://github.com/eminetto" target="_blank"><i
+                                                class="fa fa-github"></i></a></li>
+                                    <li><a href="https://linkedin.com/in/eminetto" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://medium.com/@eminetto" target="_blank"><i
+                                                class="fa fa-medium"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-widget">
+                        <div class="widget-title">
+                            <h4>
+                                Links
+                            </h4>
+                        </div>
+                        <div class="widget-text">
+                            <div class="widget-link">
+                                <ul>
+                                    {{- $currentPage := . -}}
+                                    {{ range $index, $item := .Site.Menus.main -}}
+                                    <li><a href="{{ .URL | absLangURL }}"><i class="fa fa-caret-right"
+                                                aria-hidden="true"></i>{{.Name}}</a></li>
+                                    {{- end }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="footer-text  pt-75 text-center">
+                        <!-- <p>&copy; Copyright All right reserved <span>Theme: design by <a href="#">Themeix</a></span></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ====================ALL JS FILE HERE===================================== -->
+<!-- jQuery -->
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+<!-- easing efect JS -->
+<script src="/assets/js/easing-efect.js"></script>
+<!-- owlcarousel  JS -->
+<script src="/assets/js/owl.carousel.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- waypoints JS -->
+<script src="/assets/js/jquery.waypoints.min.js"></script>
+<!-- wow JS -->
+<script src="/assets/js/wow.min.js"></script>
+<!-- main  JS -->
+<script src="/assets/js/main.js"></script>
+<!-- goatcounter -->
+<script data-goatcounter="https://eltonminetto.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

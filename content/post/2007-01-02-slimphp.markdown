@@ -1,0 +1,21 @@
+---
+categories:
+- codes
+- home
+comments: true
+date: 2007-01-02T14:51:07Z
+slug: slimphp
+title: slimPHP
+url: /2007/01/02/slimphp/
+wordpress_id: 181
+---
+
+Finalmente criei o projeto do slimPHP no Sourceforge.
+
+slimPHP é o nome, pouco criativo, que dei para o pequeno framework que desenvolvi e que estamos utilizando aqui na Unochapecó no desenvolvimento de novos aplicativos.
+
+Eu já havia descrito ele anteriormente aqui no site, mas agora no sourceforge fica mais fácil de alguém visualizar os códigos e fazer o download.
+
+O site ficou horrível, sem nenhum design. Se alguém tiver interesse de ajudar nisso e em qualquer coisa relacionada eu agradeço
+
+Site: [http://slimphp.sourceforge.net](http://slimphp.sourceforge.net)

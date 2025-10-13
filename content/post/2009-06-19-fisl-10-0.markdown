@@ -1,0 +1,18 @@
+---
+categories:
+- palestras
+- php
+comments: true
+date: 2009-06-19T22:21:16Z
+slug: fisl-10-0
+title: FISL 10.0
+url: /2009/06/19/fisl-10-0/
+wordpress_id: 375
+---
+
+Alguém comentou em algum texto que o FISL é algo próximo a "Festa da Padroeira dos Nerds". Todo ano nós migramos pro sul e nos encontramos em meio a bits, cerveja e discussões sobre tecnologia e, principalmente, software livre.
+E vou ter a felicidade de ministrar novamente uma [palestra](http://fisl.softwarelivre.org/10/papers/pub/programacao/66).
+Como eu vou comentar sobre o case do [Drimio](http://www.drimio.com) já publicaram sobre a palestra [aqui](http://www.clicrbs.com.br/especial/rs/tecnologia/19,0,2548535,Rede-social-brasileira-quer-quebrar-monologo-das-marcas.html) e [aqui](http://www.resellerweb.com.br/agenda/index.asp). Legal!
+Então, se você estiver perdido por lá, na sexta ou no sábado e quiser trocar umas idéias é só me avisar. Vou estar twittando sobre as palestras. Meu twitter é [http://www.twitter.com/eminetto](http://www.twitter.com.br/eminetto)
+Provavelmente também devo estar no estande do PHP Brasil Comunidades representando orgulhosamente o PHPSC.
+E que venha o #phpinga :-D

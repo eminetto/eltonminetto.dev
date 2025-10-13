@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2003-09-04T20:10:47Z
+slug: trabalho
+title: Trabalho
+url: /2003/09/04/trabalho/
+wordpress_id: 33
+---
+
+[Unochapecó](http://www.unochapeco.edu.br/) - universidade onde trabalho.

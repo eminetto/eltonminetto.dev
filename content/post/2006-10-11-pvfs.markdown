@@ -1,0 +1,314 @@
+---
+categories:
+- docs
+- home
+comments: true
+date: 2006-10-11T17:22:12Z
+slug: pvfs
+title: PVFS
+url: /2006/10/11/pvfs/
+wordpress_id: 168
+---
+
+**Introdução**
+
+O Parallel Virtual File System é um sistema de arquivos distribuído desenvolvido para prover alta performance e escalabilidade paralela para clusters de PCs linux.
+Em geral, o PVFS promete 4 características:
+
+*  Um espaço de nomes consistente para todo o cluster
+*  Acesso transparente para programas e aplicações já existentes, sem ter que recompilá-los
+*  Distribuição física de dados em múltiplos discos e múltiplos nós
+*  Alta performance de acesso em modo usuário
+
+**Download**
+
+Pode-se fazer download do arquivo de instalação no site:
+
+http://www.pvfs.org/pvfs2/download.html
+
+O arquivo de instalação foi copiado para o diretório /usr/src e descompactado:
+
+cp pvfs2-1.5.1.tar.gz /usr/src
+cd /usr/src
+tar xfvz pvfs2-1.5.1.tar.gz
+cd pvfs2-1.5.1
+
+** Construindo e instalando os pacotes**
+
+O ambiente usado para estes testes foi um laboratório com 4 computadores com o CentOS 4.4, kernel 2.6.9-34.ELsmp. Para instalar é necessário os pacotes de compiladores e dos fontes do kernel, disponíveis em RPM no CD da distribuição.
+
+Os passos padrão para compilar e instalar o PVFS2 são os seguintes:
+
+./configure with-kernel=/usr/src/kernels/2.6.9-34.EL-smp-i686
+make
+make install
+make kmod
+make kmod_install
+
+Para executar os comandos make install e make kmod_install é necessário acesso a conta root.
+Para carregar o módulo do kernel:
+
+/sbin/insmod /lib/modules/2.6.9-34.ELsmp/kernel/fs/pvfs2/pvfs2.ko
+
+Estes passos devem ser executados em todas as máquinas que vão compartilhar seu espaço de disco para o PVFS2.
+
+**Configurando o ambiente de testes**
+
+É importante ter em mente os papéis que cada máquina (ou nó) vai exercer no sistema PVFS2. Existem três papéis que uma máquina pode exercer:
+
+* servidor de metadados: nó que mantém metadados (como permissões e data de criação) para o sistema de arquivos.
+* servidor de I/O: nó que realmente armazena uma porção dos dados do PVFS2
+* cliente: é um nó que lê e grava arquivos PVFS2
+
+Uma máquina pode exercer um, dois ou os três papéis simultaneamente. Além disto, podem haver vários servidores de metadados, de I/O e clientes.
+
+O ambiente onde foram realizados estes testes é formado de quatro máquinas:
+
+* lrac.unochapeco.edu.br (servidor de metadados e de I/O)
+* et-015.unochapeco.edu.br (servidor de I/O e cliente)
+* et-016.unochapeco.edu.br (servidor de I/O)
+* et-017.unochapeco.edu.br(servidor de I/O)
+
+**Configuração do servidor**
+
+Neste passo é considerado que a instalação do PVFS2 já foi realizada em todas as quatro máquinas, conforme descrito anteriormente.
+Agora será gerado um arquivo de configuração principal e 3 arquivos com as configurações de cada uma das máquinas restantes. É importante lembrar de informar corretamente os nomes dos computadores e que eles possam ser acessados pelos seus nomes. Recomenda-se que sejam criadas entradas no arquivo /etc/hosts de cada computador para facilitar.
+
+Para gerar os arquivos de configuração:
+
+root@lrac:~# /usr/local/bin/pvfs2-genconfig /etc/pvfs2-fs.conf /etc/pvfs2-server.conf
+
+As perguntas abaixo são apresentadas. Os comentários abaixo foram adicionados na criação deste documento para facilitar a compreenção.
+
+**********************************************************************
+Welcome to the PVFS2 Configuration Generator:
+
+This interactive script will generate configuration files suitable
+for use with a new PVFS2 file system. Please see the PVFS2 quickstart
+guide for details.
+
+**********************************************************************
+You must first select the network protocol that your file system will use.
+The only currently supported options are "tcp" and "gm".
+* Enter protocol type [Default is tcp]:
+
+deixar tcp
+
+Choose a TCP/IP port for the servers to listen on. Note that this
+script assumes that all servers will use the same port number.
+
+* Enter port number [Default is 3334]:
+
+usar a porta padrão
+
+Next you must list the hostnames of the machines that will act as
+I/O servers. Acceptable syntax is "node1, node2, ..." or "node{#-#,#,#}".
+
+* Enter hostnames [Default is localhost]: lrac, et-015, et-016, et-017
+
+neste passo é necessário indicar as máquinas que irão atuar como servidores de I/O.
+
+Now list the hostnames of the machines that will act as Metadata
+servers. This list may or may not overlap with the I/O server list.
+
+* Enter hostnames [Default is localhost]: lrac
+
+indicar a máquina que irá atuar como o servidor de metadados: lrac
+
+Configured a total of 4 servers:
+4 of them are I/O servers.
+1 of them are Metadata servers.
+
+* Would you like to verify server list (y/n) [Default is n]? y
+
+se digitar a opção y os servidores serão testados. Pode-se colocar n e deixar este passo para mais tarde
+
+****** I/O servers:
+tcp://lrac:3334
+tcp://et-015:3334
+tcp://et-016:3334
+tcp://et-017:3334
+
+****** Metadata servers:
+
+tcp://lrac:3334
+
+* Does this look ok (y/n) [Default is y]? y
+
+Confirmar se tudo está ok
+
+Choose a file for each server to write log messages to.
+
+* Enter log file location [Default is /tmp/pvfs2-server.log]:
+
+Escolher um arquivo de log.
+
+Choose a directory for each server to store data in.
+
+* Enter directory name: [Default is /pvfs2-storage-space]:
+
+Diretório onde será armazenado os arquivos pertencentes ao PVFS2. Este diretório será criado automaticamente mais tarde em todas as máquinas
+
+Writing fs config file... Done.
+Writing 4 server config file(s)... Done.
+
+Configuration complete!
+
+Agora temos todos os arquivos de configuração criados:
+
+root@cluster1:~# ls /etc/pvfs2*
+-rw-r--r-- 1 root root 793 Out 10 18:55 /etc/pvfs2-fs.conf
+-rw-r--r-- 1 root root 91 Out 10 11:21 /etc/pvfs2-server.conf-et-015
+-rw-r--r-- 1 root root 91 Out 10 11:21 /etc/pvfs2-server.conf-et-016
+-rw-r--r-- 1 root root 91 Out 10 11:36 /etc/pvfs2-server.conf-et-017
+-rw-r--r-- 1 root root 94 Out 10 11:21 /etc/pvfs2-server.conf-lrac
+
+Agora os arquivos devem ser copiados para as máquinas. Podemos fazer isso usando o ssh ou outra forma de cópia remota (ou copiando em disquete mesmo e gravando em cada uma das máquinas)
+
+root@lrac:~# scp /etc/pvfs2-server.conf-et-015 root@et-015:/etc/
+root@lrac:~# scp /etc/pvfs2-fs.conf root@et-015:/etc/
+root@lrac:~# scp /usr/src/pvfs2-1.5.1/examples/pvfs2-server.rc root@et-015:/etc/rc.d/init.d/pvfs2-server
+
+O mesmo deve ser feito para as outras máquinas (et-016 e et-017).
+Também pode ser copiado para o servidor original o arquivo de inicialização:
+
+root@lrac:~# cp /usr/src/pvfs2-1.5.1/examples/pvfs2-server.rc /etc/rc.d/init.d/pvfs2-server
+
+Este arquivo será usado para iniciar e parar o servidor do PVFS2.
+
+**Iniciando os servidores**
+
+Em cada uma das máquinas deve ser executado o comando:
+
+/usr/local/sbin/pvfs2-server /etc/pvfs2-fs.conf /etc/pvfs2-server.conf-(nome_da_maquina) -f
+
+Exemplo:
+
+/usr/local/sbin/pvfs2-server /etc/pvfs2-fs.conf /etc/pvfs2-server.conf-et-015 -f
+
+Desta forma será criado o espaço onde será armazenado os arquivos (/pvfs2-storage- space) e o servidor será inicializado. Este comando é necessário ser executado somente na primeira inicialização. Das próximas vezes pode ser usado o serviço:
+
+/etc/init.d/pvfs2-server start
+
+e para interromper:
+
+/etc/init.d/pvfs2-server stop
+
+**Configuração do cliente**
+
+Na máquina, ou máquinas, que irá atuar como cliente é preciso adicionar a seguinte linha no arquivo /etc/fstab
+
+tcp://localhost:3334/pvfs2-fs /mnt/pvfs2 pvfs2 default,noauto 0 0
+
+Esta entrada será usada pelo Linux para poder montar e desmontar o sistema de arquivos PVFS2. Além disto é necessário criar um arquivo chamado /etc/pvfs2tab que irá conter a mesma entrada e será usado pelos aplicativos próprios do PVFS2. Os passos abaixo mostram como criar o diretório onde será montado a partição e a criação do arquivo:
+
+[root@et-015 /root]# mkdir /mnt/pvfs2
+[root@et-015 /root]# touch /etc/pvfs2tab
+[root@et-015 /root]# chmod a+r /etc/pvfs2tab
+
+Agora é preciso adicionar no arquivo criado a mesma entrada que foi adicionada no /etc/fstab.
+
+**Testando a instalação**
+
+Existe duas maneiras de testar a instalação. A primeira é usar as ferramentas que são fornecidas com o PVFS2: pvfs2-ping, pvfs2-cp, e pvfs2-ls. Estas ferramentas testam, a saúde do sistema de arquivos, permitem copiar arquivos e listam o conteúdo dos diretórios.
+
+bash-2.05b# /usr/local/bin/pvfs2-ping -m /mnt/pvfs2
+
+(1) Parsing tab file...
+
+(2) Initializing system interface...
+
+(3) Initializing each file system found in tab file: /etc/fstab...
+
+PVFS2 servers: tcp://localhost:3334
+
+Storage name: pvfs2-fs
+
+Local mount point: /mnt/pvfs2
+
+/mnt/pvfs2: Ok
+
+(4) Searching for /mnt/pvfs2/ in pvfstab...
+
+PVFS2 servers: tcp://localhost:3334
+
+Storage name: pvfs2-fs
+
+Local mount point: /mnt/pvfs2
+
+meta servers:
+
+tcp://lrac:3334
+
+data servers:
+
+tcp://lrac:3334
+tcp://et-015:3334
+
+(5) Verifying that all servers are responding...
+
+meta servers:
+
+tcp://lrac:3334 Ok
+
+data servers:
+
+tcp://lrac:3334 Ok
+
+tcp://et-015:3334 Ok
+
+(6) Verifying that fsid 1224940272 is acceptable to all servers...
+
+Ok; all servers understand fs_id 1224940272
+
+(7) Verifying that root handle is owned by one server...
+
+Root handle: 1048576
+
+Ok; root handle is owned by exactly one server.
+
+=============================================================
+
+The PVFS2 filesystem at /mnt/pvfs2/ appears to be correctly configured.
+
+Para listar:
+
+bash-2.05b# /usr/local/bin/pvfs2-ls /mnt/pvfs2/
+
+bash-2.05b# /usr/local/bin/pvfs2-cp -t /usr/lib/libc.a /mnt/pvfs2/testfile
+
+Wrote 2310808 bytes in 0.264689 seconds. 8.325842 MB/seconds
+
+bash-2.05b# /usr/local/bin/pvfs2-ls /mnt/pvfs2/
+
+testfile
+
+bash-2.05b# /usr/local/bin/pvfs2-ls -alh /mnt/pvfs2/
+
+drwxrwxrwx 1 pcarns users 0 2003-08-14 22:45 .
+
+drwxrwxrwx 1 pcarns users 0 2003-08-14 22:45 .. (faked)
+
+-rw------- 1 root root 2M 2003-08-14 22:47 testfile
+
+Copiando arquivos:
+
+bash-2.05b# /usr/local/bin/pvfs2-cp -t /mnt/pvfs2/testfile /tmp/testfile-out
+Wrote 2310808 bytes in 0.180621 seconds. 12.201016 MB/seconds
+
+bash-2.05b# diff /tmp/testfile-out /usr/lib/libc.a
+
+Outra forma de utilizar o PVFS2 é montando o diretório da mesma maneira que faríamos com o NFS ou outro sistema de arquivos.
+
+No cliente, após ter carregado na memória o módulo do kernel como foi explicado anteriormente, pode-se executar os seguintes comandos:
+
+[root@et-015 linux]# /usr/local/sbin/pvfs2-client
+[root@et-015 linux]# mount -t pvfs2 tcp://localhost:3334/pvfs2-fs /mnt/pvfs2
+
+Após isso é possível acessar o diretório normalmente, como se fosse um diretório local.
+
+**Referências**
+
+http://www.ime.usp.br/~carvalho/monografia-sad/
+
+http://www.pvfs.org/pvfs2/pvfs2-quickstart.html

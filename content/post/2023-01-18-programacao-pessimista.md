@@ -1,0 +1,27 @@
+---
+title: "Programação pessimista"
+date: 2023-01-18T09:00:19-03:00
+draft: false
+---
+Alguns anos atrás Sam Newman publicou o livro [Building Microservices](https://www.oreilly.com/library/view/building-microservices/9781491950340/?utm_source=oreilly&utm_medium=newsite&utm_campaign=microservices-at-scale-top) que se tornou uma grande referência quando falamos em microsserviços.
+
+Em um dos capítulos, entitulado *Microservices at scale*, e que está público neste [link](https://www.oreilly.com/radar/microservices-at-scale/), ele faz algumas afirmações interessantes (tradução minha):
+
+> As falhas estão em toda parte
+
+> Partir da suposição de que tudo pode e irá falhar leva você a pensar de forma diferente sobre como resolver problemas.
+
+Isso me fez refletir sobre como somos otimistas quando escrevemos nossos códigos. É bem comum escrevermos o código e os testes pensando no "caminho feliz". 
+
+Mas como o Sam fala, se partirmos da noção de que as coisas muito provavelmente vão falhar faz com que façamos perguntas importantes como:
+
+- o que vai acontecer quando o banco de dados da aplicação parar de responder? Eu posso usar um *pool de conexões*? Ou um *cache*?
+- e se a máquina (ou *pod*, *VM*, ou *container*, etc) onde o software estiver rodando ficar com falta de memória, cpu ou disco? O que vai acontecer se o sistema operacional resolver matar a minha aplicação? Eu estou preparado para fazer um *graceful shutdown*?
+- e se a fila para onde eu estou enviando as mensagens ficar sobrecarregada? Posso ter um algoritmo para fazer uma nova tentativa de processamento? E estou tratando a *idempotência*?
+- e se o microsserviço que eu estou usando como dependência parar de responder? Estou preparado para tratar isso via algum tipo de *circuit break* e/ou um *load balancer*?
+- e se o cliente que está consumindo minha API fizer uma inundação de acessos em pouco tempo? Estou preparado para tratar isso com algum mecanismo de *rate limit*?
+- etc, etc, etc
+
+Outro ponto importante que consta neste capítulo é a noção de que nem todo serviço é igual. Alguns são mais críticos do que os outros e nestes casos precisamos ser muito mais pessimistas/cuidadosos. Em contrapartida, alguns serviços são mais simples, tem menor impacto em caso de falha. Ter essa noção é importante pois nos ajuda a determinar quanto vamos aprofundar nas salva-guardas que comentei acima.
+
+Recomendo muito a leitura deste capítulo, mesmo se você não está usando a arquitetura de microsserviços. Mas resumindo, devemos ser mais pessimistas (ou realistas?) em relação aos cenários que estamos desenvolvendo, usando a análise de criticidade para avaliar o nível de cuidado que cada serviço precisa.

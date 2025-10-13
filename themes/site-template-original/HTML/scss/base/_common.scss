@@ -1,0 +1,253 @@
+ /*
+################
+Common Css
+################
+*/
+
+a:hover{
+     text-decoration:none;
+	 transition:all .4s ease-out;
+}
+
+ body{
+     font-size:$primary-font-size;
+     color:$primary-color;
+     font-family:$font-family;
+}
+.pt-100{
+ padding-top:100px;
+}
+.pb-100{
+padding-bottom:$section-padding-100;
+}
+.padding-60{
+ padding-bottom:60px;
+}
+.pb-60{
+ padding-bottom:60px;
+}
+.pt-60{
+padding-top:60px;
+}
+.pt-75{
+ padding-top:75px;
+}
+.mb-50{
+ margin-bottom:50px;
+}
+.mb-30{
+ margin-bottom:30px;
+}
+.mb-25{
+ margin-bottom:25px;
+}
+.mt-20{
+ margin-top:20px;
+}
+.head-main{
+ padding-top:30px;
+}
+ .main-nav{
+  width:100%;
+ }
+.page-header{
+.title{
+ margin-bottom:20px;
+   h2{
+   font-size:60px;
+  font-weight:600;
+  margin-bottom:45px;
+  @include desktop{
+      margin-top:50px;
+	  margin-bottom:15px;
+  }
+  @include tablet{
+      margin-top:50px;
+	  margin-bottom:15px;
+  }
+   }
+}
+}
+.btn-read{
+  position:relative;
+  display:inline-block;
+    &:hover{
+   a:before{
+   width:100%;
+   opacity:1;
+   transform:scale(1);
+   transition:all .2s ease-out;
+   }
+  }
+   a{
+    color:#404040;
+	font-weight:$font-medium;
+	&:hover{
+	 color:$hover;
+	 transition:all .3s ease-out;
+	}
+  &:before{
+   position:absolute;
+   bottom:0;
+   left:0;
+   width:0%;
+   height:2px;
+   background:$hover;
+   content:"";
+   opacity:0;
+   transition:all .4s ease-out;
+   transform:scale(0);
+  }
+   }
+}
+input[type="email"]{
+ padding: 8px 15px;
+ outline:0;
+ margin-bottom:15px;
+ border:1px solid #ddd;
+ width:100%;
+}
+input[type="search"]{
+ padding:8px 15px;
+ outline:0;
+ border:1px solid #ddd;
+ width:100%;
+}
+.footer-widget{
+.widget-text{
+    @include tablet{
+	 margin-bottom:30px;
+	}
+   }
+}
+.widget-link{
+@include desktop{
+	margin-bottom:30px;
+	}
+}
+.widget-text.subscribe-form{
+	margin-bottom:0;
+	}
+.post-pagination{
+	.page-count{
+	   margin-top: 7px;
+	   font-weight:500;
+	   }
+     p{display:inline-block;
+	 margin:0;
+	 padding:0;
+         a{
+			display: block;
+			transition: all 0.4s linear;
+			color: #404040;
+			border-radius: 35px;
+			padding: 6px 35px;
+			box-shadow: 0px 15px 40px -5px rgba(42, 154, 108, 0.23);
+             &:hover{
+				 background:$hover;
+				 transition: all 0.3s linear;
+				 color:$white-text;
+            }
+        }
+       }
+}
+.section-title{
+        margin-bottom:20px;
+         h3{
+             font-size:$h2-font-size;
+             font-weight:$font-bold;
+        }
+    }
+.social-link{
+	 @include tablet{
+		   margin:0;
+		  }
+		  @include desktop{
+		   margin-top:0;
+		   margin-bottom:30px;
+		   float:none !important;
+		  }
+		  @include tablet{
+	    float:none !important;
+	   }
+	 ul{
+	 margin:0;
+	 padding:0;
+	   li{
+		 list-style:none;
+		 display:inline-block;
+		 margin-right:10px;
+		 a{
+			display:block;
+            border-radius:50%;
+            text-align:center;
+            color:#777777;
+            transition:.4s;
+				 &:hover{
+				  color:$hover;
+				 }
+		      }
+		 }
+	 }
+   }
+.comment-form button,.comment-form button{
+         padding: 10px 25px;
+         border:none;
+         font-weight:$font-medium;
+		 background:$hover;
+         margin-top:15px;
+		 cursor: pointer;
+		 font-size:$smaller-font;
+		 transition:.4s;
+		 color:#fff;
+		 border-radius: 34px;
+	     box-shadow: 0px 15px 40px -5px rgba(42, 154, 108, 0.23);
+         &:focus{
+             outline:0;
+        }
+		&:hover{
+		 background:#d66565;
+		 transition:.4s;
+		 color:#fff;
+		}
+    }
+.header-area{
+  height:100px; 
+  .logo{
+    max-height:100px;
+	padding-top:10px;
+	@include tablet{
+	}
+  }
+}
+.headerr-image img{
+ max-width:100%;
+ @include tablet{
+  height:300px;
+ }
+}
+.not-found img{
+     width: 300px;
+}
+.page-title-area{
+  .page-title{
+    h1{
+	 font-size: 60px;
+    font-weight: 600;
+	margin:0;
+	 @include desktop{
+	 font-size: 63px;
+     line-height: 80px;
+	 }
+	 @include tablet{
+	 font-size: 44px;
+     line-height: 60px;
+	 }
+	}
+  }
+}
+blockquote{
+ font-style:italic;
+ font-size:$font-20;
+ margin:25px 0;
+}

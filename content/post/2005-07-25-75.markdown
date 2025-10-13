@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2005-07-25T22:20:31Z
+slug: "75"
+title: None
+url: /2005/07/25/75/
+wordpress_id: 75
+---
+
+O texto que fiz sobre Ajax foi publico no site [Tecnociência](http://tecnociencia.com.br/revista/index.php?option=com_content&task=view&id=162&Itemid=1) e no [Linha de Código](http://www.linhadecodigo.com.br/dicas.asp?id_dica=1253&sub=46)

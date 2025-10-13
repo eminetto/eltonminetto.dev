@@ -1,0 +1,13 @@
+---
+categories:
+- home
+- ubuntu
+comments: true
+date: 2006-05-08T15:15:35Z
+slug: feed-zero
+title: Feed Zero
+url: /2006/05/08/feed-zero/
+wordpress_id: 130
+---
+
+Aderindo a [campanha](http://www.meiobit.com/arq/007865.html), aí vai a [lista de feeds](/elm.opml) que leio diariamente,  no formato OPML

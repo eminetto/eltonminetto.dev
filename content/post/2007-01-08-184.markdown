@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2007-01-08T14:48:39Z
+slug: "184"
+title: None
+url: /2007/01/08/184/
+wordpress_id: 184
+---
+
+Minha dica sobre o gnome-open foi publicada no [Dicas-l](http://www.dicas-l.com.br/dicas-l/20070107.php)

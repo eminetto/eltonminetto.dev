@@ -1,0 +1,14 @@
+---
+categories:
+- home
+comments: true
+date: 2006-04-29T11:04:19Z
+slug: dicas-l
+title: Dicas-l
+url: /2006/04/29/dicas-l/
+wordpress_id: 129
+---
+
+Minha classe para trabalhar com tabelas foi [publicada na Dicas-l](http://www.dicas-l.com.br/dicas-l/20060429.php).
+
+A dicas-l é uma lista de dicas que existe desde 1997 e é recebia diariamente por milhares de leitores.

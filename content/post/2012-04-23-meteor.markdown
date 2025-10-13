@@ -1,0 +1,165 @@
+---
+categories:
+- etc
+comments: true
+date: 2012-04-23T14:22:06Z
+slug: meteor
+title: Meteor
+url: /2012/04/23/meteor/
+wordpress_id: 962
+---
+
+Esse post é minha participação no [desafio Coderockr de programação](http://www.coderockr.com/blog/2012/04/desafio-de-programacao/).
+Eu escolhi desenvolver o aplicativo usando um framework de Javascript chamado [Meteor](http://meteor.com/), que conheci em um post no Hacker News e estava na minha lista de coisas interessantes a olhar com calma. Exatamente o tipo de situação que o desafio quer promover :)
+O Meteor é um framework realmente interessante. Ele é baseado em algumas tecnologias de JavaScript que permitem criarmos um aplicativo completo usando apenas essa linguagem, tanto a porção servidor (ele usa o Nodejs para isso) quanto a parte cliente (jQuery e templates usando o [Handlebars](http://www.handlebarsjs.com/))
+Para instalar o Meteor é preciso executar os comandos no terminal (no Linux e MacOSX):
+
+```
+curl install.meteor.com | /bin/sh
+```
+
+Para criar um novo projeto é só executar os comandos:
+
+```
+meteor create myapp
+```
+
+O Meteor possui um servidor para podermos fazer o teste da aplicação. Para executá-lo é só:
+
+```
+cd myapp
+meteor
+```
+
+E para acessar no navegador é só usar a url _http://localhost:3000_
+
+Um projeto do Meteor é composto de três arquivos: um css, um html e um JavaScript. Pode ser estruturado de outra forma, mas esse é o exemplo mais comum. Dentro do JavaScript podemos definir a lógica que será executada no cliente (e que será enviada para o navegador do usuário) e a porção que será executada no servidor (no Nodejs).
+
+Para testar o framework eu criei um pequeno projeto, de cadastro de contatos. Para rodar o meu exemplo é só executar (depois de ter instalado o Meteor):
+
+```
+git clone git@github.com:eminetto/MeteorContactListSample.git
+cd MeteorContactListSample/
+meteor
+```
+
+No arquivo ContactList.html é definido o visual do aplicativo, usando o sistema de templates usado pelo Meteor. No trecho abaixo definimos dois templates (add_contact e contacts) e fazemos a inclusão dos dois, dentro da tag body:
+
+``` javascript
+<head>
+  <title>ContactList</title>
+</head>
+
+<body>
+  {{> add_contact}}
+
+  {{> contacts}}
+
+
+</body>
+
+<template name="add_contact">
+  <h3>{{action}} contact</h3>
+  <div id="new-contact">
+    <input type="hidden" id="id" name="id">
+    Name: <input type="text" name="name" id="name"><br>
+    E-mail: <input type="text" name="email" id="email"><br>
+    <input type="button" id="actionButton" value="{{action}}">
+  </div>
+</template>
+
+<template name="contacts">
+  <h3>Contacts</h3>
+  <div id="contacts">
+    {{#each contact_list}}
+      <div class="contact">
+        {{name}} - {{email}} 
+        <input type="button" class="edit" id="{{_id}}" value="edit">
+        <input type="button" class="del" id="{{_id}}" value="del">
+        <br>
+      </div>
+    {{/each}}
+  </div>
+</template>
+```
+
+O que está dentro de {{ e }} são variáveis que serão substituídas pelo sistema de templates. A instrução _each_ é usada como um _for_ e mostrará todos os contatos existentes.
+
+No arquivo ContactList.js está a lógica do aplicativo. E aí entra algo muito interessante: as Collections. São interfaces para o banco de dados MongoDB que é usado pelo framework. Na documentação é citado que pode ser extendido para usar com outros bancos de dados, mas não cheguei a testar isso. Quando a aplicação é executada é criado um banco de dados MongoDB e os dados são inseridos nele. Uma das coisas mais legais do Meteor é que ele gera uma cópia do banco de dados no lado do cliente, assim o mesmo comando usado pelo servidor é usado pelo cliente. E os dados são sincronizados, o que significa que no momento que um cliente modifica o banco de dados essa mudança é replicada automaticamente para o servidor, que manda a alteração para todos os clientes. Magia negra! Você tem um sistema sincronizado entre diversos clientes, sem precisar se preocupar com isso, o que é realmente uma vantagem.
+O código do ContactList.js:
+
+``` javascript
+Contacts = new Meteor.Collection("contacts");
+
+if (Meteor.is_client) {
+  
+  Session.set('action','add');
+  
+  Template.add_contact.action = function () {
+    var action = Session.get("action") || "add";  
+    return action;
+  };
+
+  Template.add_contact.events = {
+    'click input#actionButton' : function (evt) {
+      var $action = Session.get('action'),
+          $name = $("#name").val(),
+          $email = $("#email").val();
+
+      console.log($action);
+      if ($action == 'add') {
+        Contacts.insert({
+          name:  $name,
+          email: $email 
+        });
+        alert('contact ' + $name +  ' added');
+      }
+      else {
+        Contacts.update($("#id").val(), {$set: {name: $name, email: $email}});
+        $("#id").val('');
+        Session.set('action', 'add');
+        alert('contact ' + $name +  ' modified');
+      }
+      $("#name").val('');
+      $("#email").val('');
+    }
+  };
+
+  Template.contacts.contact_list = function () {
+    return Contacts.find({}, {sort: {name: 1}});
+  };
+
+  Template.contacts.events = {
+    'click input.del' : function (evt) {
+      var $contact = $(evt.target),
+          $id = $contact.attr('id');
+      Contacts.remove($id);
+    },
+    'click input.edit' : function (evt) {
+      var $contact = $(evt.target),
+          $id = $contact.attr('id');
+      contact = Contacts.findOne($id);
+
+      $("#id").val(contact._id);
+      $("#name").val(contact.name);
+      $("#email").val(contact.email);
+      $("#name").focus();
+
+      Session.set('action', 'edit');
+    },
+  };
+
+}
+
+if (Meteor.is_server) {
+  Meteor.startup(function () {
+    // code to run on server at startup
+  });
+}
+```
+
+No código é possível ver os comandos _is_client_ e _is_server_ que dividem o código do cliente e servidor (eles podem ser separados em arquivos diferentes também). Também é possível ver o sistema de eventos (_Template.contacts.events_) e o retorno do banco de dados sendo enviado ao template (_return Contacts.find({}, {sort: {name: 1}});_)
+
+No site do Meteor existem alguns [exemplos](http://meteor.com/examples/leaderboard) mais complexos que ajudam a entender os detalhes mais avançados. 
+Apesar de ser uma ferramenta nova (versão 0.3.3 no momento da escrita deste post) eu fiquei surpreso com as possibilidades que ela fornece. Não cheguei a testar em uma aplicação mais complexa ou com maior carga, mas é uma tecnologia que vou prestar muita atenção na sua evolução, pois vejo várias utilidades para ela. 
+

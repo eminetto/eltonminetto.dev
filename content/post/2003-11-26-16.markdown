@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2003-11-26T19:11:19Z
+slug: "16"
+title: None
+url: /2003/11/26/16/
+wordpress_id: 16
+---
+
+Finalmente adicionei o texto e os scripts do "Script para Desligar máquinas Linux", em /codes. Adicionei também mais um screenshot, em /etc

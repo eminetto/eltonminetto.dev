@@ -1,0 +1,21 @@
+---
+categories:
+- home
+comments: true
+date: 2010-11-01T15:41:57Z
+slug: about-me
+title: about.me
+url: /2010/11/01/about-me/
+wordpress_id: 481
+---
+
+Com o passar do tempo todos nós vamos criando diversos perfis em vários serviços, redes sociais, blogs, etc.
+Um problema que isso acarreta é como unificarmos nossa presença nesses diversos serviços em um só lugar.
+Para resolver este problema existem alguns sites que se propõem a serem centralizadores, "hubs de sua presença online".
+Dentre os que eu testei ([Name.ly](http://name.ly/) , [Flavors.Me](http://flavors.me/) , [Card.Ly](http://card.ly) e [Chi.mp](http://chi.mp/) ) o que achei mais interessante foi o [about.me](http://about.me)
+Você pode escrever um resumo do seu currículo, escolher um background legal, configurar as fontes, e indicar sua presença no Twitter, Facebook, Linkedin, Foursquare e outros sites.
+[![](/images/posts/perfil_150.png)](/images/posts/perfil.png)
+Além disso, existe uma funcionalidade legal que é uma espécie de Analytics com estatísticas de acesso ao seu perfil.
+[![](/images/posts/stats1_150.png)](/images/posts/stats1.png)
+Atualmente o serviço está em Beta. Você pode requisitar um convite e aguardar. Futuramente vai existir uma versão paga, com algumas funcionalidades extras.
+O meu endereço é [http://about.me/eminetto](http://about.me/eminetto)

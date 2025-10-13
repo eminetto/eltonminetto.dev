@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2004-07-20T19:04:24Z
+slug: "9"
+title: None
+url: /2004/07/20/9/
+wordpress_id: 9
+---
+
+Foi publicado no site Linha de Código o meu texto ["Automatização de tarefas do OpenOffice usando o Python"](http://www.linhadecodigo.com.br/artigos.asp?id_ac=388&pag=1).

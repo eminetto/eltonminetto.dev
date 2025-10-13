@@ -1,0 +1,13 @@
+---
+categories:
+- ubuntu
+comments: true
+date: 2005-10-28T18:48:26Z
+slug: frappr
+title: Frappr!
+url: /2005/10/28/frappr/
+wordpress_id: 87
+---
+
+O Frappr! é um site que usa a api do Google Maps para criar um espaço onde membros de uma comunidade possam inserir sua localização, foto e descrição. Montei o espaço do ubuntubrasil, assim podemos visualizar o tamanho da nossa comunidade. O endereço é:
+[![Check out our Frappr!](http://www.frappr.com/i/frapper_sticker.gif)](http://www.frappr.com/ubuntubrasil)

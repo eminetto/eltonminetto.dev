@@ -1,0 +1,27 @@
+---
+categories:
+- home
+comments: true
+date: 2010-12-20T13:56:16Z
+slug: novos-rumos-2-0
+title: Novos rumos 2.0
+url: /2010/12/20/novos-rumos-2-0/
+wordpress_id: 506
+---
+
+Essa é a época do ano onde revisamos tudo que passou, tiramos lições do que aconteceu de ruim e tentamos dar continuidade ao que aconteceu de bom.
+2010 foi ruim em alguns aspectos, mas muita coisa boa aconteceu. Foi o ano que eu fiz mais palestras, participei de vários eventos, conheci pessoas incríveis, aprendi novas tecnologias, entre outras.
+Feito o balanço de 2010, é hora de planejar 2011. A principal mudança na minha vida é que estou finalizando a minha passagem pelo Drimio e iniciando um novo desafio. Esse desafio chama-se Coderockr
+[Coderockr](http://www.coderockr.com) é a materialização de um sonho. Trabalhar em projetos inovadores, em um ambiente que seja o mais próximo possível do que imagino ser o ideal.
+O nome da empresa reflete nossas idéias e visão de mundo:
+"Programadores são artistas. São rockstars
+Não desenvolvemos software, desenvolvemos Riffs e Solos com código fonte. Nossos programadores não trabalham em uma empresa, eles fazem parte de uma banda de rock. Keep Rocking!"
+É isso que queremos fazer, é isso que defendemos. O Rock n' Roll sempre quebrou paradigmas, inventou novas formas som e de vida. É o que queremos. Inventar novas idéias, novas formas de trabalhar, quebrar convenções
+Meu sócio nessa empreitada é o [@xorna](http://twitter.com/xorna). Mago das idéias e dos códigos, grande apreciador do bom e velho som pesado das guitarras e distorções. Também estamos contando com apoio e parceirias de amigos, como a Agência Magica, que teve a inspiração de criar a nossa logo.  
+
+[![](/images/posts/coderockr-marcal_150.jpg)](/images/posts/coderockr-marcal.jpg)
+E outras parcerias que devemos comentar com mais detalhes no nosso site, que está no forno.
+Mas afinal, o que vamos fazer na Coderockr?  Estamos desenvolvendo projetos para a Web e para iOS, prestando consultoria e treinamento, e principalmente, nos divertindo muito com isso.
+Que 2011 seja só o início de uma aventura maior e mais divertida.
+
+P.S.: o título desse post é uma [auto-referência](/blog/2008/02/28/novos-rumos)

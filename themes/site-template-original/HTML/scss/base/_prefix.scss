@@ -1,0 +1,26 @@
+@mixin transform($property) {
+    -moz-transform: $property;
+      -o-transform: $property;
+     -ms-transform: $property;
+ -webkit-transform: $property;
+       transform: $property;
+}
+@mixin transition($property) {
+    -webkit-transition: $property;
+        -ms-transform: $property;
+        -o-transition: $property;
+            transition: $property;
+}
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-o-placeholder          {@content}
+    :-ms-input-placeholder      {@content}  
+}
+@mixin animation($property) {
+    -moz-transform: $property;
+      -o-transform: $property;
+     -ms-transform: $property;
+ -webkit-transform: $property;
+       transform: $property;
+}

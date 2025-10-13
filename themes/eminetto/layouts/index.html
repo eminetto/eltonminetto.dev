@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "nav.html" . }}
+
+    <header class="header-section ">
+      <div class="intro-header no-img">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="page-heading">
+                <h1>{{.Site.Title}}</h1>
+                {{if .Site.Params.subtitle}}
+                  <hr class="small">
+                  <span class="page-subheading">{{.Site.Params.subtitle}}</span>
+                {{end}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div role="main" class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="posts-list">
+            {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+            {{ range $pag.Pages }}
+            <article class="post-preview">
+              <a href="{{ .Permalink }}">
+          	  <h2 class="post-title">{{ .Title }}</h2>
+          	
+          	  {{ if .Params.subtitle }}
+          	  <h3 class="post-subtitle">
+          	    {{ .Params.subtitle }}
+          	  </h3>
+          	  {{ end }}  
+              </a>
+
+              <p class="post-meta">
+                Posted on {{ .Date.Format "January 2, 2006" }}
+              </p>
+            
+              <div class="post-entry">
+                {{ .Summary }}
+          	  <a href="{{ .Permalink }}" class="post-read-more">[Read&nbsp;More]</a>
+              </div>
+            
+             </article>
+            {{ end }}
+          </div>
+
+          {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+          <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+            <li class="previous">
+              <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; Newer Posts</a>
+            </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+            <li class="next">
+              <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Older Posts &rarr;</a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ partial "footer.html" . }}
+
+  <script async src='https://pepper.swat.io/embed.js?eyJwb3NpdGlvbiI6InJpZ2h0IiwiY29sb3IiOiI0QTkwRTIiLCJpY29uIjoiYnViYmxlIiwiaW50cm9UZXh0IjpudWxsLCJjaGFubmVscyI6W1siZmFjZWJvb2siLCJlbWluZXR0byIsInNvY2lhbCJdLFsidHdpdHRlciIsImVtaW5ldHRvIiwic29jaWFsIl0sWyJnaXRodWIiLCJodHRwOi8vZ2l0aHViLmNvbS9lbWluZXR0byIsInNvY2lhbCJdLFsibGlua2VkaW4iLCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vZW1pbmV0dG8iLCJzb2NpYWwiXSxbInlvdXR1YmUiLCJodHRwczovL3d3dy55b3V0dWJlLmNvbS9jL2VsdG9ubWluZXR0byIsInNvY2lhbCJdLFsiZW1haWwiLCJlbWluZXR0b0BnbWFpbC5jb20iLCJjbGFzc2ljIl1dfQ=='></script>
+  </body>
+</html>

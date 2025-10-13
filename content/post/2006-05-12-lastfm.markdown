@@ -1,0 +1,18 @@
+---
+categories:
+- home
+- ubuntu
+comments: true
+date: 2006-05-12T22:49:33Z
+slug: lastfm
+title: Last.fm
+url: /2006/05/12/lastfm/
+wordpress_id: 137
+---
+
+Mais uma aplicação Web2.0 interessante. O site [last.fm](http://www.last.fm) permite que você ouça as músicas que gosta, participe de comunidades das bandas, compartilhe seus gostos musicais com outros usuários, coloque tags nas músicas, etc.
+A nova versão do banshee que  vem com o Dapper possui um plugin que permite que as músicas que você ouve usando o player sejam listadas na sua lista de músicas preferidas.
+
+[![Captura_da_tela.png](/wp-content/uploads/2006/05/Captura_da_tela.miniatura.png)](/wp-content/uploads/2006/05/Captura_da_tela.png)
+
+Outra feature legal é a possibilidade de exportar via rss as músicas ou artistas que você mais ouve. Coloquei na barra ao lado a lista das últimas 10 músicas que estou ouvindo via rss.

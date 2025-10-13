@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-04-19T20:14:10Z
+slug: "125"
+title: None
+url: /2006/04/19/125/
+wordpress_id: 125
+---
+
+Minha dica sobre JSON foi [publicada](http://www.linhadecodigo.com.br/dicas.asp?id_dica=1275&sub=46) no site Linha de Código

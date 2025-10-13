@@ -1,0 +1,47 @@
+{{ define "main" }}
+<section>
+    <article>
+        <div>
+            {{ $author := index .Site.Data.authors (.Params.author | default "eminetto") }}
+            <h1>{{ .Title }}</h1>
+            <div>
+                <div>
+                    <img src="{{ $author.avatar }}">
+                </div>
+                <div>
+                    <p>By
+                        {{- if $author -}}
+                        {{ $author.name }}
+                        {{- end -}}
+                    </p>
+                    <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
+                        {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }} read</p>
+                </div>
+                <div>
+                    {{ range $idx, $category := .Site.Params.categories }}
+                    <div><a href="{{ " categories/" | relURL }}{{ $category | urlize }}">{{ $category
+                            }}</a></div>
+                    {{- end }}
+                </div>
+            </div>
+            <div>
+                {{ .Content }}
+            </div>
+        </div>
+    </article>
+</section>
+<div>
+    <div>
+        <div>
+            {{ with .PrevInSection }}
+            <button><a href="{{ .Permalink }}">&#8592; Previous Post: {{ .Title }}</a> </button>
+            {{ end }}
+        </div>
+        <div>
+            {{ with .NextInSection }}
+            <button><a href="{{ .Permalink }}">Next Post: {{ .Title }} &#8594;</a></button>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

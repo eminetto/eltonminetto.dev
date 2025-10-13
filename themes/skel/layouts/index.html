@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{.Content}}
+<ul>
+    {{ range (.Paginator).Pages }}
+    <li>
+        <a href="{{.Permalink}}">{{.Title}}</a>
+    </li>
+    <section>
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    </section>
+
+    {{end}}
+    -----
+    {{- $pages := union .RegularPages .Sections }}
+
+    {{- if .IsHome }}
+    {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{- end }}
+
+    {{- $paginator := .Paginate $pages }}
+    {{- if gt $paginator.TotalPages 1 }}
+    <footer>
+        <nav>
+            {{- if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL | absURL }}">« {{ i18n "prev_page" }}</a>
+            {{- end }}
+            {{- if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL | absURL }}">{{ i18n "next_page" }} »</a>
+            {{- end }}
+        </nav>
+    </footer>
+    {{- end }}
+
+    ----
+    {{ template "_internal/pagination.html" . }}
+</ul>
+{{ end }}

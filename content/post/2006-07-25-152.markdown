@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-07-25T14:41:05Z
+slug: "152"
+title: None
+url: /2006/07/25/152/
+wordpress_id: 152
+---
+
+Um artigo sobre meu Framework PHP foi publicado no [Linha de Código](http://www.linhadecodigo.com.br/artigos.asp?id_ac=1099&pag=1)

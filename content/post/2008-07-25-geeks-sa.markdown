@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2008-07-25T12:52:06Z
+slug: geeks-sa
+title: Geeks SA
+url: /2008/07/25/geeks-sa/
+wordpress_id: 289
+---
+
+Encontrei esse [post](http://webinsider.uol.com.br/index.php/2008/07/24/geeks-sa-convivendo-com-talentosos-esquisitos/) no site do Webinsider.  Muito legal. Vale a leitura.

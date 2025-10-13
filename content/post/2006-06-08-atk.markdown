@@ -1,0 +1,15 @@
+---
+categories:
+- docs
+- home
+comments: true
+date: 2006-06-08T16:31:33Z
+slug: atk
+title: ATK
+url: /2006/06/08/atk/
+wordpress_id: 144
+---
+
+Um framework interessante que já é antigo, está na versão 5.5, e é pouco comentado é o [Achievo ATK](http://www.achievo.org/atk/). Segundo o site, o ATK é " um framework de aplicações orientadas a objeto escrito em PHP. Seu público alvo são desenvolvedores que desejam focar na lógica de negócios ao invés de codificar HTML.  Enquanto outros frameworks proveem uma grande quantidade de classes utilitárias, ATK prove um framework completo que requer apenas pequenas quantidades de código para criar aplicações usáveis, enquanto mantém completa flexibilidade."
+
+Além dos [manuais](http://www.achievo.org/atk/docs/) existentes no site, foi publicado um [texto](http://www.oracle.com/technology/pub/articles/jansch_atk.html) bem completo no site da Oracle com exemplos para esta base de dados. A minha pequena [contribuição](http://www.achievo.org/product/languages) foi ajudar na tradução para o pt_BR. Esse é mais um  exemplo de framework que pode ajudar bastante nós desenvolvedores.

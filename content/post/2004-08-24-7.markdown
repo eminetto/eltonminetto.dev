@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2004-08-24T19:03:15Z
+slug: "7"
+title: None
+url: /2004/08/24/7/
+wordpress_id: 7
+---
+
+Adicionei em /codes um pequeno programa que fiz na linguagem Forth

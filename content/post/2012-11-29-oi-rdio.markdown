@@ -1,0 +1,20 @@
+---
+categories:
+- Apps That Rock
+comments: true
+date: 2012-11-29T17:21:48Z
+slug: oi-rdio
+title: Oi Rdio
+url: /2012/11/29/oi-rdio/
+wordpress_id: 1211
+---
+
+Vou contar uma situação real. Estou usando o iPad para ler notícias e ouvindo música via streaming. Estou ouvindo um álbum lançado semana passada, de uma banda nova e bem pouco conhecida. Clico em uma opção do player e o álbum é baixado para o iPad e o iPhone. Coloco o iPhone em modo avião (para não gastar minha 3G) ouvindo a mesma música que estava ouvindo no iPad. Depois da corrida ligo o WiFi do iPhone e dou o play para a música começar a tocar no Macbook Pro conectado no home theater e vou tomar banho. Que ferramenta estou usando para isso tudo? Se respondeu "iTunes" errou, estou usando o [Oi Rdio](http://www.rdio.com). 
+<!--more-->
+Trata-se da tropicalização de uma ferramenta americana, o Rdio, concorrente do Spotify e outros que ainda não estão disponíveis no Brasil. Apesar do nome ela pode ser usada por qualquer usuário de internet, móvel ou não, cliente de qualquer operadora.
+
+Comecei a usar a ferramenta a algumas semanas e estou muito satisfeito com o resultado. Por míseros R$ 15 mensais tenho acesso a milhares de músicas no computador e dispositivos móveis a hora que eu quiser. E são realmente milhares de bandas e músicas, sem aquela velha propaganda enganosa. Desde bancas clássicas como Beatles e Black Sabbath até novas como Grand Magus, Rival Sons, etc. E álbuns lançados recentemente estão disponíveis com alguns dias apenas de atraso, como a última coletânea do Rolling Stones ou o show ao vivo do Machine Head. 
+
+Além disso os aplicativos são muito bonitos e estáveis, o streaming funciona perfeitamente, é muito legal criar e compartilhar playlists e seguir os amigos. Esse é outro ponto legal: uma rede social que funciona (lembram do Ping da Apple?) e integrada a outras redes como Facebook e Twitter. Até mandar a lista de músicas ouvidas para o Last.fm ele faz, tudo no mesmo aplicativo.
+
+Tudo isso é o que as ferramentas da Apple deveriam fazer mas nunca conseguiram. Paguei os U$ 25 pelo Music Match mas em 2013 dificilmente irei renovar a assinatura. A menos que a Apple se movimente e implemente algumas dessas funcionalidades ela vai perder muito terreno para o Rdio, Spotify e afins. De qualquer modo é um bom momento para nós fãs de música que sentíamos remorso por fazer download pirata de músicas dos nossos artistas favoritos.

@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2004-06-17T19:05:56Z
+slug: "10"
+title: None
+url: /2004/06/17/10/
+wordpress_id: 10
+---
+
+Publiquei no [PythonBrasil](http://www.pythonbrasil.com.br/moin.cgi/bully) um artigo sobre o Algoritmo de bully em Python e sockets Unix

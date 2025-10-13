@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section>
+    <div>
+        <h1>
+            {{ .Title }}
+        </h1>
+        <div>
+            {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+
+            {{ range $name, $value := $taxonomy }}
+            <div>
+                <div>
+                    <p style="font-size:large">{{ $name }} </p>
+                </div>
+                <div>
+                    {{ range $value.Pages }}
+                    <p hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </p>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

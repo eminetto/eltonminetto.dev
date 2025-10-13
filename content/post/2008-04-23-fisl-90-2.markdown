@@ -1,0 +1,67 @@
+---
+categories:
+- home
+- python
+comments: true
+date: 2008-04-23T22:29:15Z
+slug: fisl-90-2
+tags:
+- fisl
+- php
+- python
+title: Relato do FISL 9.0
+url: /2008/04/23/fisl-90-2/
+wordpress_id: 263
+---
+
+Finalmente consegui me organizar e reler minhas anotações das palestras que vi no FISL 9.0
+
+Foram muito boas na minha opinião. Python pra todos os gostos :-)
+
+Um resumo das que eu assisti:
+
+**Ganeti - cluster-based virtualization management software**
+
+Apresentado por um programador do Google, mostrou uma ferramenta interessante de gerenciamento de clusters virtualizados com o Xen. Realmente muito interessante. Assunto para TCC. Só falta encontrar um aluno maluco o suficiente
+
+**Coding Dojo - Treino para Programadores**
+
+Já tinha assistido um vídeo de uma palestra que essa galera tinha feito, acho que na Unicamp. Bem interessante a forma como eles organizam cada sessão. Muito legal para servir como reforço para as aulas de programação em geral. Tenho vontade de implantar isso. Vou conversar com mais alguns professores e programadores da região. Quem sabe não nos divertimos nos sábados de tarde?
+
+**Large Scale PHP**
+
+Apresentado pelo criador do PHP, essa foi uma palestra bem instrutiva. Para falar a verdade eu já conhecia quase todas as ferramentas que ele mostrou, mas mesmo assim foi ótima. Ele falou bastante sobre segurança também, o que vai me ajudar na próxima edição da disciplina de segurança. Coisas para testar: YSlow, valgrind e os filtros embutidos nas novas versões do PHP. A grande surpresa foi descobrir que ele trabalhou por um tempo em uma empresa em POA, antes de criar o PHP. Legal. 
+
+**Duro de Errar 5.0**
+
+A palestra do [Marcelio Leal](http://marcelioleal.wordpress.com/) foi muito divertida e útil. Já aproveitei algumas coisa que ele falou na aula de PHP que ministrei ontem. E ainda tive tempo de conversar com o Marcelio nos corredores. Grande pessoa.
+
+No sábado eu só assisti as palestras da tarde. A ressaca estava graande. Mas aproveitei todas as palestras.
+
+**Python: Palestras Relâmpago**
+
+Várias palestras curtas sobre Python. Gostei da apresentação do Andrews e companhia sobre o joguinho que eles fizeram para o OLPC com pygame. A que foi mais importante para mim foi a da Tatiana Martins, sobre VTK. Ela deveria ter ministrado uma palestra completa no dia anterior mas não pode. Mesmo mostrando muito rápido os slides pude ver que é uma excelente biblioteca de manipulação 3D. Exatamente o que eu estou precisando para um projeto que irei iniciar em breve. Consegui conversar com ela nos corredores e vou estudar mais sobre isso.
+
+**Desenvolvimento ágil de software com XP e Scrum**
+
+Excelente [palestra](http://gc.blog.br/2008/04/20/fisl-90-desenvolvimento-agil-com-xp-e-scrum/). Foi apresentado um resumo sobre estas metodologias de desenvolvimento. E o mais legal é que foi baseado na experiência real da equipe do Globo.com. É realmente importante ver isso de uma maneira prática e real porque muitas vezes parece que isso funciona melhor no papel. 
+
+**ISIS-NBP: Python e Bibliotecas Digitais**
+
+Confesso que entrei nessa palestre meio enganado. Mas como tinha Python no título eu fui ver. E me surpreendi. Era sobre a plataforma ISIS para bibliotecas. Eu já tinha instalado um software dessa plataforma na Unochapecó quando comecei a trabalhar lá anos atrás. Além disso tirei uma idéia para G2 da turma de Estrutura de Arquivos :-)
+
+**WSGI: a resposta para a questão definitiva sobre Python, Web e tudo mais?**
+
+Faz tempo que eu precisava dar uma atenção para WSGI. E essa palestra conseguiu tirar algumas dúvidas. Muito boa apresentação. Rápida, sem papo furado. Além disso me deu curiosidade de testar mais pylons e paste.
+
+**Implementando Enterprise Patterns em PHP**
+
+A palestra do Pablo foi ótima. Ele tem muito domínio do público e apresenta muito bem. Como ele mesmo comentou na palestra, algumas coisas eu já conhecia mas não sabia que tinha um design pattern para isso. Mais uma palestra que vai parar na bibliografia das minhas disciplinas de programação web avançada
+
+**Django para desenvolvimento web / Google App Engine**
+
+Palestras apresentadas pelo Andrews Medina. A de Django foi curta para tanto conteúdo, mas a galera que estava perto de mim comentou que deu vontade de testar o framework. Missão cumprida! E eu tive mais algumas idéias para o curso de Django. Vou tentar trocar umas idéias com o Andrews para ver se ele tem algumas sugestões. A palestra sobre o Google App Engine era obrigatória porque é o assunto do momento no meio Python. Não vejo a hora de botar a mão na massa com isso!
+
+E foi mais ou menos isso. Gostei muito deste FISL. Conversei com muitas pessoas legais pelos corredores como o Pablo, o Rubens da Novatec, os meus amigos da Temporeal Eventos, conversei um pouco com o pessoal do globo.com, ganhei DVD do OpenSolaris e cd do GoboLinux (tenho que testar os dois). 
+
+Bebemos umas cervejas, rimos muito, fomos no cinema. Em resumo:  contando os dias para o FISL 10.0

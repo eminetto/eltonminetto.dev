@@ -1,0 +1,82 @@
+---
+categories:
+- codes
+- docs
+- home
+comments: true
+date: 2007-10-18T16:08:36Z
+slug: slimphp-11
+title: slimPHP 1.1
+url: /2007/10/18/slimphp-11/
+wordpress_id: 227
+---
+
+Aproveitando o lançamento da nova versão do Ubuntu, aproveito para fazer o lançamento da versão 1.1 do framework [slimPHP](http://slimphp.sourceforge.net). Este é um framework que desenvolvi a algum tempo atráz e foi adotado como principal ferramenta de desenvolvimento de novos aplicativos na universidade onde trabalho, a [Unochapecó](http://www.unochapeco.edu.br).
+Esta nova versão contou com a colaboração dos desenvolvedores da Unochapecó Odair Lopes, Francis Perini, Clemente Scaratti e o professor Jorge Antônio Di Domenico.
+
+As novas features do framework são:
+
+**Classe tabela**
+
+
+
+	
+  * Adicionado método getAllData() que retorna todos os dados da consulta na forma de um array
+
+
+Exemplo:
+$tab = new tabela("pessoa");
+$tab->get(array("*"));
+$dados = $tab->getAllData();
+unset($tab);
+app::showView("view/index_view.php",$dados);
+
+	
+  * Adicionado método setData() que automaticamente seta os valores para a tabela apartir dos dados vindos do $_POST ou $_GET
+
+
+Exemplo:
+$tab = new tabela("pessoa");
+$tab->setData($_POST);
+$tab->insert();
+$tab->save();
+unset($tab);
+
+	
+  * Adicionado campo opcional $order no método get() na forma de uma string para poder escolher os campos de ordenação do SQL
+
+
+**Demais inclusões**
+
+
+
+	
+  * Adicionado o crudGenerator na pasta extra. [Manual](/docs/manual_crudGenerator.pdf)
+
+
+
+	
+  * Foram adicionados os arquivos header.php e footer.php no diretório de visões representando o cabeçalho e o rodapé das visões.
+
+
+
+	
+  * Adicionada a classe report.
+
+
+Exemplo
+Controlador
+get(array("*"));
+$dados = $tab->getAllData();
+unset($tab);
+app::showView("view/index_view.php",$dados);
+}
+}
+$app = new XXX("mysql://root:@localhost/slimphp");
+?>
+Visão
+Table($header,$dados,'Pessoas'); //gera uma tabela
+$r->Text('Total de Pessoas '.count($info)); //gera uma linha de texto
+?>
+
+O download desta nova versão pode ser feito neste [link](/codes/slimphp-1.1.tar.gz)

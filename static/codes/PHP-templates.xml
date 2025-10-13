@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet><entry><trigger id="PHP">array</trigger><description>Creates an array</description><template>${arrayName} = array( ${value} );</template></entry><entry><trigger id="PHP">case</trigger><description>case</description><template>case ${variable}:
+	${code};
+break;</template></entry><entry><trigger id="PHP">class</trigger><description>class</description><template>/**
+ * ${classname}
+ *
+ * @package    ${package}
+ * @subpackage ${subbackage}
+ * @author     ${author}
+ * @version    ${version}
+ */
+
+class ${classname} 
+{
+	#	internal variables
+	
+	#	Constructor
+	function __construct (  )
+	{
+		${code}
+	}
+}
+</template></entry><entry><trigger id="PHP">do</trigger><description>do..while</description><template>do
+{
+	${code}
+	
+} while ( ${cond} );</template></entry><entry><trigger id="PHP">echo</trigger><description>echo</description><template>echo &quot;${var}&quot;;</template></entry><entry><trigger id="PHP">else</trigger><description>else</description><template>else {
+	${code}
+}</template></entry><entry><trigger id="PHP">elseif</trigger><description>elseif</description><template>elseif (${cond}) {
+	${code}
+}</template></entry><entry><trigger id="PHP">for</trigger><description>for</description><template>for(${0};${1};${2}) {
+	${code}
+}</template></entry><entry><trigger id="PHP">foreach</trigger><description>foreach</description><template>foreach(${0} as ${1}) {
+	${code}
+}</template></entry><entry><trigger id="PHP">function</trigger><description>function</description><template>/**
+ * ${description}
+ *
+ */
+public function ${name}(${parameters}) {
+	${code}
+}</template></entry><entry><trigger id="PHP">if</trigger><description>if</description><template>if(${cond}) {
+	${code}
+}</template></entry><entry><trigger id="PHP">ifelse</trigger><description>if..else</description><template>if (${cond}) {
+	${0}
+}
+else {
+	${1}
+}</template></entry><entry><trigger id="PHP">incl</trigger><description>include</description><template>include('${file}');</template></entry><entry><trigger id="PHP">inclo</trigger><description>include_once</description><template>include_once('${file}');</template></entry><entry><trigger id="PHP">php</trigger><description>php</description><template>&lt;?php ${code} ?&gt;</template></entry><entry><trigger id="PHP">req</trigger><description>require</description><template>require('${file}');</template></entry><entry><trigger id="PHP">reqo</trigger><description>require_once</description><template>require_once('${file}');</template></entry><entry><trigger id="PHP">switch</trigger><description>switch</description><template>switch(${var}) {
+	case ${cond}:
+		${0}
+	break;
+	
+	default:
+		${1}
+}</template></entry><entry><trigger id="PHP">while</trigger><description>while</description><template>while(${cond}) {
+	${code}
+}</template></entry></snippet>

@@ -1,0 +1,19 @@
+---
+categories:
+- General
+- home
+- php
+comments: true
+date: 2008-12-04T16:01:05Z
+slug: novo-blog
+tags:
+- php
+- zend
+title: Novo blog
+url: /2008/12/04/novo-blog/
+wordpress_id: 331
+---
+
+Foi criado o blog da empresa onde estou trabalhando em Joinville: [http://blog.drimio.com](http://blog.drimio.com)
+
+Por enquanto estamos escrevendo nossas experiências com o Zend Framework, escalabilidade, performance, etc. E em breve mais novidades sobre nosso megalomaníaco projeto de domínio global :-)

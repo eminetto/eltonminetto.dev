@@ -1,0 +1,126 @@
+-- phpMyAdmin SQL Dump
+-- version 2.8.0.3-Debian-1
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tempo de Geração: Jul 18, 2006 as 10:24 AM
+-- Versão do Servidor: 5.0.22
+-- Versão do PHP: 5.1.2
+-- 
+-- Banco de Dados: `financas`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `anos`
+-- 
+
+CREATE TABLE `anos` (
+  `cod_usu` int(11) NOT NULL,
+  `ano` int(11) NOT NULL
+);
+
+-- 
+-- Extraindo dados da tabela `anos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `despesas`
+-- 
+
+CREATE TABLE `despesas` (
+  `cod_desp` int(11) NOT NULL auto_increment,
+  `cod_usu` int(11) NOT NULL,
+  `desc_desp` varchar(200)  NOT NULL,
+  PRIMARY KEY  (`cod_desp`)
+);
+
+-- 
+-- Extraindo dados da tabela `despesas`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `despesas_mes`
+-- 
+
+CREATE TABLE `despesas_mes` (
+  `cod_usu` int(11) NOT NULL,
+  `cod_desp` int(11) NOT NULL,
+  `ano` int(11) NOT NULL,
+  `mes` int(11) NOT NULL,
+  `valor` float default NULL,
+  PRIMARY KEY  (`cod_usu`,`cod_desp`,`ano`,`mes`),
+  KEY `despesas_mes_FKIndex1` (`cod_usu`),
+  KEY `despesas_mes_FKIndex2` (`cod_desp`)
+); 
+
+-- 
+-- Extraindo dados da tabela `despesas_mes`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `rendimentos`
+-- 
+
+CREATE TABLE `rendimentos` (
+  `cod_rend` int(11) NOT NULL auto_increment,
+  `cod_usu` int(11) NOT NULL,
+  `desc_rend` varchar(200)  NULL,
+  PRIMARY KEY  (`cod_rend`)
+);
+
+-- 
+-- Extraindo dados da tabela `rendimentos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `rendimentos_mes`
+-- 
+
+CREATE TABLE `rendimentos_mes` (
+  `cod_rend` int(11) NOT NULL,
+  `cod_usu` int(11) NOT NULL,
+  `ano` int(11) NOT NULL,
+  `mes` int(11) NOT NULL,
+  `valor` float default NULL,
+  PRIMARY KEY  (`cod_rend`,`cod_usu`,`ano`,`mes`),
+  KEY `rendimentos_mes_FKIndex1` (`cod_usu`),
+  KEY `rendimentos_mes_FKIndex2` (`cod_rend`)
+);
+
+-- 
+-- Extraindo dados da tabela `rendimentos_mes`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `usuario`
+-- 
+
+CREATE TABLE `usuario` (
+  `cod_usu` int(11) NOT NULL auto_increment,
+  `nome_usu` varchar(200)  NOT NULL,
+  `senha_usu` varchar(200)  NOT NULL,
+  `email_usu` varchar(200)  NOT NULL,
+  PRIMARY KEY  (`cod_usu`)
+);
+
+-- 
+-- Extraindo dados da tabela `usuario`
+-- 
+

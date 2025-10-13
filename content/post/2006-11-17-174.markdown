@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-11-17T10:25:43Z
+slug: "174"
+title: None
+url: /2006/11/17/174/
+wordpress_id: 174
+---
+
+Excelente e extenso texto sobre PHP e a PHP Conference publicado no Webinsider, da UOL. Vale a [leitura](http://webinsider.uol.com.br/index.php/2006/11/16/evento-mostra-os-avancos-do-mundo-php-no-brasil/)

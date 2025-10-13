@@ -1,0 +1,14 @@
+---
+categories:
+- home
+comments: true
+date: 2006-06-10T14:33:52Z
+slug: nerd-view
+title: nerd view
+url: /2006/06/10/nerd-view/
+wordpress_id: 145
+---
+
+Montei um site paralelo para poder comentar sobre assuntos que acho interessantes relacionados a cultura geek ou nerd.
+
+O endereço é [http://nerdview.wordpress.com](http://nerdview.wordpress.com)

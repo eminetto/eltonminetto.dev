@@ -1,0 +1,16 @@
+---
+categories:
+- home
+comments: true
+date: 2007-11-06T10:25:35Z
+slug: flock-10
+title: Flock 1.0
+url: /2007/11/06/flock-10/
+wordpress_id: 234
+---
+
+Semana passada foi lançada a versão 1.0 do browser [Flock](http://www.flock.com). É uma versão "web 2.0" do Firefox. Com ele é possí­vel além de ler os feeds RSS, fazer upload de fotos para o Flickr, acompanhar os amigos no Twitter e Facebook, fazer posts no seu blog (como estou fazendo com este post), ver os favoritos do Delicious, etc.
+Estou usando a alguns dias e está bem estável, além de ser bem bonito. Vale o teste.
+
+
+Blogged with [Flock](http://www.flock.com/blogged-with-flock)

@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{- $lang := .Lang}}
+
+<article class="flex flex-col gap-10">
+  <header class="flex flex-col gap-2">
+    <h2 class="title-large">{{ .Title }}</h2>
+
+    <div class="meta">
+      {{/* Publish date */}}
+      <time datetime="{{ .PublishDate }}" title='{{ .PublishDate.Format "Mon, Jan 2, 2006, 3:04 PM MST" }}'>
+        {{ if eq $lang "en" }}
+        {{ .PublishDate.Format "January 2, 2006" }}
+        {{end}}
+        {{ if eq $lang "pt" }}
+        {{ .PublishDate.Format "02/01/2006" }}
+        {{end}} - {{ printf (i18n "estimatedReadingTime") .ReadingTime }}
+        {{- if .IsTranslated -}}
+        &nbsp; - &nbsp;
+        {{- i18n "translations" | default "Translations" }}:
+        {{- range .Translations }}
+        <a href="{{ .Permalink }}">
+          {{- if (and $.Site.Params.displayFullLangName (.Language.LanguageName)) }}
+          {{- .Language.LanguageName | emojify -}}
+          {{- else }}
+          {{- .Lang | title -}}
+          {{- end -}}
+        </a>
+        {{- end }}
+        {{- end -}}
+      </time>
+
+
+
+      {{/* Categories */}}
+      {{ with (.GetTerms "categories") }} —
+      {{ range . }}
+      <a class="categories" href="{{ .RelPermalink }}" alt="{{ .LinkTitle }}">
+        {{ .LinkTitle }}
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </header>
+
+  {{ partial "single/table-of-contents" . }}
+
+  <section>{{ .Content | emojify }}</section>
+
+  {{ partial "single/comments/index" . }}
+
+  <footer>
+    {{ with (.GetTerms "tags") }}
+    <div class="pb-14 taxonomy-list tags-list">
+      {{ range . }}
+      <a href="{{ .RelPermalink }}" alt="{{ .LinkTitle }}">
+        {{ .LinkTitle }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </footer>
+</article>
+
+{{ end }}

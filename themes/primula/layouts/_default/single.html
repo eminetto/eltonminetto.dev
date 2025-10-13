@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{- $lang := .Lang}}
+<!-- ======================== START PAGE TITLE AREA HERE ====================================== -->
+<div class="post-title page-title-area pb-100 pt-85 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title text-center">
+                    <h1>{{ .Title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======================== END PAGE TITLE AREA HERE ====================================== -->
+<div class="post-content-area pb-100 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="s-post-details">
+                    <div class="post-image">
+                        <img src="assets/images/post-image.png" alt="" />
+                        <div class="post-meta d-flex mb-30">
+                            <p><i class="fa fa-user"></i>
+                                {{ if eq $lang "en" }} <a href="/about">Elton Minetto</a> {{end}}
+                                {{ if eq $lang "pt" }} <a href="/sobre">Elton Minetto</a> {{end}}
+                            </p>
+                            <p class=" ml-40"><i class="fa fa-clock-o"></i>
+                                {{ if eq $lang "en" }}
+                                {{ .PublishDate.Format "January 2, 2006" }}
+                                {{end}}
+                                {{ if eq $lang "pt" }}
+                                {{ .PublishDate.Format "02/01/2006" }}
+                                {{end}}
+                            </p>
+                            {{- if .IsTranslated -}}
+                            <p class=" ml-40">
+                                {{- i18n "translations" | default "Translations" }}:
+                                {{- range .Translations }}
+                                <a href="{{ .Permalink }}">
+                                    {{- if (and $.Site.Params.displayFullLangName (.Language.LanguageName)) }}
+                                    {{- .Language.LanguageName | emojify -}}
+                                    {{- else }}
+                                    {{- .Lang | title -}}
+                                    {{- end -}}
+                                </a>
+                                {{- end }}
+                            </p>
+                            {{- end -}}
+                        </div>
+                    </div>
+                    <div class="post-text">
+                        {{ .Content }}
+                        <div class="inner-padding  pb-10">
+                            <div class="post-share-icon clearfix">
+                                <div class="tag-list">
+                                    <ul>
+                                        <li><a href="https://twitter.com/eminetto" target="_blank"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://github.com/eminetto" target="_blank"><i
+                                                    class="fa fa-github"></i></a></li>
+                                        <li><a href="https://linkedin.com/in/eminetto" target="_blank"><i
+                                                    class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="post-share-icon clearfix">
+                                <script src="https://utteranc.es/client.js" repo="eminetto/eltonminetto.dev"
+                                    issue-term="title" theme="boxy-light" crossorigin="anonymous" async>
+                                    </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

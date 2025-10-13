@@ -1,0 +1,45 @@
+---
+categories:
+- home
+- ubuntu
+comments: true
+date: 2005-11-18T10:57:39Z
+slug: tango
+title: Tango!
+url: /2005/11/18/tango/
+wordpress_id: 92
+---
+
+O projeto [Tango Desktop](http://tango-project.org/Tango_Desktop_Project) foi criado para criar uma aparência padronizada para as interfaces de usuário dos aplicativos open source. A idéia é criar um conjunto de ícones que seja usado pelo Gnome, KDE e outros aplicativos, mais ou menos o que a RedHat fez com seu tema Bluecurve. Se a idéia vai pegar ou não ainda é cedo para dizer, mas já dá para testar e ver como está ficando. Instalei no meu ubuntu e ficou legal.
+Fiz o download dos dois arquivos:
+[http://tango-project.org/releases/icon-naming-utils-0.4.0.tar.gz](http://tango-project.org/releases/icon-naming-utils-0.4.0.tar.gz)
+[http://tango-project.org/releases/tango-icon-theme-0.4.0.tar.gz](http://tango-project.org/releases/tango-icon-theme-0.4.0.tar.gz)
+
+Para instalar primeiro precisei instalar os pacotes
+
+libxml-simple-perl
+libmagick++6-dev
+
+Então: apt-get install  libxml-simple-perl libmagick++6-dev
+
+Depois para instalar:
+
+`
+tar xfvz icon-naming-utils-0.4.0.tar.gz
+cd cd icon-naming-utils-0.4.0
+./configure --prefix=/usr
+make
+sudo make install
+
+tar xfvz tango-icon-theme-0.4.0.tar.gz
+cd  cd tango-icon-theme-0.4.0
+./configure --prefix=/usr
+make
+sudo make install
+`
+É preciso usar o --prefix=/usr no configure para o script colocar os arquivos no diretório correto.
+Depois é só ir na opção Tema na configuração do Gnome e escolher o tema Tango na opção do tema de ícones.
+Aí vai um screenshot do meu desktop:
+[![Tango](/images/thumb-tango.jpg)](/images/tango.jpg)
+O wallpaper eu encontrei [aqui](http://www.xfce-look.org/content/files/31056-tango-desktop-1024.png) e o tema das janelas é o Clearlooks
+Como não tenho o KDE instalado não pude testar, mas provavelmente deve funcionar também.

@@ -1,0 +1,16 @@
+---
+categories:
+- palestras
+comments: true
+date: 2012-08-23T11:22:55Z
+slug: phpsc-conf-2012
+title: PHPSC Conf 2012
+url: /2012/08/23/phpsc-conf-2012/
+wordpress_id: 1109
+---
+
+O Grupo de Usuários PHP de SC está organizando a quinta edição do PHPSC Conf, que é um evento itinerante, e esse ano vai acontecer em São José, na grande Florianópolis no dia 27 de Outubro.
+
+As [inscrições](http://www.phpsc.com.br/2012/08/phpsc-conference-2012/) para o evento já estão abertas assim como a [submissão de palestras](http://www.phpsc.com.br/2012/08/chamada-de-trabalhos-phpsc-conference-2012/), que fica aberta até o dia 31/08
+
+Sei que sou suspeito para falar, pois sempre participo da organização, mas é um evento que já tem tradição de mostrar a qualidade dos profissionais de SC, assim como trazer palestrantes de outros estados. Vale muito o investimento para participar.

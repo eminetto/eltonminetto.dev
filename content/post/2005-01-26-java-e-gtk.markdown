@@ -1,0 +1,13 @@
+---
+categories:
+- home
+comments: true
+date: 2005-01-26T19:26:40Z
+slug: java-e-gtk
+title: Java e GTK
+url: /2005/01/26/java-e-gtk/
+wordpress_id: 50
+---
+
+Eu não curto muito Java, isso é um fato! Um dos motivos é que sempre achei a parte visual meio chata. Hoje vi algo que me parece muito interessante. Usar GTK, o toolkit usado pelo Gimp e pelo Gnome, para construír a interface, usando Glade, e usar Java para programação. Ainda prefiro pyGtk, mas me pareceu muito interessante. Nesse "demo" demonstra o eclipse e o GNU libgcj  como JVM. A previsão é para ser lançado no Fedora Core 4.
+[http://people.redhat.com/overholt/nativeeclipse/index.html](http://people.redhat.com/overholt/nativeeclipse/index.html)

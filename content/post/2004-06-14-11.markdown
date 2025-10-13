@@ -1,0 +1,13 @@
+---
+categories:
+- home
+comments: true
+date: 2004-06-14T19:06:47Z
+slug: "11"
+title: None
+url: /2004/06/14/11/
+wordpress_id: 11
+---
+
+Adicionei em /codes um exemplo de script em python para automatizar tarefas do OpenOffice.
+Publicado também em [PythonBrasil](http://www.pythonbrasil.com.br/moin.cgi/ArtigosTutoriais)

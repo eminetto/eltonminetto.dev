@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2003-11-18T19:12:01Z
+slug: "17"
+title: None
+url: /2003/11/18/17/
+wordpress_id: 17
+---
+
+Adicionei em /docs a apresentação que fiz no Install Fest promovido pelo [Grupo de Usuários de Software Livre da Unochapecó](http://www.slchapeco.org).

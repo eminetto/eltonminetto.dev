@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-02-02T16:36:23Z
+slug: "114"
+title: None
+url: /2006/02/02/114/
+wordpress_id: 114
+---
+
+Meu texto sobre PHP e CVS no Eclipse foi publicado no [Linha de Código](http://www.linhadecodigo.com.br/artigos.asp?id_ac=927&pag=1)

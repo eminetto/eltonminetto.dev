@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2004-08-26T19:01:29Z
+slug: "6"
+title: None
+url: /2004/08/26/6/
+wordpress_id: 6
+---
+
+Foi publicado no site [Freecode ](http://freecode.linuxsecurity.com.br/modules.php?op=modload&name=News&file=article&sid=2335) o meu texto "Automatização de tarefas do OpenOffice usando o Python".

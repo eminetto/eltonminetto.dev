@@ -1,0 +1,108 @@
+baseURL = "https://eltonminetto.dev/"
+copyright = "{year}"
+# languageCode = 'en-US'
+enableRobotsTXT = true
+summaryLength = 15
+# theme = "primula"
+theme = 'lowkey'
+author = "eminetto"
+pagination.pagerSize = 10
+staticDir = ['static', 'slides']
+defaultContentLanguage = 'pt'
+
+[services]
+[services.googleAnalytics]
+ID = 'G-B6W400SFM4'
+
+[languages]
+[languages.en]
+title = "My name is Elton Minetto"
+[languages.en.params]
+content = "I'm a software developer, teacher, speaker and writer"
+languageName = 'English'
+weight = 2
+[languages.en.menu]
+[[languages.en.menu.main]]
+name = "Talks"
+url = "https://eltonminetto.dev/talks/"
+weight = 1
+[[languages.en.menu.main]]
+"name" = "About"
+"url" = "https://eltonminetto.dev/about/"
+"weight" = 5
+
+[[languages.en.menu.main]]
+"name" = "Português"
+"url" = "/"
+"weight" = 15
+
+[[languages.en.menu.main]]
+"name" = "rss"
+"url" = "/index.xml"
+"weight" = 25
+
+
+[languages.pt]
+title = "Meu nome é Elton Minetto"
+[languages.pt.params]
+content = "Sou desenvolvedor de software, professor, palestrante e escritor"
+languageName = 'Português'
+weight = 1
+[languages.pt.menu]
+[[languages.pt.menu.main]]
+name = "maisquesenior.dev"
+url = "https://maisquesenior.dev"
+weight = 1
+[[languages.pt.menu.main]]
+name = "A Semana Go"
+url = "https://asemanago.dev"
+weight = 2
+[[languages.pt.menu.main]]
+"name" = "Dicas de Carreira"
+"url" = "https://dicasdecarreira.dev"
+"weight" = 5
+[[languages.pt.menu.main]]
+"name" = "Palestras"
+"url" = "/talks/"
+"weight" = 10
+[[languages.pt.menu.main]]
+"name" = "Sobre"
+"url" = "/sobre/"
+"weight" = 15
+[[languages.pt.menu.main]]
+"name" = "English"
+"url" = "/en/"
+"weight" = 25
+
+[[languages.pt.menu.main]]
+"name" = "rss"
+"url" = "/index.xml"
+"weight" = 25
+
+
+[params]
+[params.navigation]
+help = "Help"
+
+# [params]
+#     categories = ["Web Development","Blogging","Web Design"]
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[markup]
+[markup.highlight]
+anchorLineNos = false
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = false
+noClasses = true
+noHl = false
+style = 'dracula'
+tabWidth = 4

@@ -1,0 +1,23 @@
+---
+categories:
+- codes
+- home
+comments: true
+date: 2008-04-16T18:14:57Z
+slug: aptana
+tags:
+- aptana
+- eclipse
+- php
+title: Aptana
+url: /2008/04/16/aptana/
+wordpress_id: 260
+---
+
+Faz um bom tempo que tenho usado o Eclipse como IDE para trabalhar com PHP, principalmente por causa do suporte a CVS que preciso para alguns projetos.
+
+Ele é muito bom, mas uma coisa estava me irritando. A dificuldade de configurar cores de fundo e cores da sintaxe. Parece besteira, mas o fundo branco padrão do Eclipse agride os olhos depois de algumas horas de uso.  No Komodo Edit é muito fácil trocar essas configurações mas no Eclipse é muito complicado e limitado.
+
+Então resolvi fazer um teste com o [Aptana](http://www.aptana.com/) . E me surpreendi. Ele tem tudo o que o Eclipse tem (é baseado nele) como CVS e outros plugins, suporte a várias bibliotecas de Ajax como ExtJs, jQuery, etc. E tem suporte a alterar as cores de uma maneira bem fácil e completa. 
+
+Segui estes [passos](http://gueschla.com/labs/green-chaud/) e estou bem feliz com minha nova configuração.

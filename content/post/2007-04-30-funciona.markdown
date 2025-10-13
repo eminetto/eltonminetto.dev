@@ -1,0 +1,15 @@
+---
+categories:
+- home
+comments: true
+date: 2007-04-30T09:59:19Z
+slug: funciona
+title: Funciona
+url: /2007/04/30/funciona/
+wordpress_id: 203
+---
+
+Essas brincadeiras quase sempre dão resultados esquisitos, mas esta deu certo. "Qual linguagem de programação você é?:
+
+[![You are PHP.  You enjoy the World Wide Web.  You are constantly changing the way you do things, and this tends to confuse people who work with you.](http://www.bbspot.com/Images/News_Features/2006/08/language/php.jpg)
+Which Programming Language are You?](http://www.bbspot.com/News/2006/08/language_quiz.php)

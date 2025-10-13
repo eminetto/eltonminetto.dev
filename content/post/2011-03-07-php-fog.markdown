@@ -1,0 +1,44 @@
+---
+categories:
+- etc
+comments: true
+date: 2011-03-07T21:27:41Z
+slug: php-fog
+title: PHP Fog
+url: /2011/03/07/php-fog/
+wordpress_id: 659
+---
+
+Programar não é uma tarefa das mais simples. Existem muitas coisas para um desenvolvedor pensar. Um grande número de projetos é realizado por uma ou poucas pessoas. Assim, ferramentas que facilitem quaisquer fases do projeto são importantes.
+O [PHP Fog](http://www.phpfog.com) é um serviço muito interessante, que pode ajudar tanto projetos pequenos, com poucos e atarefados desenvolvedores, quanto projetos grandes, com necessidades de escalabilidade e controle.
+O serviço não é exatamente uma novidade. O pessoal do Ruby on Rails já deve conhecer o [Heroku](http://heroku.com/) que faz algo semelhante. Alías, comparado ao Heroku o PHP Fog ainda tem algumas coisas a implementar.
+Como o serviço ainda está trabalhando em beta fechado, através de convites, eu resolvi escrever este post   para mostrar algumas funcionalidades legais que encontrei.
+Após logar no sistema a primeira tarefa é criar uma aplicação. É possível escolher alguns pacotes prontos, ou usar códigos seus, sem usar algum framework ou CMS
+
+[![](/images/posts/phpfog14_150.png)](/images/posts/phpfog14.png)
+
+O próximo passo é escolher os servidores onde vai ser hospedado o seu aplicativo. Os servidores são os da Amazon, do serviço EC2. Nessa fase beta é possível escolher uma instância "Micro" sem pagar nada, por seis meses. Também está disponível uma versão com mais opções como Failover para o Apache e mais espaço em disco, por 29 dólares o servidor. Esta opção pode ser alterada a qualquer momento depois da aplicação ter sido criada
+
+[![](/images/posts/phpfog21_150.png)](/images/posts/phpfog21.png)
+
+O passo final é a escolha das informações das credenciais de acesso, o nome do domínio da sua aplicação e a conferência dos valores a serem pagos. É possível usar um domínio próprio ou algo como coderockr.phpfogapp.com, domínio fornecido pela ferramenta
+
+[![](/images/posts/phpfog31_150.png)](/images/posts/phpfog31.png)
+
+Depois da criação da aplicação você é levado a tela de administração. Enquanto a nova instância é criada na Amazon é possível verificar e configurar algumas coisas. É possível, a qualquer momento, adicionar novos servidores a sua aplicação, ao custo adicional de alguns dólares por servidor. 
+
+[![](/images/posts/phpfog41_150.png)](/images/posts/phpfog41.png)
+É possível acompanhar os logs do Apache, acessar sua base de dados usando o phpMyAdmin, configurar o .htaccess e o php.ini do seu ambiente.
+
+Outra funcionalidade muito interessante que a ferramenta proporciona é a facilidade de deploy da sua aplicação. Ao criar uma nova aplicação você tem acesso a um repositório Git dos códigos. É preciso inicialmente criar um par de chaves SSH e cadastrar na interface antes de ter acesso aos códigos. Você pode inclusive escolher se determinada chave possui acesso a leitura ou gravação. O help da ferramenta ajuda a fazer estes passos.
+Depois da chave cadastrada basta:
+
+`git clone git@git.phpfog.com:coderockr.phpfogapp.com`
+
+Alterar algum arquivo e depois:
+
+`git commit -am Teste
+git push
+`
+E pronto. Sua aplicação está atualizada. 
+O PHP Fog ainda tem algumas coisas a serem implementadas mas já é possível ver uma solução bem interessante para alguns problemas diários como deploy de aplicações, criação do ambiente de um projeto, escalabilidade, etc.

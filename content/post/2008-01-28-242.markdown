@@ -1,0 +1,12 @@
+---
+categories:
+- apple
+comments: true
+date: 2008-01-28T14:10:08Z
+slug: "242"
+title: None
+url: /2008/01/28/242/
+wordpress_id: 242
+---
+
+Meu texto sobre os editores de programação no Mac foi publicado no site [AppleMania.info](http://applemania.info/?p=1380)

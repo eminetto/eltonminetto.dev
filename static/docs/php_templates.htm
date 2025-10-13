@@ -1,0 +1,107 @@
+<html>
+    	<link rel="stylesheet" type="text/css" href="../old_site/gila.css" title="Gila stylesheet" />
+    	<link rel="stylesheet" type="text/css" href="../old_site/color-scheme.css" title="Gila stylesheet" />
+<title>O uso de templates em PHP</title>
+<body>
+<center><h2>O uso de templates em PHP</h2></center>
+
+<p align="justify">Qualquer webmaster que enfrentou a missão de manter um site de médio a grande porte, sabe a dificuldade que isso significa, principalmente no que diz respeito a relação entre o design e a programação. Alterar dezenas de páginas cada vez que um detalhe de design, como uma cor de fundo ou uma imagem, é alterado é uma tarefa desgastante.</p>
+<p align="justify">Mas, para alívio de todos, existe uma solução para o problema e esta solução está nos templates. Os templates, ou modelos, tem por finalidade separar o design, a parte HTML, da programação, no nosso caso, o PHP.</p>
+<p align="justify">Existem diversas implementações de templates em PHP, e uma breve busca no freshmeat.net pode trazer várias opções.Foi numa destas buscas que encontrei a implementação desenvolvida por <a href="mailto:sunil@nanjang.com">Sunil Baek </a>, <a href="mailto:everblue@nanjang.com">Kongyeol Baek </a>, <a href="mailto:thunder@nanjang.com">Sungyoon Lee </a> e <a href="mailto:legna@nanjang.com">Kwangjin Na </a>.
+Na verdade este módulo de templates faz parte do webmail Netmania <www.netmania.org> e pode ser copiado no <a href="http://www.unochapeco.edu.br/saa/templates/template.lib">link </a>. Sua vantagem em relação a outros como o FastTemplate é a facilidade.</p>
+	Exemplo de template:<br>
+<xmp>
+<BODY bgColor="#FFFFFF">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<center>
+	<table border="0">
+	<tr>
+		<td align="right" bgcolor="#0b740b">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tr bgcolor="#0b740b">
+				<td width="100%"><font color="white" size="2"><b>#TITULO&nbsp;</b></font></td>
+			</tr>
+			</table>
+			<table border="3" bordercolor="#0b740b" cellspacing="0" cellpadding="0">
+			<tr bgcolor="silver">
+				<td width="100%">
+					#TABLE_CENTRAL
+					#TABLE_FINAL
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</center>
+</body>
+</html>
+</xmp>
+
+<p align="justify">Na verdade o template é um simples arquivo HTML com apenas algumas modificações. As palavras começando com # (#TITULO,
+#TABLE_CENTRAL,#TABLE_FINAL) são as partes do modelo que serão alteradas pelo script PHP. No exemplo, caso se precise alterar
+as configurações de bgcolor ou alguma outra, todas as páginas que usam o modelo sofrem as alterações.</p>
+<p align="justify">No exemplo abaixo, o script PHP que usa o template:</p>
+<xmp>
+<?php
+include("template.lib");
+$TITULO = "Página Exemplo";
+$TABLE_CENTRAL = '
+<table border="0">
+<tr>
+	<td>Teste de Tabela</td>
+</tr>
+</table>
+';
+$TABLE_FINAL = '
+<table border="0">
+<tr>
+	<td>Sair</td>
+</tr>
+</table>
+';
+ReadTLE("teste.tle");
+?>
+</xmp>
+
+<p align="justify">O script acima é apenas um exemplo do que pode-se fazer com um pouco de criatividade. A instrução ReadTLE("teste.tle"); faz a mesclagem dos dados usando as variáveis do modelo (#TITULO,...) e a imprime para o navegador.</p>
+<p align="justify"> Outro exemplo um pouco mais complexo é o seguinte:</p>
+<xmp>
+<html>
+<body>
+<table border="1">
+#LOOP (#TABLE_BODY)
+	<tr>
+		<td>#NOME</td>
+	</tr>
+#ENDLOOP
+</table>
+#MSG
+</body>
+</html>
+</xmp>
+<p align="justify">Neste caso definimos um loop para o conteúdo da tabela. O script abaixo faz uso deste modelo :</p>
+<xmp>
+<?php
+include("template.lib");
+for($i=0;$i<4;$i++){
+	$TABLE_BODY[$i] = $i;
+	$NOME[$i] = "nome$i";
+}
+$MSG = "Mensagem final";
+/*  template section  */
+ReadTLE("teste.tle");
+?>
+</xmp>
+
+<p align="justify">Com este recurso de loop, pode-se criar diversas combinações e aumentar a capacidade do modelo.
+	O uso de templates tem se mostrado muito útil em diversos projetos que estou paticipando, e esta implementação com
+certeza é uma das mais simples e poderosas.</p>
+<p align="justify">
+<b>Elton Luís Minetto<br>
+elm@unochapeco.edu.br<br>
+http://www.unochapeco.edu.br/~elm/</b><br>
+</p>
+
+

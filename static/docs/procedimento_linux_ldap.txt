@@ -1,0 +1,35 @@
+Linux + LDAP
+
+Elton Luís Minetto
+13/05/2004
+
+Procedimentos para configurar o Linux com autenticação no OpenLDAP
+
+
+*Instalar o pacote
+openldap
+
+*Configurar o arquivo /etc/ldap.conf
+
+host ldap.empresa.com.br
+base o=empresa
+ssl start_tls
+pam_password md5
+
+*Alterar o /etc/nsswitch.conf
+
+passwd:     files ldap
+shadow:     files ldap
+group:      files ldap
+hosts:      files dns
+bootparams: nisplus [NOTFOUND=return] files
+ethers:     files
+netmasks:   files
+networks:   files
+protocols:  files ldap
+rpc:        files
+services:   files ldap
+netgroup:   files ldap
+publickey:  nisplus
+automount:  files ldap
+aliases:    files nisplus

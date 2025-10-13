@@ -1,0 +1,13 @@
+{{ $avatar := resources.GetMatch .Site.Params.avatar }} {{ $tiny := ($avatar.Fill "80x80 q90") }} {{- $lang := .Lang}}
+
+<!-- <div class="flex-none w-20 h-20 rounded-full overflow-hidden">
+  {{ if eq $lang "en" }}
+  <a href="{{ .Site.BaseURL }}en">
+    {{ end }}
+    {{ if eq $lang "pt" }}
+    <a href="{{ .Site.BaseURL }}">
+      {{ end }}
+      <img srcset="{{- with $tiny.RelPermalink -}}{{.}} 80w{{- end -}}" src="{{ $avatar.RelPermalink }}"
+        width="{{ $avatar.Width }}" height="{{ $avatar.Height }}" alt="{{ .Site.Title }}" />
+    </a>
+</div> -->

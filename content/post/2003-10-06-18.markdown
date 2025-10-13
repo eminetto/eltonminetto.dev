@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2003-10-06T19:12:44Z
+slug: "18"
+title: None
+url: /2003/10/06/18/
+wordpress_id: 18
+---
+
+Mudei todo o design do site. Ficou mais simples de gerenciar. Nada contra o anterior que foi desenhado pelo Éder. Achei esse no site [Open Source Web Design](http://www.oswd.org/).

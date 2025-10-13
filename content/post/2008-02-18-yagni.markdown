@@ -1,0 +1,24 @@
+---
+categories:
+- General
+comments: true
+date: 2008-02-18T16:19:39Z
+slug: yagni
+title: YAGNI
+url: /2008/02/18/yagni/
+wordpress_id: 246
+---
+
+Algumas coisas que aprendemos na área de programação podem ser utilizadas na nossa vida "off-line".
+
+Aprendi mais uma recentemente. O "[YAGNI argument](http://en.wikipedia.org/wiki/You_Ain't_Gonna_Need_It)". YAGNI é uma sigla para "You Ain't Gonna Need It", ou "Você não vai precisar disso" em português. É uma idéia usada na engenharia de software para controlar a adição de novas funcionalidades em um aplicativo que irão acrescentar mais custos de manutenção do que benefícios.
+
+E como usar isso no dia a dia?
+
+Você está morrendo de vontade de trocar sua TV de 29 por uma de 42?  YAGNI!
+
+Quer trocar o celular por um smartphone? YAGNI!
+
+Sua esposa/namorada quer comprar o centésimo par de sapatos? YAGNI, definitivamente YAGNI!
+
+Espero que com esta nova filosofia de vida eu consiga economizar alguns trocados.

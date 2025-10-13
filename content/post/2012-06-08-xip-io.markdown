@@ -1,0 +1,29 @@
+---
+categories:
+- etc
+comments: true
+date: 2012-06-08T14:58:14Z
+slug: xip-io
+title: xip.io
+url: /2012/06/08/xip-io/
+wordpress_id: 991
+---
+
+Numa das minhas leituras diárias ao [Hacker News](http://news.ycombinator.com/) encontrei uma ferramenta bem interessante, o [http://xip.io/](http://xip.io/), criado pela [37signals](http://37signals.com/), mesma empresa responsável pelo Ruby on Rails e outras ferramentas como o Basecamp.
+
+Ele fornece um nome de domínio "mágico" que pode ser bem útil para usar com máquinas virtuais e outras necessidades. Funciona da seguinte forma. Imagine que você tenha que testar um novo aplicativo que esteja desenvolvendo, digamos o novo site da Coderockr. Para facilitar o desenvolvimento e testes eu crio um novo domínio virtual no Apache, o coderockr.dev e preciso adicionar uma linha no /etc/hosts do meu Mac (o mesmo para Linux e Windows) para mapear este endereço para o IP da máquina local, o 127.0.0.1.
+
+Usando o xip.io basta configurar o domínio do Apache para algo como
+
+coderockr.127.0.0.1.xip.io
+
+e você vai estar acessando o 127.0.0.1
+
+O xip.io basicamente extrai o IP do endereço e o retorna para seu sistema operacional como resposta. Usando o exemplo do site:
+
+10.0.0.1.xip.io responde  10.0.0.1
+www.10.0.0.1.xip.io responde 10.0.0.1
+mysite.10.0.0.1.xip.io responde 10.0.0.1
+foo.bar.10.0.0.1.xip.io responde 10.0.0.1
+
+Já estou usando nos meus novos testes, e acho que vai ser bem útil

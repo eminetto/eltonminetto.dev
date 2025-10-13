@@ -1,0 +1,16 @@
+---
+categories:
+- palestras
+comments: true
+date: 2010-07-19T21:41:42Z
+slug: fisl-2010
+title: Fisl 2010
+url: /2010/07/19/fisl-2010/
+wordpress_id: 432
+---
+
+Esta semana acontece o FISL 11, em Porto Alegre.
+E pela terceira vez vou ter o orgulho de palestrar no evento
+Minha palestra vai ser na sexta, dia 23/07, as 20:00.
+O título da palestra é "[Entre na fila. Processamento distribuído usando Gearman](http://verdi.softwarelivre.org/papers_ng/activity/view?activity_id=203)".
+Provavelmente vou passar muito tempo no stand do PHPBR conversando com a galera, então caso passe por lá é só dar um parada para conversarmos

@@ -1,0 +1,14 @@
+---
+categories:
+- home
+comments: true
+date: 2007-06-05T17:40:54Z
+slug: xdebug
+title: Xdebug
+url: /2007/06/05/xdebug/
+wordpress_id: 209
+---
+
+Material sobre o Xdebug que utilizei na disciplina de programação avançada para web que estou ministrando.
+
+[Download](/docs/xdebug.pdf)

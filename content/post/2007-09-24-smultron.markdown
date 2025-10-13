@@ -1,0 +1,13 @@
+---
+categories:
+- apple
+- home
+comments: true
+date: 2007-09-24T20:42:53Z
+slug: smultron
+title: Smultron
+url: /2007/09/24/smultron/
+wordpress_id: 223
+---
+
+Nas minhas novas aventuras pelo mundo do MacOSX encontrei um software livre muito bom. É o [Smultron](http://smultron.sourceforge.net/), um editor para programação que apesar de não possuir a fama e o charme de um [Textmate](http://macromates.com/), possui todas as características básicas de um bom editor: syntax highlighting, snippets, customizações, suporte a PHP, HTML, Python, etc. Fica aí a dica para quem está começando a usar o Mac para programar e não precisa do peso de um Eclipse ou não está disposto a pagar pelo [BBEdit](http://www.barebones.com/products/bbedit/), [Coda](http://www.panic.com/coda/) ou Textmate.

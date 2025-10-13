@@ -1,0 +1,21 @@
+---
+categories:
+- php
+- abraphp
+comments: true
+date: 2013-04-05T00:00:00Z
+title: ABRAPHP
+url: /2013/04/05/abraphp/
+---
+
+Eu trabalho com PHP desde 1999 e acompanhei várias mudanças nesse período de tempo. E não só em relação a própria linguagem mas também em relação ao mercado e aos desenvolvedores.
+
+O PHP deixou de ser uma linguagem de estimação de alguns malucos para tornar-se uma das mais importantes do ambiente web fornecendo a estrutura para alguns dos maiores e mais complexos sistemas e sites do mundo. 
+
+A comunidade de desenvolvedores também evoluiu e hoje temos eventos internacionais, profissionais brasileiros trabalhando em grandes empresas e fora do país, livros e técnicas cada vez mais avançados. Não somos mais vistos como os "sobrinhos" e sim profissionais de primeira linha. Um dos reflexos dessa maturidade é a criação da [ABRAPHP](http://www.abraphp.org), Associação Brasileira de Profissionais PHP, que vem para auxiliar no crescimento e amadurecimento do mercado. 
+
+É uma iniciativa nova mas que vem com muitas idéias e gente esforçada envolvida. Vale muito a pena você se informar sobre isso e, principalmente, se associar a ela. Eu estou participando da [organização](http://abraphp.org/sobre-a-associacao/) e todos estão empenhados para trazer benefícios para todos os envolvidos. 
+
+A Coderockr e o Code Squad estão [apoiando](http://blog.coderockr.com/2013/04/a-coderockr-e-o-code-squad-apoiam-a-abraphp/) essa iniciativa também e fornecendo um pequeno incentivo para os associados. Se você possui uma empresa que usa PHP ou se trabalha em uma empresa é muito válido a sua aproximação da ABRAPHP para ajudar a fomentar o mercado em que você está inserido.
+
+Vida longa a ABRAPHP.

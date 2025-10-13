@@ -1,0 +1,16 @@
+---
+categories:
+- palestras
+- php
+comments: true
+date: 2011-10-25T15:05:23Z
+slug: phpsc-conf-2011
+title: PHPSC Conf 2011
+url: /2011/10/25/phpsc-conf-2011/
+wordpress_id: 805
+---
+
+O PHPSC, grupo de usuários de PHP de SC, do qual sou um dos organizadores está promovendo o quarto evento anual. Depois de passar por [Chapecó](/blog/2008/05/30/phpsc-conf/), [Itajaí](/blog/2009/04/17/chamada-de-trabalhos-phpsc-conf-202009-univali-itajai/) e [Joinville](/blog/2010/06/21/phpsc-conf-2010/) o evento volta a ser na cidade de Itajaí, no dia 19/11/2011. 
+A chamada de trabalhos já está aberta, então se você tem interesse em palestrar ou ministrar algum mini-curso é só ver os detalhes neste link: [bit.ly/phpsc2011](http://bit.ly/phpsc2011)
+O processo de inscrição vai ser aberto nos próximos dias, no site do PHPSC, então acompanhe o site, [Twitter](https://twitter.com/search/phpscconf) e Facebook para ficar por dentro das novidades
+

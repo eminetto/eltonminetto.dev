@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-09-14T10:06:59Z
+slug: "164"
+title: None
+url: /2006/09/14/164/
+wordpress_id: 164
+---
+
+Minha dica sobre Cache de DNS para navegação mais rápida foi publicada na lista [Dicas-L](http://www.dicas-l.com.br/dicas-l/20060914.php)

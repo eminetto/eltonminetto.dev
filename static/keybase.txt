@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/eminetto
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://eltonminetto.net
+  * I am eminetto (https://keybase.io/eminetto) on keybase.
+  * I have a public key with fingerprint CBFC 9502 A2D8 13C5 7AFF  44A2 8363 4A09 8FE7 22AF
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "cbfc9502a2d813c57aff44a283634a098fe722af",
+            "host": "keybase.io",
+            "key_id": "83634a098fe722af",
+            "kid": "0101a80861f79e6b3894cfb7d2755feedd655f3f273620e4c925a4bec14aa3cea4540a",
+            "uid": "bf391902be3e783bbf581bb05f3feb00",
+            "username": "eminetto"
+        },
+        "service": {
+            "hostname": "eltonminetto.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1429878545,
+    "expire_in": 157680000,
+    "prev": "2fd575b0504fa6bbbbbe7ceca123fe7e5b796cccc27c8a417deeeb534a73243d",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMM0AnicbVJrTBRXFF4erQJaltoWUh7V0UpRspnnzuwi2ITVPgRTQEgTWuHOzJ1l
+yu7MujsgG0q1Etsq8hCSJhsQWyxPTU1BpARReYgWmj4SC1SRNgvlIRRbNKSkLXSG
+6L+eH/fknvN938l3cvo3+ukCfYq5NwPKp5GLPkM9ljxdupkOKURYmXcj5kIkF64l
+QZSs0OlwipKCmBGOFTgTheIA5xmM4CgaCAJJApwhjAQJUBMjQBrHgYDEIjmyS2Oo
+MixwQYMoqzX1kyXyavV/8LlrDRRDMcCgjBETaBM0sgRjIjmBpXmcpigBQp43qpkQ
+cJow4igkORNOAZKFHEYCQHAQkBSJAlUub02OFQgTZkJxFhKQZgiWFSgGY1lUk4As
+impAF3RKwA5VNLSLElQUGSmKRdRqvshBbQWakycImyJLj1EG9VX5DqesyJxsU7s5
+iuIwa2TF7dDQhyGb9VgnixUlXl2lSsiHTpcoS4gZU5GcImrCGImbGJqhSCoWgQUO
+0QmzRA1B0UYGVUMbA/NVSVzgKZpSDaCkAIysFpDmIAcwXHVEQ4qlTUZODZzmGEBi
+NA8hZCl12TSBkwSPaM4OSTJiVicpwKpKukSrBJQ8J0SKenve8df5BOqefspXOwZd
+YID+yYk0NwWvbB2rWJza0nN7vNH+V+IHPze+hO1oarMZohYkrqfBfmD8hS8igLwt
+mGBA/sh73002RCVM7hYGU+mu0I7KY9e+jb9b27CkXy7Z0z+2Xrfb99HY27N+U2c9
+IfDd1DMWpHY6IC05s8C38niJf8yFrl99q1yftR8uny+o8ustnPF8fOB0ePMzlpaJ
+7NceNNSN4zeC8ruBW3TPXdLrh2XlfGnj9dHeSa85gfMOXsG9/4TMvPVgc0hwfFNZ
+Z9XSctfe+aLj3aeGwzpPRp+Nx35iVz56uPdyNiVcbL9/OW6dIS50uXdbceK/XZ8c
+XXd7y4lbzakh9RsMVzq3n557bl+B9XrGPXq8JWjwRvWfw7YP9/+xuqGyHzSPnC+r
+Ht915NOrlqT+QLu7tbpu56mFuV92xLdvbLv5Yw5Tf7ePvHSTPnnoq4OhJbsiX13a
+XzOAJtYLy5Grj55f/b3Vei9tqvR+zMEKzxuRfRc2ZWRUGDavf7by647f7qQdK6ns
+K8YqolHzhMU09nJbzvdhumtbd3pSNoUHecvcia9nlx/50mr7xqbP2N6S/FD/uWdo
+PiKvA0vfV9v4flZ38VXp6MDowmJaQkBKcl11ku6H2RTXzAzmLYoIP1FzbmDQcCt3
+ZJZx5I1G1IylR/OdAZ646ZXFzKGw0bSoM6+0TiZk+Me8mHOurcb1d/JQ6R1vgn0i
+M+k/elOv1w==
+=T3Vv
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/eminetto
+
+==================================================================
+

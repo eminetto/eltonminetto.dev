@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="navbar__left">
+            <a href="/"><strong>{{ .Site.BaseURL }}</strong></a>
+            {{ range $.Site.Home.AllTranslations }}
+            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            {{ end }}
+        </div>
+        <div class="navbar__right">
+            {{- $currentPage := . -}}
+            {{ range .Site.Menus.main -}}
+            <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+            {{- end }}
+        </div>
+    </nav>
+</header>

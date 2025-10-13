@@ -1,0 +1,14 @@
+---
+categories:
+- home
+comments: true
+date: 2005-06-14T19:28:19Z
+slug: "68"
+title: None
+url: /2005/06/14/68/
+wordpress_id: 68
+---
+
+Dois textos meus foram publicados no site Tecnociência:
+[Automatização de tarefas do OpenOffice usando o Python](http://tecnociencia.com.br/revista/index.php?option=com_content&task=view&id=135&Itemid=1)
+[Exemplos de Web Services](http://tecnociencia.com.br/revista/index.php?option=com_content&task=view&id=136&Itemid=1)

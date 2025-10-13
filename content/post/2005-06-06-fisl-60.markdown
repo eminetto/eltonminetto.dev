@@ -1,0 +1,63 @@
+---
+categories:
+- home
+comments: true
+date: 2005-06-06T12:23:34Z
+slug: fisl-60
+title: FISL 6.0
+url: /2005/06/06/fisl-60/
+wordpress_id: 67
+---
+
+Voltei ontem do FISL. Realmente é um grande evento. O nível das palestras foi muito bom e a estrutura fornecida pela PUC é excelente. Descrevo aqui o que achei de mais interessante e as palestras que assisti.
+
+**Palestras**
+
+TargetLinux - Uma ferramenta para o gerenciamento do parque de TI no ambiente corporativo. A primeira palestra que assisti, pois chegamos tarde no local e algumas mudanças de horário atrapalharam um pouco. Foi apresentado uma solução sendo desenvolvida em Python, com interfaces em GTK, para a realização de inventário de hardware, helpdesk, comunicação interna (via Jabber), gerenciamento via web entre outras coisas. Interessante projeto que anotei na minha lista de códigos fonte a dar uma olhada. Link: http://www.targetlinux.org
+
+Entre essa palestra e a do PHP5 que queria assistir pude dar uma visitada nos estandes. Destaque para a grande quantia de estandes do governo demonstrando o interesse deles no assunto. No estande da SUN estava sendo apresentada uma palestra sobre virtualização no ambiente Solaris, usando a característica Solaris Zones. Muito interessante mesmo. Outra coisa que adorei foi uma máquina de café que tinha no estande da Caixa. E pela fila constante que se formava eu não era o único viciado em café do evento. Os outros estandes estavam interessantes também com várias comunidades presentes, como a Debian-br, Underlinux, OpenOffice, entre outras. Lógico que onde estavam as LinuxChix também chamava atenção.
+[![](/images/thumb-fisl.jpg)](/images/fisl.jpg) Imagem do local onde estavam as comunidades
+[![](/images/thumb-chix1.jpg)](/images/chix1.jpg)
+LinuxChix em ação
+[![](/images/thumb-chix2.jpg)](/images/chix2.jpg)
+
+As novidades do PHP5: Apresentada pelo Pablo Dall'oglio da Solis. Foram apresentadas as novas features do PHP5. As que mais gostei foram os interceptadores (__get, __set e __call), as exceptions, o simpleXML(muito legal), o sqlite embutido (vai solucionar um problema que tenho no meu trabalho) e o suporte a web services, que eu já havia testado algumas semanas atrás, inclusive descrevendo o teste aqui.
+
+GerpavGrid. Apresentada como parte das sessões técnicas do evento, essa palestra me chamou atenção porque é uma aplicação prática de Grid Computing. O professor César de Rose, da PUCRS, apresentou a implementação desta ferramenta usando técnicas de grid computing para realizar processamento pesado e resolver o problema que a prefeitura de Porto Alegre tem de gerenciar o estado dos pavimentos (estradas de asfalto) da cidade. O que achei interessante foi a utilização do OurGrid como middleware ao invés do Globus Toolkit. Parece ser uma alternativa muito interessante e que eu quero dar uma olhada com mais atenção. Mais tarde pudemos passar no prédio onde estão os clusters e máquinas que fazem parte do grid e tiramos algumas fotos com elas.
+[![](/images/thumb-grid1.jpg)](/images/grid1.jpg)
+Imagem dos clusters que fazem parte do Grid
+[![](/images/thumb-grid2.jpg)](/images/grid2.jpg)
+[![](/images/thumb-grid3.jpg)](/images/grid3.jpg)
+[![](/images/thumb-grid4.jpg)](/images/grid4.jpg)
+Eu e o Frosi com as máquinas
+[![](/images/thumb-grid5.jpg)](/images/grid5.jpg)
+Eu, Frosi e o Jean
+
+MySQL 4.x e 5.0 - O Poder do Golfinho: confesso que a primeira vista achei que esta palestra não seria muito interessante, mas me enganei. Foram apresentadas as características e vantagens do MySQL e eu percebi que conhecia muito pouco sobre elas. Depois desta apresentação comecei a olhar o banco como uma ferramenta bem mais robusta. E vou migrar minhas tabelas do formato MyISAM para innodb
+
+Projeto Mono Brasil 2005: durante o dia o pessoal do projeto Mono estava fazendo uma dramatização pelos corredores, exorcisando o pessoal que usava o .NET da "inominável". A estratégia deu certo pois na palestra várias pessoas que não conheciam o mono apareceram para ver do que se tratava. Eu já conhecia e aproveitei para ver a quantas anda o projeto e fiquei impressionado com o empenho dos brasileiros e a qualidade das contribuíções feitas por eles ao projeto.
+
+PostgreSQL 8 - Livre, Poderoso e Multiplataforma: interessante palestra sobre as novas features do 8.0, inclusive o fato de agora rodar nativamente em sistemas Win32, sem necessitar do cygwin. Gostei também da possibilidade de usar python e outras linguagens para criar stored procedures e triggers.
+
+Comparativo do Desempenho entre bancos de dados livres: palestra sobre as diferenças de desempenho entre o Postgresql 8.0 e o MySQL 5.0.4beta. Foi usado o benchmark OSDB e o pessoal mostrou em detalhes os testes. O PG8 se saiu melhor em alguns casos, principalmente com grandes bases de dados, e o MySQL em outros. Achei pouco conclusivo, como todo benchmark é, mas achei interessante, principalmente pela apresentação do OSDB.
+
+The Cathedral an the Bazaar: a palestra que eu aguardava com maior interesse. E todas minhas espectativas foram superadas. O Eric Raymond é realmente um cara muito influente e inteligente. De longe a melhor apresentação do fórum. Ele falou em técnicas de como convencer pessoas que não conhecem SL a usá-lo. Falou das diferenças entre a OSI (que ele coordena) e a FSF (coordenada pelo Stallman). Resumindo, usando as palavras do meu amigo Frosi, "[..] o Stallman é dogmático e o Raymond é pragmático[...]". E o melhor é que conseguimos uma foto ao lado dele.
+[![](/images/thumb-raymond.jpg)](/images/raymond.jpg)
+Palestra do Eric Raymond
+[![](/images/thumb-raymond2.jpg)](/images/raymond2.jpg)
+Eu e o Frosi ao lado do Raymond
+
+Apache em Sites de Alto tráfego: meu ex-professor, o Rivalino, apresentou uma excelente palestra sobre as características do protocolo HTTP, do Apache e como tirar proveito delas para melhorar o desempenho deste web server em sites com um tráfego de dados pesado.
+
+Software Livre no Apoio ao Ensino e Educação à distância: Apresentação do case da Unipar. Muito importante para meu trabalho, pois a universidade onde trabalho está começando nessa área. Foram apresentados alguns softwares de LMS (learning management systems) que eles testaram e o que eles estão usando. Ao invéz de iniciar o desenvolvimento de novos aplicativos eles se enganjaram em projetos já existentes. Softwares apresentados: o phpsurveyor (para enquetes, solução esta que eu tinha desenvolvido internamente na universidade sem pensar em procurar algo pronto) e o Dokeos, usada para o LMS, ao invéz do Teleduc que estamos usando. Também gostei da apresentação da solução que eles implementaram para distribuir os streamings de som e vídeo (sendo essa solução a mesma que o FISL usou na sua trasmissão). Para o futuro estão estudando a possibilidade de começar a usar o Zope/Plone para desenvolver seus softwares de EAD e workflow. Com certeza vou entrar em contato com eles para trocar algumas idéias.
+
+Pirated Software is not Free: Jon "maddog" é realmente um "show-man". A brincadeira que fez com as câmeras digitais foi realmente muito engraçada. Ele falou sobre o software pirata e o software livre. Usou algumas analogias e idéias realmente interessantes, como a do neurocirurgião, que eu vou adotar daqui para diante. O legal foi ele dar os parabéns aos brasileiros, dizendo que somos o um dos países líderes no mundo em relação ao SL, devido a quantidade e qualidade dos desenvolvedores. E que o FISL é o melhor evento do mundo (isso vindo de alguém que realmente viaja pelo mundo todo é algo a se levar em consideração). Divertido foi ouvir seu sotaque para falar "software livre" e "chimarrão's bag"
+[![](/images/thumb-maddog.jpg)](/images/maddog.jpg)
+Maddog passeando pelos corredores
+
+[![](/images/thumb-trux1.jpg)](/images/trux1.jpg)
+Eu, Tux e Frosi
+[![](/images/thumb-tux2.jpg)](/images/tux2.jpg)
+Jean e o Tux
+
+As demais fotos eu coloquei [aqui](http://www.flickr.com/photos/eltonminetto/tags/fisl2005/)

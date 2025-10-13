@@ -1,0 +1,22 @@
+---
+categories:
+- home
+comments: true
+date: 2008-04-15T15:44:16Z
+slug: fisl-90
+title: Fisl 9.0
+url: /2008/04/15/fisl-90/
+wordpress_id: 259
+---
+
+Como já virou tradição, este ano vou para meu quarto FISL.
+
+Infelizmente não vai dar para repetir a façanha do ano passado e ser palestrante. Minha palestra foi recusada. Mas foi por pouco. A pontuação ficou um pouco abaixo da média, e como tinha mais de 500 palestrantes inscritos fiquei de fora desta vez. Uma pena. Eu ia falar sobre as novidades do Oracle 11G para o PHP. Inclusive tinha trocado algumas mensagens com o [Christopher Jones](http://blogs.oracle.com/opal/) da Oracle, que me passou algumas informações legais. Vou tentar apresentar essa palestra em outro evento.
+
+O FISL deste ano vai estar legal como sempre. Mas uma das palestras chama atenção: Large Scale PHP. O palestrante é ninguém menos que Rasmus Lerdorf, o criador da linguagem PHP. Legal. Vou tentar dar uma de fã e tirar uma foto com o cara.
+
+Além das palestas quero ver se encontro com alguns amigos por lá como o Karlisson (pai do [Nerdson](http://nerdson.com/blog/)), o Pablo Dalloglio e o pessoal da Temporeal e Novatec. Vai ser o FISL do "Networking" como os professores do MBA adoram falar.
+
+Isso sem contar a também tradicional cervejada no Dado Bier :-)
+
+Se alguém mais for pro FISL e me encontrar vamos tomar umas cervejas juntos. É [fácil](http://www.orkut.com/AlbumZoom.aspx?uid=1852768226449872486&pid=1206303476260&aid=1) de me achar.

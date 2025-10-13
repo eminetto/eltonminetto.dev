@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-08-19T09:52:51Z
+slug: "159"
+title: None
+url: /2006/08/19/159/
+wordpress_id: 159
+---
+
+Meu texto sobre o menu da Novell no Dapper foi publicado na lista [Dicas-l](http://www.dicas-l.com.br/dicas-l/20060819.php)

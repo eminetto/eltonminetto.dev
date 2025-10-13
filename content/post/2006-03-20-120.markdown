@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2006-03-20T14:41:42Z
+slug: "120"
+title: None
+url: /2006/03/20/120/
+wordpress_id: 120
+---
+
+O texto sobre Retornando Multiplos Valores com Ajax foi publicado no site [Linha de Código](http://www.linhadecodigo.com.br/dicas.asp?id_dica=1272)

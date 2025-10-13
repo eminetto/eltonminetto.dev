@@ -1,0 +1,37 @@
+<html> 
+  <head><title> Micro local news </title> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.0a3.min.css" />
+  </head> 
+<body>
+	<div data-role="page" data-theme="b"> 
+	<div role="banner" class="ui-bar-b ui-header" data-role="header" data-theme="b">
+		<h1 aria-level="1" role="heading" tabindex="0" class="ui-title">Lugares</h1>
+		
+	</div>
+			
+			
+		<div data-role="content" id="location"></div>
+		<div data-role="footer">by Coderockr</div>
+		<!-- <script src="lib/jquery-1.4.min.js" type="text/javascript"></script>-->
+		<script src="js/jquery-1.5.min.js"></script>
+		<script src="js/jquery.mobile-1.0a3.min.js"></script>
+	
+	    <script type="text/javascript"> 
+		  $("#location").html("Carregando...");	
+		  navigator.geolocation.getCurrentPosition(getLocation, unknownLocation);
+	      function getLocation(pos)
+	      {
+	        //var latitde = pos.coords.latitude;
+	        //var longitude = pos.coords.longitude;
+			//alert('Your current coordinates (latitide,longitude) are : ' + latitde + ', ' + longitude);
+			$("#location").load("getPlaces.php", {lat: pos.coords.latitude, lng: pos.coords.longitude});
+	      }
+	      function unknownLocation()
+	      {
+	        //alert('Could not find location');
+			$("#location").load("getPlaces.php", {lat: 0, lng: 0} );
+	      }
+	    </script> 
+	</div>
+</body>	
+</html>

@@ -1,0 +1,19 @@
+---
+categories:
+- home
+- python
+- ubuntu
+comments: true
+date: 2007-02-08T21:23:26Z
+slug: scribes
+title: scribes
+url: /2007/02/08/scribes/
+wordpress_id: 191
+---
+
+Em um [post](/blog/2006/11/28/gedit-ambiente-de-programacao) anterior alguém me indicou o [scribes.](http://scribes.sourceforge.net/) Hoje li [este texto](http://ninjahideout.com/blog/2007/02/08/scribes-one-of-the-best-imho-text-editors-on-linux/) e lembrei dele, então resolvi fazer um teste na ferramenta. Realmente é bem legal. Simples e rápido. Tem syntax highlighting e snippets. Tudo que é necessário para editar alguns arquivos php ou python.
+Para instalar no Ubuntu é só clicar no pacote no site e instalar.
+
+Como não achei os snippets (que ele chama de templates) para PHP eu resolvi fazer. Para instalar é só copiar [este arquivo](/codes/PHP-templates.xml) para algum diretório depois clicar em Template Editor, escolher PHP, clicar em Import e escolher o arquivo salvo. Para usar o Template é só digitar o a palavra-chave e teclar Tab. Por exemplo: class e tecla Tab.
+Ele tem um conceito um pouco diferente de organizar os arquivos abertos. Ele não usa as já tradicionais Abas. Cada arquivo é aberto em uma nova janela, como no OpenOffice. Para visualizar todos os arquivos abertos é só usar a tecla F9. Vai demorar um pouco para me acostumar...
+Mais um aplicativo legal para edição de textos/programação

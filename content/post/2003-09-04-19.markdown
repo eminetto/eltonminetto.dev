@@ -1,0 +1,12 @@
+---
+categories:
+- home
+comments: true
+date: 2003-09-04T19:13:39Z
+slug: "19"
+title: Hello World
+url: /2003/09/04/19/
+wordpress_id: 19
+---
+
+Inaugurado meu site pessoal.

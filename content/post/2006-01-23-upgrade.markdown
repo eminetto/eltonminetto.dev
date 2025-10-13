@@ -1,0 +1,13 @@
+---
+categories:
+- home
+comments: true
+date: 2006-01-23T18:02:39Z
+slug: upgrade
+title: Upgrade
+url: /2006/01/23/upgrade/
+wordpress_id: 95
+---
+
+Finalmente fiz o upgrade para o Wordpress 2.0
+O processo de upgrade que já era muito bom agora ficou fantástico. Não foi preciso nem alterar o tema. E as novidades na parte de administração usando bastante AJAX valem mesmo a atualização

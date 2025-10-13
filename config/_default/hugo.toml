@@ -1,4 +1,5 @@
 baseURL = "https://eltonminetto.dev/"
+base_url = "https://eltonminetto.dev/"
 copyright = "{year}"
 # languageCode = 'en-US'
 enableRobotsTXT = true

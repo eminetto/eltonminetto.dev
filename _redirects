@@ -1,0 +1,5 @@
+# Redirect domain aliases to primary domain
+https://eltonminetto.dev/* https://eltonminetto.net/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://blissful-payne-7475fb.netlify.com/* https://eltonminetto.net/:splat 301!

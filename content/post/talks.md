@@ -12,6 +12,17 @@ url = "/talks"
 
 # 2025
 
+###  The Go Way
+
+**Quando**: 11/10/2025
+
+**Onde**: Youtube
+
+[Video](https://www.youtube.com/watch?v=KrgIJdrh46A)
+
+---
+
+
 ###  Go, por onde começar?
 
 **Quando**: 27/09/2025

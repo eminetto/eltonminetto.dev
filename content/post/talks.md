@@ -12,6 +12,16 @@ url = "/talks"
 
 # 2025
 
+###  Características do dev do futuro
+
+**Quando**: 16/10/2025
+
+**Onde**: Podcast Escovando Bits
+
+[Audio](https://open.spotify.com/episode/4UukTc0k0lAxKM0TJah9c1?go=1&sp_cid=9912ddf5ff55e9fa4cdccd4a72b13bf4&utm_source=embed_player_p&utm_medium=desktop)
+
+---
+
 ###  The Go Way
 
 **Quando**: 11/10/2025

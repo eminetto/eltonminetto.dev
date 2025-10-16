@@ -11,3 +11,4 @@ source/_stash
 source/stylesheets/screen.css
 vendor
 node_modules
+.hugo_build.lock

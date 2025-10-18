@@ -12,7 +12,17 @@ url = "/talks"
 
 # 2025
 
-###  Características do dev do futuro
+###  There and Back again, a jornada de um dev
+
+**Quando**: 18/10/2025
+
+**Onde**: Codecon Select Express
+
+[Slides](https://docs.google.com/presentation/d/17DQfcD3PaN5s005vjgbkGDnDjOnPanXojsR7BAd3qYo/edit?usp=sharing)
+
+---
+
+
 
 **Quando**: 16/10/2025
 

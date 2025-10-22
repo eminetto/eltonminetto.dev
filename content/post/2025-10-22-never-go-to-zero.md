@@ -15,4 +15,4 @@ Pequenas ações, somadas, vão gerar grandes impactos na nossa vida.
 
 Tenho aplicado essa dica desde que vi o vídeo e tenho me sentido melhor com meus objetivos, pois sinto que sempre estou fazendo progresso, mesmo que em pequenos passos.
 
-Espero que essa dica faça sentido par você também, nobre leitor(a). E se tiver mais sugestões, compartilhe nos comentários.
+Espero que essa dica faça sentido para você também, nobre leitor(a). E se tiver mais sugestões, compartilhe nos comentários.

@@ -22,7 +22,7 @@ url = "/talks"
 
 ---
 
-
+###  Características do dev do futuro
 
 **Quando**: 16/10/2025
 

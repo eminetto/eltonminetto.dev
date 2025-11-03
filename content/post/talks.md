@@ -14,6 +14,33 @@ url = "/talks"
 
 ###  There and Back again, a jornada de um dev
 
+**Quando**: 05/11/2025
+
+**Onde**: SAADS - IFSC São José
+
+[Slides](https://docs.google.com/presentation/d/17DQfcD3PaN5s005vjgbkGDnDjOnPanXojsR7BAd3qYo/edit?usp=sharing)
+
+---
+
+
+###  Mentoria coletiva: De sênior para staff / principal
+
+**Quando**: 01/11/2025
+
+**Onde**: Codecon Select
+
+---
+
+###  Painel: Engenharia de Plataforma
+
+**Quando**: 01/11/2025
+
+**Onde**: Codecon Select
+
+---
+
+###  There and Back again, a jornada de um dev
+
 **Quando**: 18/10/2025
 
 **Onde**: Codecon Select Express

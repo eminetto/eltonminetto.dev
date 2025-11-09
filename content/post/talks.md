@@ -12,11 +12,22 @@ url = "/talks"
 
 # 2025
 
+### A arte e a ciência de tomar decisões técnicas
+
+**Quando**: 08/11/2025
+
+**Onde**: dev.talks (Chapecó/SC)
+
+[Slides](https://eltonminetto.dev/files/talks/presentation_devtalks_2025.pdf)
+
+---
+
+
 ###  There and Back again, a jornada de um dev
 
 **Quando**: 05/11/2025
 
-**Onde**: SAADS - IFSC São José
+**Onde**: SAADS - IFSC (São José/SC)
 
 [Slides](https://docs.google.com/presentation/d/17DQfcD3PaN5s005vjgbkGDnDjOnPanXojsR7BAd3qYo/edit?usp=sharing)
 
@@ -27,7 +38,7 @@ url = "/talks"
 
 **Quando**: 01/11/2025
 
-**Onde**: Codecon Select
+**Onde**: Codecon Select (São Paulo/SP)
 
 ---
 
@@ -35,7 +46,7 @@ url = "/talks"
 
 **Quando**: 01/11/2025
 
-**Onde**: Codecon Select
+**Onde**: Codecon Select (São Paulo/SP)
 
 ---
 
@@ -85,7 +96,7 @@ url = "/talks"
 
 **Quando**: 16/09/2025
 
-**Onde**: Tech Leads Club (TLC) Commit Florianópolis
+**Onde**: Tech Leads Club (TLC) Commit (Florianópolis/SC)
 
 ---
 
@@ -104,7 +115,7 @@ url = "/talks"
 
 **Quando**: 19/08/2025
 
-**Onde**: Meetup Codecon
+**Onde**: Meetup Codecon (Florianópolis/SC)
 
 [Slides](https://eltonminetto.dev/files/talks/go_por_onde_comecar.pdf)
 
@@ -137,7 +148,7 @@ url = "/talks"
 
 **Quando**: 19/07/2025
 
-**Onde**: Codecon Summit
+**Onde**: Codecon Summit (Curitiba/PR)
 
 ---
 

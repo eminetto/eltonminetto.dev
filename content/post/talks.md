@@ -12,6 +12,19 @@ url = "/talks"
 
 # 2025
 
+### Go, por onde começar?
+
+**Quando**: 25/11/2025
+
+**Onde**: Meetup AngularSP
+
+[Video](https://www.youtube.com/watch?v=W-1tqx0R95U)
+
+[Slides](https://eltonminetto.dev/files/talks/go_por_onde_comecar.pdf)
+
+---
+
+
 ### A arte e a ciência de tomar decisões técnicas
 
 **Quando**: 08/11/2025

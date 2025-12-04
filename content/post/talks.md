@@ -12,6 +12,17 @@ url = "/talks"
 
 # 2025
 
+###  De sênior para staff/principal - a transição que ninguém explica
+
+**Quando**: 04/12/2025
+
+**Onde**: Podcast Escovando Bits
+
+[Audio](https://open.spotify.com/episode/3ktTonMjMYjAh7EMpDbR0i?go=1&sp_cid=fd83e4c1ac9a5fbdc98c12849d9f9029&utm_source=embed_player_p&utm_medium=desktop)
+
+---
+
+
 ### Go, por onde começar?
 
 **Quando**: 25/11/2025

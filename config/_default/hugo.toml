@@ -24,7 +24,7 @@ languageName = 'English'
 weight = 2
 [languages.en.menu]
 [[languages.en.menu.main]]
-name = "Talks"
+name = "Content"
 url = "https://eltonminetto.dev/talks/"
 weight = 1
 [[languages.en.menu.main]]
@@ -63,7 +63,7 @@ weight = 2
 "url" = "https://dicasdecarreira.dev"
 "weight" = 5
 [[languages.pt.menu.main]]
-"name" = "Palestras"
+"name" = "Conteúdos"
 "url" = "/talks/"
 "weight" = 10
 [[languages.pt.menu.main]]

@@ -10,6 +10,22 @@ url = "/talks"
 
 +++
 
+# 2026
+
+###  Da ideia ao Speaker Deck: dicas para devs de como palestrar
+
+**Quando**: 23/02/2026
+
+**Onde**: Canal da Gophercon Latam
+
+[Video](https://www.youtube.com/watch?v=k-mfQ_RggiY)
+
+[Slides](https://eltonminetto.dev/files/talks/comopalestrar.pdf)
+
+
+---
+
+
 # 2025
 
 ###  De sênior para staff/principal - a transição que ninguém explica

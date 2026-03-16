@@ -12,6 +12,18 @@ url = "/talks"
 
 # 2026
 
+###  Go, por onde começar
+
+**Quando**: 14/03/2026
+
+**Onde**: The Developers Life Weekend 2026 - Curitiba
+
+[Slides](https://eltonminetto.dev/files/talks/go_por_onde_comecar_2026.pdf)
+
+
+---
+
+
 ###  Da ideia ao Speaker Deck: dicas para devs de como palestrar
 
 **Quando**: 23/02/2026

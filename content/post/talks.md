@@ -12,6 +12,15 @@ url = "/talks"
 
 # 2026
 
+###  Plataformas para developers
+
+**Quando**: 16/03/2026
+
+**Onde**: Live interna do curso [Tech na Prática](https://www.linkedin.com/company/tech-na-pr%C3%A1tica/)
+
+
+---
+
 ###  Go, por onde começar
 
 **Quando**: 14/03/2026

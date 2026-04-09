@@ -1,0 +1,364 @@
+{{ define "main" }}
+{{- $lang := .Lang}}
+
+<article class="flex flex-col gap-10">
+  <header class="flex flex-col gap-2">
+    <h2 class="title-large">{{ .Title }}</h2>
+  </header>
+
+  {{/* Filter bar */}}
+  <div id="talks-filter" class="flex flex-row flex-wrap gap-2 pb-2">
+    <span class="filter-label">
+      {{ if eq $lang "en" }}Filter:{{ else }}Filtrar:{{ end }}
+    </span>
+    <button class="filter-btn active" data-filter="all">
+      {{ if eq $lang "en" }}All{{ else }}Todos{{ end }}
+    </button>
+    <button class="filter-btn" data-filter="palestra">
+      {{ if eq $lang "en" }}Talk{{ else }}Palestra{{ end }}
+    </button>
+    <button class="filter-btn" data-filter="video">
+      {{ if eq $lang "en" }}Video{{ else }}Vídeo{{ end }}
+    </button>
+    <button class="filter-btn" data-filter="podcast">Podcast</button>
+    <button class="filter-btn" data-filter="live">Live</button>
+  </div>
+
+  {{/* When on the EN version, prepend the EN intro then render the PT content */}}
+  <section id="talks-content">
+    {{- .Content | emojify -}}
+    {{- range .Translations }}{{ if eq .Lang "pt" }}{{ .Content | emojify }}{{ end }}{{ end -}}
+  </section>
+</article>
+
+<style>
+  #talks-filter {
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+  }
+
+  .dark #talks-filter {
+    border-bottom-color: #374151;
+  }
+
+  .filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .dark .filter-label {
+    color: #9ca3af;
+  }
+
+  .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+    transition: all 0.15s ease;
+  }
+
+  .filter-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+  }
+
+  .filter-btn.active {
+    background-color: #1f2937;
+    color: #f9fafb;
+    border-color: #1f2937;
+  }
+
+  .dark .filter-btn {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #d1d5db;
+  }
+
+  .dark .filter-btn:hover {
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+
+  .dark .filter-btn.active {
+    background-color: #f9fafb;
+    color: #1f2937;
+    border-color: #f9fafb;
+  }
+
+  .talk-block {
+    padding-bottom: 1.5rem;
+  }
+
+  .talk-block.hidden {
+    display: none;
+  }
+
+  .talk-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .talk-badge-palestra {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+
+  .dark .talk-badge-palestra {
+    background-color: #1e3a5f;
+    color: #93c5fd;
+  }
+
+  .talk-badge-video {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+
+  .dark .talk-badge-video {
+    background-color: #14532d;
+    color: #86efac;
+  }
+
+  .talk-badge-podcast {
+    background-color: #fae8ff;
+    color: #86198f;
+  }
+
+  .dark .talk-badge-podcast {
+    background-color: #4a044e;
+    color: #e879f9;
+  }
+
+  .talk-badge-live {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+
+  .dark .talk-badge-live {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+  }
+</style>
+
+<script>
+(function () {
+  const lang = {{ $lang | jsonify }};
+  const labels = {
+    palestra: lang === 'en' ? 'Talk' : 'Palestra',
+    video: lang === 'en' ? 'Video' : 'Vídeo',
+    podcast: 'Podcast',
+    live: 'Live',
+  };
+
+  function detectTypes(block) {
+    const types = new Set();
+    const titleEl = block.querySelector('h3');
+    const title = titleEl ? titleEl.textContent.trim().toLowerCase() : '';
+
+    // Check anchor link texts (rendered from [Audio](url), [Video](url), [Slides](url))
+    const links = block.querySelectorAll('a');
+    let hasSlides = false;
+    links.forEach(a => {
+      const text = a.textContent.trim().toLowerCase();
+      if (text === 'audio') types.add('podcast');
+      if (text === 'video') types.add('video');
+      if (text === 'slides') hasSlides = true;
+    });
+
+    // Detect live events from title
+    if (title.startsWith('live') || / live[: ]/.test(title)) {
+      types.add('live');
+    }
+
+    // If no type detected yet, it's a palestra
+    if (types.size === 0) {
+      types.add('palestra');
+    }
+
+    // A talk with slides is a palestra (even if also recorded as video)
+    if (hasSlides && !types.has('palestra')) {
+      types.add('palestra');
+    }
+
+    return [...types];
+  }
+
+  function addBadge(container, type) {
+    const badge = document.createElement('span');
+    badge.className = `talk-badge talk-badge-${type}`;
+    badge.textContent = labels[type] || type;
+    container.appendChild(badge);
+  }
+
+  function processContent() {
+    const section = document.getElementById('talks-content');
+    if (!section) return;
+
+    // Collect all top-level nodes
+    const nodes = Array.from(section.childNodes);
+
+    // Group nodes into talk blocks (split at <hr> elements)
+    const groups = [];
+    let current = [];
+
+    for (const node of nodes) {
+      if (node.nodeName === 'HR') {
+        if (current.length > 0) {
+          groups.push(current);
+          current = [];
+        }
+      } else {
+        current.push(node);
+      }
+    }
+    if (current.length > 0) {
+      groups.push(current);
+    }
+
+    // Clear section
+    section.innerHTML = '';
+
+    for (const group of groups) {
+      const hasH3 = group.some(n => n.nodeName === 'H3');
+
+      if (!hasH3) {
+        // Pure year header group — always visible, never wrapped
+        for (const node of group) {
+          section.appendChild(node);
+        }
+        continue;
+      }
+
+      // Separate year header nodes (H1/H2) from talk nodes (H3 and below).
+      // The first talk of each year shares a group with the year header because
+      // there is no <hr> before it, only after it.
+      const yearNodes = [];
+      const talkNodes = [];
+      let foundH3 = false;
+      for (const node of group) {
+        if (!foundH3 && (node.nodeName === 'H1' || node.nodeName === 'H2')) {
+          yearNodes.push(node);
+        } else {
+          if (node.nodeName === 'H3') foundH3 = true;
+          talkNodes.push(node);
+        }
+      }
+
+      // Append year header outside the filterable block so it is always visible
+      for (const node of yearNodes) {
+        section.appendChild(node);
+      }
+
+      // Create a wrapper div for this talk block
+      const block = document.createElement('div');
+      block.className = 'talk-block';
+
+      for (const node of talkNodes) {
+        block.appendChild(node);
+      }
+
+      const types = detectTypes(block);
+      block.dataset.types = types.join(' ');
+
+      // Insert badges before the h3 title
+      const titleEl = block.querySelector('h3');
+      if (titleEl && types.length > 0) {
+        const badgeContainer = document.createElement('div');
+        badgeContainer.className = 'talk-badges';
+        types.forEach(t => addBadge(badgeContainer, t));
+        titleEl.parentNode.insertBefore(badgeContainer, titleEl);
+      }
+
+      // Add a separator after each block
+      block.appendChild(document.createElement('hr'));
+
+      section.appendChild(block);
+    }
+  }
+
+  function updateYearVisibility() {
+    const section = document.getElementById('talks-content');
+    if (!section) return;
+
+    const children = Array.from(section.children);
+    let currentYearEl = null;
+    let hasVisible = false;
+
+    for (const el of children) {
+      if (el.tagName === 'H1' || el.tagName === 'H2') {
+        // Close out the previous year
+        if (currentYearEl) {
+          currentYearEl.style.display = hasVisible ? '' : 'none';
+        }
+        currentYearEl = el;
+        hasVisible = false;
+      } else if (el.classList.contains('talk-block')) {
+        if (!el.classList.contains('hidden')) {
+          hasVisible = true;
+        }
+      }
+    }
+    // Handle the last year in the list
+    if (currentYearEl) {
+      currentYearEl.style.display = hasVisible ? '' : 'none';
+    }
+  }
+
+  function setupFilters() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Toggle active state
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const blocks = document.querySelectorAll('.talk-block');
+        blocks.forEach(block => {
+          if (filter === 'all') {
+            block.classList.remove('hidden');
+          } else {
+            const types = (block.dataset.types || '').split(' ');
+            if (types.includes(filter)) {
+              block.classList.remove('hidden');
+            } else {
+              block.classList.add('hidden');
+            }
+          }
+        });
+
+        updateYearVisibility();
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    processContent();
+    setupFilters();
+  });
+})();
+</script>
+
+{{ end }}

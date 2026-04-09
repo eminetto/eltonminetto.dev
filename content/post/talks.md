@@ -7,6 +7,7 @@ aliases = [
     "/palestras",
 ]
 url = "/talks"
+layout = "talks"
 
 +++
 

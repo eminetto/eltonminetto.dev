@@ -1,0 +1,65 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
+<meta
+    name="description"
+    content="{{ if .IsPage }}{{ or .Params.description .Summary }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else if .IsNode }}{{ or .Params.description .Summary }}{{ end }}"
+/>
+<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="robots" href="/robots.txt" />
+
+<!-- Open Graph / LinkedIn / Social sharing -->
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ if .IsPage }}
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ or .Params.description .Summary }}" />
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ else }}
+<meta property="og:image" content="{{ "img/profile-picture.jpg" | absURL }}" />
+{{ end }}
+{{ with .Date }}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
+{{ end }}
+{{ with .Lastmod }}
+<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
+{{ end }}
+{{ else }}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ .Site.Title }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="og:image" content="{{ "img/profile-picture.jpg" | absURL }}" />
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ if .IsPage }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ if .IsPage }}{{ or .Params.description .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+{{ if .IsPage }}
+{{ with .Params.image }}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{ else }}
+<meta name="twitter:image" content="{{ "img/profile-picture.jpg" | absURL }}" />
+{{ end }}
+{{ else }}
+<meta name="twitter:image" content="{{ "img/profile-picture.jpg" | absURL }}" />
+{{ end }}
+
+<!-- Google Analytics -->
+<script
+    defer
+    src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "{{ .Site.Config.Services.GoogleAnalytics.ID }}");
+</script>
+<!-- End Google Analytics -->

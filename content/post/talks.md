@@ -13,6 +13,14 @@ layout = "talks"
 
 # 2026
 
+###  Platform Engineering
+
+**Quando**: 07/04/2026
+
+**Onde**: Live interna do time da Globo
+
+---
+
 ###  Plataformas para developers
 
 **Quando**: 16/03/2026

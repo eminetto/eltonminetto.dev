@@ -13,6 +13,16 @@ layout = "talks"
 
 # 2026
 
+###  Esmerdelhamento do SaaS
+
+**Quando**: 16/04/2026
+
+**Onde**: Podcast Escovando Bits
+
+[Audio](https://open.spotify.com/episode/6t1RpfeZFDYBl2HdW3Mu7r?si=qJKtdQFiR2qz4PM1f0KRMQ)
+
+---
+
 ###  Platform Engineering
 
 **Quando**: 07/04/2026

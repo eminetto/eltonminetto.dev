@@ -13,6 +13,15 @@ layout = "talks"
 
 # 2026
 
+###  Resumo das novidades do Google Cloud Next
+
+**Quando**: 04/05/2026
+
+**Onde**: Evento interno do PicPay
+
+
+---
+
 ###  A IA tá cara? Contrate um júnior
 
 **Quando**: 30/04/2026

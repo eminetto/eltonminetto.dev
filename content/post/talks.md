@@ -13,6 +13,25 @@ layout = "talks"
 
 # 2026
 
+###  Resumo das novidades do Google Cloud Next
+
+**Quando**: 04/05/2026
+
+**Onde**: Evento interno do PicPay
+
+
+---
+
+###  A IA tá cara? Contrate um júnior
+
+**Quando**: 30/04/2026
+
+**Onde**: Podcast Escovando Bits
+
+[Audio](https://open.spotify.com/episode/6pSaN5UxxhVHLWi09fhCv7?go=1&sp_cid=9912ddf5ff55e9fa4cdccd4a72b13bf4&nd=1&dlsi=27556b94443e4a90)
+
+---
+
 ###  Esmerdelhamento do SaaS
 
 **Quando**: 16/04/2026

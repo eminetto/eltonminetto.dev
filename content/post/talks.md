@@ -13,6 +13,16 @@ layout = "talks"
 
 # 2026
 
+###  Este é mais um episódio sobre IA
+
+**Quando**: 14/05/2026
+
+**Onde**: Podcast Escovando Bits
+
+[Audio](https://open.spotify.com/episode/0WE39UB51ub2cccJtbSAe0?go=1&sp_cid=73d24d1ca79532bc759ef15e5dc707e4&utm_source=embed_player_p&utm_medium=desktop)
+
+---
+
 ###  Resumo das novidades do Google Cloud Next
 
 **Quando**: 04/05/2026

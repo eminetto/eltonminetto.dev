@@ -13,6 +13,27 @@ layout = "talks"
 
 # 2026
 
+###  As leis da arquitetura frugal
+
+**Quando**: 16/05/2026
+
+**Onde**: Code & Coffee - Campo Mourão/PR
+
+[Slides](https://eltonminetto.dev/files/talks/arquitetura_frugal.pdf)
+
+---
+
+###  As leis da arquitetura frugal
+
+**Quando**: 15/05/2026
+
+**Onde**: Code & Coffee - Maringá/PR
+
+[Slides](https://eltonminetto.dev/files/talks/arquitetura_frugal.pdf)
+
+---
+
+
 ###  Este é mais um episódio sobre IA
 
 **Quando**: 14/05/2026

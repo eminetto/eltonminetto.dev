@@ -13,6 +13,15 @@ layout = "talks"
 
 # 2026
 
+###  Carreira Staff+
+
+**Quando**: 28/05/2026
+
+**Onde**: Evento interno - PWS
+
+---
+
+
 ###  As leis da arquitetura frugal
 
 **Quando**: 16/05/2026

@@ -48,7 +48,7 @@
   if (form) {
     form.addEventListener('submit', function () {
       var text = document.getElementById('site-search-text').value.trim();
-      document.getElementById('site-search-q').value = 'site:eltonminetto.dev ' + text;
+      document.getElementById('site-search-q').value = text + ' site:eltonminetto.dev';
     });
   }
 })();

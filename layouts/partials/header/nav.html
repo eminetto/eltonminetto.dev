@@ -15,17 +15,10 @@
     </li>
   </ul>
 
-  <form
-    action="https://www.google.com/search"
-    method="get"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="mt-4 flex items-center gap-2 px-4 lg:px-0"
-  >
-    <input type="hidden" name="as_sitesearch" value="eltonminetto.dev">
+  <form id="site-search-form" class="mt-4 flex items-center gap-2 px-4 lg:px-0">
     <input
       type="text"
-      name="q"
+      id="site-search-input"
       placeholder="Search posts..."
       aria-label="Search posts on eltonminetto.dev"
       autocomplete="off"
@@ -40,3 +33,17 @@
     </button>
   </form>
 </nav>
+
+<script>
+document.getElementById('site-search-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var term = document.getElementById('site-search-input').value.trim();
+  if (term) {
+    window.open(
+      'https://www.google.com/search?q=' + encodeURIComponent(term) + '+site%3Aeltonminetto.dev',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  }
+});
+</script>

@@ -1,4 +1,7 @@
 User-agent: *
-{{ range .Pages }}
-Disallow: {{ .RelPermalink }}
-{{ end }}
+{{- if hugo.IsProduction | or (eq .Site.Params.env "production") }}
+Disallow:
+{{- else }}
+Disallow: /
+{{- end }}
+{{ with .Site.BaseURL }}Sitemap: {{ "sitemap.xml" | absURL }}{{ end }}

@@ -1,0 +1,49 @@
+<nav>
+  <ul class="px-4 lg:px-0">
+    {{ $currentPage := . }}
+    {{ range site.Menus.main }}
+    {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+    {{- $page_url := $currentPage.Permalink | absLangURL }}
+    <li>
+      <a href="{{ .URL }}" class="{{ if eq $menu_item_url $page_url }} active {{ end }}">
+        {{ .Name }}
+      </a>
+    </li>
+    {{ end }}
+    <li class="-mt-2 block lg:hidden">
+      {{ partial "header/theme-button" . }}
+    </li>
+  </ul>
+
+  <form id="site-search-form" class="mt-4 flex items-center gap-2 px-4 lg:px-0">
+    <input
+      type="text"
+      id="site-search-input"
+      placeholder="Search posts..."
+      aria-label="Search posts on eltonminetto.dev"
+      autocomplete="off"
+      class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-xs text-gray-700 outline-none focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-gray-400"
+    >
+    <button
+      type="submit"
+      aria-label="Search"
+      class="shrink-0 text-xs font-semibold uppercase text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+    >
+      Search
+    </button>
+  </form>
+</nav>
+
+<script>
+document.getElementById('site-search-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var term = document.getElementById('site-search-input').value.trim();
+  if (term) {
+    window.open(
+      'https://www.google.com/search?q=' + encodeURIComponent(term) + '+site%3Aeltonminetto.dev',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  }
+});
+</script>

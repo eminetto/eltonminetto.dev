@@ -81,6 +81,9 @@
   /* Conteúdo: links com grifo amarelo (estilo Make Time) */
   #content a { @apply font-medium text-link underline decoration-brand decoration-2 underline-offset-2 hover:bg-brand/25 hover:text-ink dark:text-link-dark dark:decoration-brand dark:hover:bg-brand/20 dark:hover:text-night-text; }
 
+  /* Títulos de posts (links) em preto — não usam o acento teal */
+  #content .title-small a, #content .title-large a { @apply text-ink no-underline hover:bg-brand/30 hover:text-ink dark:text-night-text dark:hover:bg-brand/25 dark:hover:text-night-text; }
+
   .title-large { @apply text-balance font-sans text-4xl font-extrabold leading-tight text-ink dark:text-night-text; }
   .title-small { @apply font-sans text-2xl font-extrabold text-ink dark:text-night-text; }
 

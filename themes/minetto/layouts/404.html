@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <article class="container-prose flex flex-col gap-3 py-10">
+    <h1 class="title-small">{{ i18n "404_title" | default "Page not found" }}</h1>
+    <p>{{ i18n "404_text" | default "Looks like you've followed a broken link." }}</p>
+    <p><a href="{{ "" | relLangURL }}">← {{ .Site.Title }}</a></p>
+  </article>
+{{ end }}

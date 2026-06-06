@@ -1,0 +1,7 @@
+{{- if and (.Params.toc | default true) (gt (len .TableOfContents) 80) -}}
+  {{- $toc := .TableOfContents | replaceRE `<nav id="TableOfContents">` (printf `<nav id="TableOfContents" aria-label="%s">` (i18n "toc" | default "Contents")) -}}
+  <details class="table-of-contents" open>
+    <summary class="cursor-pointer font-semibold">{{ i18n "toc" | default "Contents" }}</summary>
+    {{ $toc | safeHTML }}
+  </details>
+{{- end -}}

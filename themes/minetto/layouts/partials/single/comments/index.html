@@ -1,0 +1,4 @@
+{{ if .IsPage }}
+  {{ if .Site.Params.giscus.enable }}{{ partial "single/comments/giscus" . }}{{ end }}
+  {{ if .Site.Params.disqusShortname }}{{ partial "single/comments/disqus" . }}{{ end }}
+{{ end }}

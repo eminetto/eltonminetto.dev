@@ -1,0 +1,13 @@
+{{- with .Site.Params.avatar -}}
+  {{- with resources.GetMatch . -}}
+    {{- $tiny := (.Fill "160x160 q90") -}}
+    <a href="{{ "" | relLangURL }}" class="flex-none">
+      <img
+        class="h-20 w-20 rounded-full"
+        src="{{ $tiny.RelPermalink }}"
+        width="80" height="80"
+        loading="eager"
+        alt="{{ $.Site.Title }}" />
+    </a>
+  {{- end -}}
+{{- end -}}

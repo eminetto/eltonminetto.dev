@@ -1,0 +1,9 @@
+{{- with site.Menus.social -}}
+  <ul class="flex flex-wrap justify-center gap-5 font-sans text-xs font-semibold uppercase tracking-wide">
+    {{- range . -}}
+      {{- if ne .URL "#" -}}
+        <li><a href="{{ .URL }}" rel="me noopener" target="_blank">{{ .Name }}</a></li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+{{- end -}}

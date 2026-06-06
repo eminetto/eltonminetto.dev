@@ -1,0 +1,28 @@
+<!doctype html>
+<html
+  lang="{{ .Site.LanguageCode | default `pt-br` }}"
+  class="scroll-smooth"
+  data-copy-label="{{ i18n `copy` | default `copy` }}"
+  data-copied-label="{{ i18n `copied` | default `copied!` }}">
+  <head>
+    {{- partial "head/index" . -}}
+  </head>
+
+  <body class="mx-auto max-w-screen-md font-serif antialiased">
+    <a class="skip-link" href="#content">{{ i18n "skipToContent" | default "Skip to content" }}</a>
+
+    <div class="site-header-bar">
+      {{ partial "header/index" . }}
+      <div class="hidden lg:inline-block">
+        {{ partial "header/theme-button" . }}
+      </div>
+    </div>
+
+    <main id="content">
+      {{- block "main" . }}{{ end -}}
+    </main>
+
+    {{- partial "footer/index" . -}}
+    {{- partial "head/scripts" . -}}
+  </body>
+</html>

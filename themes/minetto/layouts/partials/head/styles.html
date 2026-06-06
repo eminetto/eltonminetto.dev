@@ -1,0 +1,8 @@
+{{- /* Tailwind via PostCSS → concat → (prod) minify + fingerprint */ -}}
+{{- $css := resources.Get "css/main.css" | postCSS (dict "config" "./config/postcss.config.js") -}}
+{{- if eq hugo.Environment "development" -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{- else -}}
+  {{- $css = $css | minify | fingerprint | resources.PostProcess -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
+{{- end -}}

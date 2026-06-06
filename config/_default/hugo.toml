@@ -5,7 +5,8 @@ copyright = "{year}"
 enableRobotsTXT = true
 summaryLength = 15
 # theme = "primula"
-theme = 'lowkey'
+# theme = 'lowkey'
+theme = 'minetto'
 author = "eminetto"
 pagination.pagerSize = 10
 staticDir = ['static', 'slides']
@@ -82,6 +83,7 @@ weight = 2
 
 
 [params]
+mainSections = ['post']
 [params.navigation]
 help = "Help"
 
@@ -93,6 +95,8 @@ tag = "tags"
 series = "series"
 
 [markup]
+[markup.goldmark.renderer]
+unsafe = true
 [markup.highlight]
 anchorLineNos = false
 codeFences = true
@@ -103,7 +107,6 @@ lineAnchors = ''
 lineNoStart = 1
 lineNos = false
 lineNumbersInTable = false
-noClasses = true
+noClasses = false
 noHl = false
-style = 'dracula'
 tabWidth = 4

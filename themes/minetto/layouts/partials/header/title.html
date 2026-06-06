@@ -1,0 +1,4 @@
+<a href="{{ "" | relLangURL }}" class="no-underline hover:no-underline">
+  <h1 id="site-title">{{ .Site.Title }}</h1>
+</a>
+{{- with .Site.Params.content }}<p class="text-center font-sans text-base text-gray-500 sm:text-left dark:text-gray-400">{{ . }}</p>{{ end -}}

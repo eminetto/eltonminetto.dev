@@ -1,0 +1,16 @@
+<button class="toggle-theme" aria-label="{{ i18n `toggleTheme` | default `Toggle theme` }}" title="{{ i18n `toggleTheme` | default `Toggle theme` }}" onclick="toggleTheme()">
+  <span class="theme-icon light hidden dark:block">{{ partial "utils/icon" "sun" }}</span>
+  <span class="theme-icon dark block dark:hidden">{{ partial "utils/icon" "moon" }}</span>
+</button>
+
+<script>
+  function setTheme(theme) {
+    var html = document.documentElement;
+    try { localStorage.setItem("theme", theme); } catch (e) {}
+    if (theme === "dark") html.classList.add("dark");
+    else html.classList.remove("dark");
+  }
+  function toggleTheme() {
+    setTheme(document.documentElement.classList.contains("dark") ? "light" : "dark");
+  }
+</script>

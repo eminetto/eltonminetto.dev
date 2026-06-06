@@ -1,0 +1,11 @@
+name = "Minetto"
+license = "MIT"
+description = "Tema clean e tipográfico (Tailwind CSS) com modo claro/escuro, syntax highlighting por classes e suporte multilíngue (pt/en)."
+homepage = "https://eltonminetto.dev"
+tags = ["clean", "minimal", "blog", "dark mode", "responsive", "multilingual", "tailwind", "syntax highlighting"]
+features = ["dark mode", "light mode", "responsive", "i18n", "syntax highlighting", "seo", "rss"]
+min_version = "0.146.0"
+
+[author]
+  name = "Elton Minetto"
+  homepage = "https://eltonminetto.dev"

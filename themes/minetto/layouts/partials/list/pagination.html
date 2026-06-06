@@ -1,0 +1,19 @@
+{{ $p := .Paginator }}
+<div class="grid grid-cols-2 pb-10 font-sans font-semibold">
+  <div>
+    {{ if $p.HasPrev }}
+      <a href="{{ $p.Prev.URL }}" class="pagination-button">
+        <span class="h-4 w-4">{{ partial "utils/icon" "arrow-left" }}</span>
+        {{ i18n "newer_posts" | default "Newer Posts" }}
+      </a>
+    {{ end }}
+  </div>
+  <div class="flex justify-end">
+    {{ if $p.HasNext }}
+      <a href="{{ $p.Next.URL }}" class="pagination-button">
+        {{ i18n "older_posts" | default "Older Posts" }}
+        <span class="h-4 w-4">{{ partial "utils/icon" "arrow-right" }}</span>
+      </a>
+    {{ end }}
+  </div>
+</div>

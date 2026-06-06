@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- $lang := .Lang -}}
+<article class="container-prose flex flex-col gap-8 pb-10">
+  <header class="flex flex-col gap-2">
+    <h1 class="title-large">{{ .Title }}</h1>
+    <div class="meta">
+      <time datetime="{{ .PublishDate.Format "2006-01-02" }}" title='{{ .PublishDate.Format "Mon, Jan 2, 2006" }}'>
+        {{- if eq $lang "en" }}{{ .PublishDate.Format "January 2, 2006" }}{{ else }}{{ .PublishDate.Format "02/01/2006" }}{{ end -}}
+      </time>
+      {{- if .ReadingTime }} · {{ printf (i18n "estimatedReadingTime") .ReadingTime }}{{ end -}}
+      {{- if .IsTranslated }} · {{ i18n "translations" | default "Translations" }}:
+        {{- range .Translations }} <a href="{{ .Permalink }}">{{ .Language.LanguageName | default (.Lang | title) }}</a>{{ end -}}
+      {{- end -}}
+      {{- with (.GetTerms "categories") }} ·
+        {{- range . }} <a class="categories" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end -}}
+      {{- end -}}
+    </div>
+  </header>
+
+  {{ partial "single/table-of-contents" . }}
+
+  <section>{{ .Content | emojify }}</section>
+
+  {{ partial "single/comments/index" . }}
+
+  {{- with (.GetTerms "tags") }}
+    <footer>
+      <div class="taxonomy-list tags-list pt-6">
+        {{- range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end -}}
+      </div>
+    </footer>
+  {{- end }}
+</article>
+{{ end }}

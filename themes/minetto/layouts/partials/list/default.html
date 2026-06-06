@@ -1,0 +1,19 @@
+{{- $lang := .Lang -}}
+<article class="flex flex-col gap-1">
+  <h2 class="title-small"><a href="{{ .Permalink }}" class="no-underline hover:underline">{{ .Title }}</a></h2>
+
+  <span class="date">
+    <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+      {{- if eq $lang "en" }}{{ .PublishDate.Format "January 2, 2006" }}{{ else }}{{ .PublishDate.Format "02/01/2006" }}{{ end -}}
+    </time>
+  </span>
+
+  {{- with (or .Params.description .Summary) }}<div class="description">{{ . | plainify | truncate 220 }}</div>{{ end -}}
+
+  <div class="mt-2">
+    <a class="read-more" href="{{ .Permalink }}">
+      {{ i18n "readMore" | default "Read more" }}
+      <span class="h-4 w-4">{{ partial "utils/icon" "arrow-right" }}</span>
+    </a>
+  </div>
+</article>

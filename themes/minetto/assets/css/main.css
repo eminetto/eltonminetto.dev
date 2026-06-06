@@ -108,10 +108,9 @@
   .taxonomy-list { @apply ml-0 flex list-none flex-wrap gap-2; }
   .taxonomy-list a { @apply rounded-full bg-cream-100 px-3 py-1.5 font-sans text-base font-medium text-ink no-underline hover:bg-brand dark:bg-night-100 dark:text-night-text dark:hover:bg-brand dark:hover:text-ink; }
 
-  /* Botão copiar código */
-  .code-wrap { @apply relative; }
-  .copy-btn { @apply absolute right-2 top-2 rounded border border-cream-200 bg-cream/90 px-2 py-1 font-sans text-xs text-ink-soft opacity-0 transition hover:text-link dark:border-night-200 dark:bg-night-100/90 dark:text-night-soft; }
-  .code-wrap:hover .copy-btn, .copy-btn:focus { @apply opacity-100; }
+  /* Botão "copiar" → estilos em CSS puro abaixo (fora do @layer)
+     porque a classe é adicionada via JS e seria removida pelo tree-shaking
+     do Tailwind se ficasse dentro de @layer components. */
 
   /* Alert shortcode */
   .alert-box { @apply mb-5 rounded-md border-l-4 px-4 py-3; }
@@ -124,6 +123,41 @@
 /* Skip-link (acessibilidade) */
 .skip-link { @apply sr-only; }
 .skip-link:focus { @apply not-sr-only absolute left-2 top-2 z-50 rounded bg-accent-light px-3 py-2 text-white; }
+
+/* ===========================================================
+   Botão "copiar código" (CSS puro — fora do @layer p/ não sofrer
+   tree-shaking, já que a classe é injetada via JS).
+   Pequeno, monospace e integrado ao canto do bloco de código.
+   =========================================================== */
+.code-wrap {
+  @apply relative;
+}
+.copy-btn {
+  @apply absolute right-2 top-2 z-10 cursor-pointer rounded-md px-2 py-1 font-mono text-[11px] font-medium uppercase leading-none tracking-wider opacity-60 transition;
+  /* combina com o bloco de código (github claro) */
+  border: 1px solid #d0d7de;
+  background-color: #ffffff;
+  color: #57606a;
+}
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  @apply opacity-100;
+  border-color: #e6bf09;
+  background-color: #ffd40a;
+  color: #141414;
+}
+/* combina com o bloco de código (dracula escuro) */
+.dark .copy-btn {
+  border: 1px solid #44475a;
+  background-color: #21222c;
+  color: #9aa3c0;
+}
+.dark .copy-btn:hover,
+.dark .copy-btn:focus-visible {
+  border-color: #ffd40a;
+  background-color: #ffd40a;
+  color: #141414;
+}
 
 
 /* ===========================================================

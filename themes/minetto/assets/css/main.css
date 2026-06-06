@@ -65,7 +65,7 @@
    Componentes / utilitários
    =========================================================== */
 @layer components {
-  .container-prose { @apply mx-auto w-full max-w-prose px-4 lg:px-0; }
+  .container-prose { @apply mx-auto w-full max-w-prose; }
 
   /* Header */
   #site-title { @apply text-center font-sans text-4xl font-extrabold tracking-tight text-ink sm:text-left dark:text-night-text; }

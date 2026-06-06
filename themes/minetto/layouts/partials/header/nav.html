@@ -1,5 +1,5 @@
 <nav>
-  <ul class="px-4 lg:px-0">
+  <ul>
     {{ $currentPage := . }}
     {{ range site.Menus.main }}
       {{- $item := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) | absLangURL -}}

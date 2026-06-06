@@ -25,7 +25,7 @@
 
   p, ul, ol, dl, blockquote, pre, table, figure { @apply mb-5; }
 
-  a { @apply text-link underline-offset-2 hover:underline dark:text-link-dark; }
+  a { @apply text-link underline-offset-2 hover:bg-brand/30 hover:text-ink dark:text-link-dark dark:hover:bg-brand/25 dark:hover:text-night-text; }
 
   hr { @apply my-8 border-cream-200 dark:border-night-200; }
 
@@ -72,7 +72,7 @@
 
   header nav > ul { @apply flex flex-wrap items-baseline justify-center gap-x-6 gap-y-2 font-sans text-xs font-bold uppercase tracking-wide; }
   header nav > ul > li { @apply flex items-center leading-none; }
-  nav a, footer a { @apply font-sans font-bold leading-none text-ink-soft no-underline hover:text-ink dark:text-night-soft dark:hover:text-night-text; }
+  nav a, footer a { @apply font-sans font-bold leading-none text-ink-soft no-underline hover:bg-brand/40 hover:text-ink dark:text-night-soft dark:hover:bg-brand/30 dark:hover:text-night-text; }
   /* item ativo: realce amarelo da marca */
   nav a.active { @apply text-ink shadow-[inset_0_-0.5em_0_theme(colors.brand.DEFAULT)] dark:text-night-text; }
 
@@ -92,13 +92,13 @@
   .date { @apply font-sans text-sm font-semibold text-ink-soft dark:text-night-soft; }
   .description { @apply text-base text-ink-soft dark:text-night-soft; }
 
-  .read-more { @apply inline-flex items-center gap-1.5 font-sans text-sm font-bold uppercase tracking-wide text-link no-underline hover:gap-2 dark:text-link-dark; }
+  #content .read-more { @apply inline-flex items-center gap-1.5 font-sans text-sm font-bold uppercase tracking-wide text-ink no-underline hover:gap-2 hover:bg-brand/40 hover:text-ink dark:text-night-text dark:hover:bg-brand/30 dark:hover:text-night-text; }
 
   /* TOC */
   .table-of-contents { @apply rounded-lg border border-cream-200 bg-cream-100 p-4 font-sans text-ink dark:border-night-200 dark:bg-night-100 dark:text-night-text; }
   .table-of-contents #TableOfContents ul { @apply ml-4 list-decimal; }
   .table-of-contents #TableOfContents li { @apply my-1 text-base; }
-  .table-of-contents #TableOfContents a { @apply font-normal text-ink-soft no-underline hover:text-link hover:underline dark:text-night-soft dark:hover:text-link-dark; }
+  .table-of-contents #TableOfContents a { @apply font-normal text-ink-soft no-underline hover:bg-brand/30 hover:text-ink dark:text-night-soft dark:hover:bg-brand/25 dark:hover:text-night-text; }
 
   /* Paginação */
   .pagination-button { @apply inline-flex items-center gap-2 rounded-md border border-cream-200 bg-cream-100 px-3 py-2 font-sans text-sm font-semibold text-ink no-underline hover:border-brand hover:bg-brand/20 dark:border-night-200 dark:bg-night-100 dark:text-night-text dark:hover:border-brand; }

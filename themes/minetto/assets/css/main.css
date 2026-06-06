@@ -25,7 +25,8 @@
 
   p, ul, ol, dl, blockquote, pre, table, figure { @apply mb-5; }
 
-  a { @apply text-link underline-offset-2 hover:bg-brand/30 hover:text-ink dark:text-link-dark dark:hover:bg-brand/25 dark:hover:text-night-text; }
+  /* Estilo único de link: preto + sublinhado amarelo + hover amarelo */
+  a { @apply text-ink underline decoration-brand decoration-2 underline-offset-2 hover:bg-brand/40 hover:text-ink dark:text-night-text dark:decoration-brand dark:hover:bg-brand/30 dark:hover:text-night-text; }
 
   hr { @apply my-8 border-cream-200 dark:border-night-200; }
 
@@ -78,11 +79,11 @@
 
   .toggle-theme { @apply h-6 w-6 text-ink-soft hover:text-ink dark:text-night-soft dark:hover:text-night-text; }
 
-  /* Conteúdo: links com grifo amarelo (estilo Make Time) */
-  #content a { @apply font-medium text-link underline decoration-brand decoration-2 underline-offset-2 hover:bg-brand/25 hover:text-ink dark:text-link-dark dark:decoration-brand dark:hover:bg-brand/20 dark:hover:text-night-text; }
+  /* Links de conteúdo: preto + sublinhado amarelo + hover amarelo */
+  #content a { @apply font-medium text-ink underline decoration-brand decoration-2 underline-offset-2 hover:bg-brand/30 hover:text-ink dark:text-night-text dark:decoration-brand dark:hover:bg-brand/25 dark:hover:text-night-text; }
 
-  /* Títulos de posts (links) em preto — não usam o acento teal */
-  #content .title-small a, #content .title-large a { @apply text-ink no-underline hover:bg-brand/30 hover:text-ink dark:text-night-text dark:hover:bg-brand/25 dark:hover:text-night-text; }
+  /* Títulos de posts (links) — mesmo padrão */
+  #content .title-small a, #content .title-large a { @apply text-ink underline decoration-brand decoration-2 underline-offset-2 hover:bg-brand/30 hover:text-ink dark:text-night-text dark:decoration-brand dark:hover:bg-brand/25 dark:hover:text-night-text; }
 
   .title-large { @apply text-balance font-sans text-4xl font-extrabold leading-tight text-ink dark:text-night-text; }
   .title-small { @apply font-sans text-2xl font-extrabold text-ink dark:text-night-text; }
@@ -92,13 +93,13 @@
   .date { @apply font-sans text-sm font-semibold text-ink-soft dark:text-night-soft; }
   .description { @apply text-base text-ink-soft dark:text-night-soft; }
 
-  #content .read-more { @apply inline-flex items-center gap-1.5 font-sans text-sm font-bold uppercase tracking-wide text-ink no-underline hover:gap-2 hover:bg-brand/40 hover:text-ink dark:text-night-text dark:hover:bg-brand/30 dark:hover:text-night-text; }
+  #content .read-more { @apply inline-flex items-center gap-1.5 font-sans text-sm font-bold uppercase tracking-wide text-ink underline decoration-brand decoration-2 underline-offset-2 hover:gap-2 hover:bg-brand/40 hover:text-ink dark:text-night-text dark:decoration-brand dark:hover:bg-brand/30 dark:hover:text-night-text; }
 
   /* TOC */
   .table-of-contents { @apply rounded-lg border border-cream-200 bg-cream-100 p-4 font-sans text-ink dark:border-night-200 dark:bg-night-100 dark:text-night-text; }
   .table-of-contents #TableOfContents ul { @apply ml-4 list-decimal; }
   .table-of-contents #TableOfContents li { @apply my-1 text-base; }
-  .table-of-contents #TableOfContents a { @apply font-normal text-ink-soft no-underline hover:bg-brand/30 hover:text-ink dark:text-night-soft dark:hover:bg-brand/25 dark:hover:text-night-text; }
+  .table-of-contents #TableOfContents a { @apply font-normal text-ink underline decoration-brand decoration-2 underline-offset-2 hover:bg-brand/30 hover:text-ink dark:text-night-text dark:decoration-brand dark:hover:bg-brand/25 dark:hover:text-night-text; }
 
   /* Paginação */
   .pagination-button { @apply inline-flex items-center gap-2 rounded-md border border-cream-200 bg-cream-100 px-3 py-2 font-sans text-sm font-semibold text-ink no-underline hover:border-brand hover:bg-brand/20 dark:border-night-200 dark:bg-night-100 dark:text-night-text dark:hover:border-brand; }

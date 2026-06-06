@@ -13,6 +13,12 @@ disqusShortname = ""
 [emoji]
 enableEmoji = true
 
+# utterances is a comment system based on GitHub Issues. see https://utteranc.es
+[utterances]
+repo = "eminetto/eltonminetto.dev"
+issueTerm = "title"
+theme = "boxy-light"
+
 # giscus is a comment system based on GitHub Discussions. see https://giscus.app
 [giscus]
 enable = false

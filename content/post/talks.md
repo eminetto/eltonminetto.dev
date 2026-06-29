@@ -13,6 +13,19 @@ layout = "talks"
 
 # 2026
 
+###  Sobre minha carreira
+
+**Quando**: 28/06/2026
+
+**Onde**: Podcast Osprogramadores
+
+[Audio](https://open.spotify.com/episode/7Kr7pou4TyVY6QrIptKhHQ?si=zIHgqkZnTrWMpyIJnOriVg)
+
+[Video](https://www.youtube.com/watch?v=na-BRzn95MU&list=PLIHN7OKuaxr7vtG_qnJJD2AqNwIkbCXaB&index=1)
+
+---
+
+
 ###  Carreira Staff+
 
 **Quando**: 28/05/2026

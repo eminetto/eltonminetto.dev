@@ -2,6 +2,8 @@
 title: Sobre Engenharia de Plataforma
 date: 2026-07-01T20:00:43-03:00
 draft: false
+tags:
+  - platform-engineering
 ---
 
 Nos últimos quatro anos, o assunto “engenharia de plataforma” tem feito parte do meu trabalho e dos meus estudos; por isso, estou começando aqui uma série de textos sobre algumas coisas que aprendi nesse período.

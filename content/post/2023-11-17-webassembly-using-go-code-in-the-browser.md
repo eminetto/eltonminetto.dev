@@ -4,6 +4,7 @@ date: 2023-11-17T08:00:43-03:00
 draft: false
 tags:
   - go
+  - webassembly
 ---
 
 De tempos em tempos surge uma tecnologia que causa um grande impacto no dia a dia das pessoas desenvolvedoras. Linux, Git, Docker, Kubernetes, entre outras. Na minha opinião o WebAssembly é uma tecnologia que tem potencial para figurar nessa seleta lista.

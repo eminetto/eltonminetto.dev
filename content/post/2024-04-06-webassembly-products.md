@@ -4,6 +4,7 @@ date: 2024-04-06T08:00:43-03:00
 draft: false
 tags:
   - go
+  - webassembly
 ---
 Esta é a última parte de uma série de posts que escrevi sobre uma das tecnologias que eu acho mais impactantes dos últimos anos: WebAssembly. No [primeiro texto](https://eltonminetto.dev/post/2023-11-17-webassembly-using-go-code-in-the-browser/) falei sobre como portar código em Go para executá-lo em um navegador web. Na [segunda parte](https://eltonminetto.dev/post/2023-12-11-running-webassembly-in-go/) mostrei como usar código WebAssembly em um projeto Go e neste quero falar sobre alguns projetos bem interessantes que vem fazendo uso desta tecnologia. 
 

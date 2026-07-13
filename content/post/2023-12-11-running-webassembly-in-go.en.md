@@ -4,6 +4,7 @@ date: 2023-12-11T08:00:43-03:00
 draft: false
 tags:
   - go
+  - webassembly
 ---
 
 This post is the second part of a series about WebAssembly and Go. In the [first post](https://eltonminetto.dev/en/post/2023-11-17-webassembly-using-go-code-in-the-browser/), we saw how to run Go code in a web browser. In this one, we will import a WebAssembly function and run it in a Go application.

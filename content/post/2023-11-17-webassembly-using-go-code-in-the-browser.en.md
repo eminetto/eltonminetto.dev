@@ -4,6 +4,7 @@ date: 2023-11-17T08:00:43-03:00
 draft: false
 tags:
   - go
+  - webassembly
 ---
 
 Occasionally, a technology emerges that significantly impacts developers' daily lives—things like Linux, Git, Docker, and Kubernetes, among others. WebAssembly is a technology that has the potential to appear on this select list.

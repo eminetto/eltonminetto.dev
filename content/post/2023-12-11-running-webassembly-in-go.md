@@ -4,6 +4,7 @@ date: 2023-12-11T08:00:43-03:00
 draft: false
 tags:
   - go
+  - webassembly
 ---
 
 Este é o segundo post de uma série que estou fazendo sobre WebAssembly e Go. No [primeiro post](https://eltonminetto.dev/post/2023-11-17-webassembly-using-go-code-in-the-browser/) vimos como executar código Go em um navegador web. Neste vamos importar uma função WebAssembly e executá-la em uma aplicação Go.

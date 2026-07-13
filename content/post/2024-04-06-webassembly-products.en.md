@@ -2,6 +2,9 @@
 title: "Interesting projects using WebAssembly"
 date: 2024-04-06T08:00:43-03:00
 draft: false
+tags:
+  - webassembly
+
 ---
 This text is the last part of a series of posts I wrote about one of the technologies that have had the most impact on me in recent years: WebAssembly. In the [first text](https://eltonminetto.dev/en/post/2023-11-17-webassembly-using-go-code-in-the-browser/), I discussed how to port Go code to run it in a web browser. In the [second part](https://eltonminetto.dev/en/post/2023-12-11-running-webassembly-in-go/), I showed how to use WebAssembly code in a Go project. In this post, I will discuss some exciting projects using this technology.
 

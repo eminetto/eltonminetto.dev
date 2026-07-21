@@ -13,6 +13,15 @@ layout = "talks"
 
 # 2026
 
+###  Sobre Staff+
+
+**Quando**: 21/07/2026
+
+**Onde**: Evento interno do PicPay
+
+---
+
+
 ###  Sobre minha carreira
 
 **Quando**: 28/06/2026

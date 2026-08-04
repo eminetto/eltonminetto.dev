@@ -64,6 +64,10 @@ weight = 2
 "url" = "https://dicasdecarreira.dev"
 "weight" = 5
 [[languages.pt.menu.main]]
+"name" = "Substack"
+"url" = "https://substack.com/@eminetto"
+"weight" = 6
+[[languages.pt.menu.main]]
 "name" = "Conteúdos"
 "url" = "/talks/"
 "weight" = 10

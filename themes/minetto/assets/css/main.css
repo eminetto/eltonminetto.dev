@@ -71,7 +71,7 @@
   #site-title { @apply text-center font-sans text-4xl font-extrabold tracking-tight text-ink sm:text-left dark:text-night-text; }
   .site-header-bar { @apply flex flex-row items-center justify-between; }
 
-  header nav > ul { @apply flex flex-wrap items-baseline justify-center gap-x-6 gap-y-2 font-sans text-xs font-bold uppercase tracking-wide; }
+  header nav > ul { @apply flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 font-sans text-[0.65rem] font-bold uppercase tracking-normal sm:gap-x-4 sm:text-xs sm:tracking-wide; }
   header nav > ul > li { @apply flex items-center leading-none; }
   nav a, footer a { @apply font-sans font-bold leading-none text-ink-soft no-underline hover:bg-brand/40 hover:text-ink dark:text-night-soft dark:hover:bg-brand/30 dark:hover:text-night-text; }
   /* item ativo: realce amarelo da marca */

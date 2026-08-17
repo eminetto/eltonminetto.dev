@@ -13,6 +13,34 @@ layout = "talks"
 
 # 2026
 
+###  As leis da arquitetura frugal
+
+**Quando**: 15/08/2026
+
+**Onde**: Codecon Summit
+
+[Slides](https://eltonminetto.dev/files/talks/arquitetura_frugal.pdf)
+
+---
+
+
+###  Escovando bits com Elton Minetto
+
+**Quando**: 15/08/2026
+
+**Onde**: Codecon Summit
+
+---
+
+###  Don't Panic: o que 20 anos de "isso vai matar a programação" já ensinou
+
+**Quando**: 15/08/2026
+
+**Onde**: Codecon Summit
+
+---
+
+
 ###  Sobre Staff+
 
 **Quando**: 21/07/2026

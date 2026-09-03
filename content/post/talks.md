@@ -13,6 +13,17 @@ layout = "talks"
 
 # 2026
 
+###  Go é uma plataforma
+
+**Quando**: 02/09/2026
+
+**Onde**: Gophercon Latam
+
+[Slides](https://docs.google.com/presentation/d/1vmN3jb7BAJZN9exQKZOg1SX5QxQjzoHn/edit?usp=sharing&ouid=100356262512170981797&rtpof=true&sd=true)
+
+---
+
+
 ###  As leis da arquitetura frugal
 
 **Quando**: 15/08/2026

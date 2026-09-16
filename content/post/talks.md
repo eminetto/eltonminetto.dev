@@ -13,6 +13,28 @@ layout = "talks"
 
 # 2026
 
+###  As leis da arquitetura frugal
+
+**Quando**: 18/09/2026
+
+**Onde**: Evento interno do PicPay
+
+[Slides](https://eltonminetto.dev/files/talks/arquitetura_frugal.pdf)
+
+---
+
+
+###  As leis da arquitetura frugal
+
+**Quando**: 16/09/2026
+
+**Onde**: Evento interno da empresa Frete.com
+
+[Slides](https://eltonminetto.dev/files/talks/arquitetura_frugal.pdf)
+
+---
+
+
 ###  Go é uma plataforma
 
 **Quando**: 02/09/2026

@@ -1279,6 +1279,9 @@ nav a.active {
 .static {
   position: static;
 }
+.fixed {
+  position: fixed;
+}
 .absolute {
   position: absolute;
 }
@@ -1325,6 +1328,9 @@ nav a.active {
 .block {
   display: block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -1360,6 +1366,9 @@ nav a.active {
 }
 .flex-none {
   flex: none;
+}
+.flex-shrink {
+  flex-shrink: 1;
 }
 .shrink-0 {
   flex-shrink: 0;

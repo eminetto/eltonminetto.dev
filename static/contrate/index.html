@@ -1,90 +1,282 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contrate uma palestra com Elton Minetto</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  body { margin: 0; background: #FAF8F4; }
-  * { box-sizing: border-box; }
-  .site { font-family: Archivo, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  a { color: inherit; text-decoration: none; }
-  .u-link { text-decoration: underline; text-decoration-color: #FFD40A; text-decoration-thickness: 2px; text-underline-offset: 2px; font-weight: 500; }
-  .u-link:hover { background: rgba(255,212,10,.35); }
-  .pill-primary { background: #FFD40A; color: #141414; }
-  .pill-primary:hover { background: #ffdf3d; }
-  .pill-ghost { background: #F3EFE8; color: #141414; }
-  .pill-ghost:hover { background: #ece5d6; }
-  .row:hover .row-title { text-decoration: underline; text-decoration-color: #FFD40A; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-  .nav-links { display: flex; gap: 28px; align-items: center; }
-  .hero-photo { width: 100%; max-width: 340px; aspect-ratio: 4/5; border-radius: 14px; background: #F3EFE8; border: 1px solid #e7e0d2; display: flex; align-items: center; justify-content: center; color: #9a9080; font-size: 13px; text-align: center; padding: 20px; }
-  .grid-quotes { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 48px; }
-  .row { display: flex; gap: 28px; padding: 24px 0; border-top: 1px solid #e7e0d2; }
-  .row-num { width: 40px; flex-shrink: 0; color: #b8ae98; font-weight: 800; font-size: 18px; }
-  .row-title { width: 280px; flex-shrink: 0; font-weight: 700; font-size: 19px; color: #141414; }
-  .tl-date { width: 84px; flex-shrink: 0; color: #4D4D4D; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; }
-  .tl-title { flex: 1; color: #141414; font-weight: 700; font-size: 16px; }
-  .tl-where { color: #4D4D4D; font-size: 14px; }
-  .hero-wrap { display: flex; gap: 48px; align-items: center; }
-  .about-wrap { display: flex; gap: 56px; }
-  .ink { color: #141414; }
-  .ink-soft { color: #4D4D4D; }
 
-  @media (max-width: 860px) {
-    .wrap { padding-left: 24px !important; padding-right: 24px !important; }
-    .hero-wrap { flex-direction: column-reverse; align-items: flex-start; }
-    .hero-h1 { font-size: 38px !important; }
-    .about-wrap { flex-direction: column; gap: 20px; }
-    .row { flex-direction: column; gap: 6px; padding: 20px 0; }
-    .row-num { display: none; }
-    .row-title { width: auto; }
-    .tl-row { flex-direction: column; gap: 4px; align-items: flex-start !important; }
-    .tl-date { width: auto; }
-    .grid-quotes { grid-template-columns: 1fr; gap: 32px; }
-    .nav-links > a { display: none; }
-    .cta-buttons { flex-direction: column; align-items: stretch !important; }
-    .logos-row { gap: 20px !important; }
-    .section-pad { padding-top: 64px !important; padding-bottom: 64px !important; }
-  }
-</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contrate uma palestra com Elton Minetto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #FAF8F4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .site {
+      font-family: Archivo, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .u-link {
+      text-decoration: underline;
+      text-decoration-color: #FFD40A;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+      font-weight: 500;
+    }
+
+    .u-link:hover {
+      background: rgba(255, 212, 10, .35);
+    }
+
+    .pill-primary {
+      background: #FFD40A;
+      color: #141414;
+    }
+
+    .pill-primary:hover {
+      background: #ffdf3d;
+    }
+
+    .pill-ghost {
+      background: #F3EFE8;
+      color: #141414;
+    }
+
+    .pill-ghost:hover {
+      background: #ece5d6;
+    }
+
+    .row:hover .row-title {
+      text-decoration: underline;
+      text-decoration-color: #FFD40A;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-photo {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 4/5;
+      border-radius: 14px;
+      background: #F3EFE8;
+      border: 1px solid #e7e0d2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9a9080;
+      font-size: 13px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .grid-quotes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px;
+    }
+
+    .row {
+      display: flex;
+      gap: 28px;
+      padding: 24px 0;
+      border-top: 1px solid #e7e0d2;
+    }
+
+    .row-num {
+      width: 40px;
+      flex-shrink: 0;
+      color: #b8ae98;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .row-title {
+      width: 280px;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 19px;
+      color: #141414;
+    }
+
+    .tl-date {
+      width: 84px;
+      flex-shrink: 0;
+      color: #4D4D4D;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .tl-title {
+      flex: 1;
+      color: #141414;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .tl-where {
+      color: #4D4D4D;
+      font-size: 14px;
+    }
+
+    .hero-wrap {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-wrap {
+      display: flex;
+      gap: 56px;
+    }
+
+    .ink {
+      color: #141414;
+    }
+
+    .ink-soft {
+      color: #4D4D4D;
+    }
+
+    @media (max-width: 860px) {
+      .wrap {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+
+      .hero-wrap {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .hero-h1 {
+        font-size: 38px !important;
+      }
+
+      .about-wrap {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 6px;
+        padding: 20px 0;
+      }
+
+      .row-num {
+        display: none;
+      }
+
+      .row-title {
+        width: auto;
+      }
+
+      .tl-row {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start !important;
+      }
+
+      .tl-date {
+        width: auto;
+      }
+
+      .grid-quotes {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .nav-links>a {
+        display: none;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch !important;
+      }
+
+      .logos-row {
+        gap: 20px !important;
+      }
+
+      .section-pad {
+        padding-top: 64px !important;
+        padding-bottom: 64px !important;
+      }
+    }
+  </style>
 </head>
+
 <body class="site" style="width: 100%; min-height: 100%; background: #FAF8F4; color: #141414;">
 
   <!-- NAV -->
-  <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; padding: 28px 64px; max-width: 1160px; margin: 0 auto;">
+  <div class="wrap"
+    style="display: flex; align-items: center; justify-content: space-between; padding: 28px 64px; max-width: 1160px; margin: 0 auto;">
     <div class="ink" style="font-size: 19px; font-weight: 800; letter-spacing: -.02em;">Elton Minetto</div>
     <nav class="nav-links">
       <a href="#temas" class="ink-soft" style="font-size: 15px; font-weight: 500; color: #4D4D4D;">Temas</a>
       <a href="#trajetoria" class="ink-soft" style="font-size: 15px; font-weight: 500; color: #4D4D4D;">Trajetória</a>
       <a href="#depoimentos" class="ink-soft" style="font-size: 15px; font-weight: 500; color: #4D4D4D;">Depoimentos</a>
-      <a href="mailto:elton@minetto.dev?subject=Proposta%20de%20palestra" class="pill-primary" style="font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px;">Contratar palestra</a>
+      <a href="mailto:elton@minetto.dev?subject=Proposta%20de%20palestra" class="pill-primary"
+        style="font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px;">Contratar palestra</a>
     </nav>
   </div>
 
   <!-- HERO -->
   <div class="wrap hero-wrap" style="padding: 56px 64px 88px; max-width: 1160px; margin: 0 auto;">
     <div style="flex: 1.15; display: flex; flex-direction: column; gap: 22px;">
-      <div class="ink-soft" style="font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: #4D4D4D; font-weight: 700;">Palestrante · Principal Engineer · Google Developer Expert</div>
-      <h1 class="hero-h1 ink" style="margin: 0; font-size: 50px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; color: #141414;">Decisões técnicas que sua empresa consegue sustentar.</h1>
-      <p class="ink-soft" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4D4D4D; max-width: 520px;">Escrevo código desde 1998. Hoje uso essa bagagem pra falar de arquitetura, plataforma e cultura de engenharia com o time técnico de outras empresas — sem slide genérico, sem discurso motivacional.</p>
+      <div class="ink-soft"
+        style="font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: #4D4D4D; font-weight: 700;">
+        Palestrante · Principal Engineer · Google Developer Expert</div>
+      <h1 class="hero-h1 ink"
+        style="margin: 0; font-size: 50px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; color: #141414;">
+        Decisões técnicas que sua empresa consegue sustentar.</h1>
+      <p class="ink-soft" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4D4D4D; max-width: 520px;">
+        Escrevo código desde 1998. Hoje uso essa bagagem pra falar de arquitetura, plataforma e cultura de engenharia
+        com o time técnico de outras empresas — sem slide genérico, sem discurso motivacional.</p>
       <div class="cta-buttons" style="display: flex; gap: 14px; margin-top: 6px; align-items: center;">
-        <a href="mailto:elton@minetto.dev?subject=Proposta%20de%20palestra" class="pill-primary" style="padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; text-align: center;">Convidar para uma palestra</a>
-        <a href="https://eltonminetto.dev" class="pill-ghost" style="padding: 14px 26px; border-radius: 999px; font-weight: 600; font-size: 16px; text-align: center;">Ver o blog</a>
+        <a href="mailto:elton@minetto.dev?subject=Proposta%20de%20palestra" class="pill-primary"
+          style="padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; text-align: center;">Convidar
+          para uma palestra</a>
+        <a href="https://eltonminetto.dev" class="pill-ghost"
+          style="padding: 14px 26px; border-radius: 999px; font-weight: 600; font-size: 16px; text-align: center;">Ver o
+          blog</a>
       </div>
-      <p class="ink-soft" style="margin: 10px 0 0; font-size: 14px; color: #4D4D4D;">Quase 30 anos de tecnologia, 7 deles organizando a GopherCon Latam. Mais de 100 palestras.</p>
+      <p class="ink-soft" style="margin: 10px 0 0; font-size: 14px; color: #4D4D4D;">Quase 30 anos de tecnologia, 7
+        deles organizando a GopherCon Latam. Mais de 100 palestras.</p>
     </div>
     <div style="flex: 0.8; display: flex; justify-content: center;">
-      <div class="hero-photo">[FOTO PROFISSIONAL DE ELTON — retrato para a página]</div>
+      <img class="hero-photo" src="avatarGDESummit400x.png" alt="Foto profissional de Elton Minetto">
     </div>
   </div>
 
   <!-- LOGOS / CONTEXTO -->
   <div style="border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; padding: 24px 0;">
-    <div class="wrap logos-row" style="max-width: 1160px; margin: 0 auto; padding: 0 64px; display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center;">
-      <span class="ink-soft" style="font-size: 12px; color: #8a8378; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;">Já apresentou em / para</span>
+    <div class="wrap logos-row"
+      style="max-width: 1160px; margin: 0 auto; padding: 0 64px; display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center;">
+      <span class="ink-soft"
+        style="font-size: 12px; color: #8a8378; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;">Já
+        apresentou em / para</span>
       <span class="ink" style="color: #141414; font-size: 16px; font-weight: 700;">PicPay</span>
       <span class="ink" style="color: #141414; font-size: 16px; font-weight: 700;">GopherCon Latam</span>
       <span class="ink" style="color: #141414; font-size: 16px; font-weight: 700;">KCD Floripa</span>
@@ -97,51 +289,74 @@
   <!-- SOBRE -->
   <div class="wrap about-wrap section-pad" style="padding: 88px 64px; max-width: 1160px; margin: 0 auto;">
     <div style="flex: 1;">
-      <h2 class="ink" style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414;">Quem toma a decisão sabe o preço dela.</h2>
+      <h2 class="ink" style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414;">Quem
+        toma a decisão sabe o preço dela.</h2>
     </div>
     <div style="flex: 1.4; display: flex; flex-direction: column; gap: 16px;">
-      <p class="ink-soft" style="margin: 0; font-size: 17px; line-height: 1.7; color: #4D4D4D;">Sou Principal Engineer no PicPay. Defino arquitetura, padrões e plataforma para dezenas de times em um banco digital, num setor regulado, onde erro custa caro. Antes disso passei uma década do outro lado da mesa — CTO na Code:Nation e na Planrockr, CEO na Code Squad e na Coderockr, gestor de engenharia na Trybe.</p>
-      <p class="ink-soft" style="margin: 0; font-size: 17px; line-height: 1.7; color: #4D4D4D;">Sou <span class="u-link"><a href="http://g.dev/eminetto" target="_blank">Google Developer Expert em Go</a></span> desde 2023. Dei aula na universidade por oito anos e ajudo a organizar a GopherCon Latam há sete. Escrevo no <span class="u-link"><a href="https://eltonminetto.dev" target="_blank">eltonminetto.dev</a></span>, curo a newsletter <span class="u-link"><a href="https://asemanago.dev" target="_blank">A Semana Go</a></span> e entrevisto engenheiros Staff+ no <span class="u-link"><a href="https://maisquesenior.dev" target="_blank">Mais que Senior</a></span>.</p>
-      <p class="ink" style="margin: 0; font-size: 17px; line-height: 1.7; color: #141414; font-weight: 600;">Já paguei o preço de decisão técnica errada. Contratar minhas palestras é pular a parte de aprender isso na marra.</p>
+      <p class="ink-soft" style="margin: 0; font-size: 17px; line-height: 1.7; color: #4D4D4D;">Sou Principal Engineer
+        no PicPay. Defino arquitetura, padrões e plataforma para dezenas de times em um banco digital, num setor
+        regulado, onde erro custa caro. Antes disso passei uma década do outro lado da mesa — CTO na Code:Nation e na
+        Planrockr, CEO na Code Squad e na Coderockr, gestor de engenharia na Trybe.</p>
+      <p class="ink-soft" style="margin: 0; font-size: 17px; line-height: 1.7; color: #4D4D4D;">Sou <span
+          class="u-link"><a href="http://g.dev/eminetto" target="_blank">Google Developer Expert em Go</a></span> desde
+        2023. Dei aula na universidade por oito anos e ajudo a organizar a GopherCon Latam há sete. Escrevo no <span
+          class="u-link"><a href="https://eltonminetto.dev" target="_blank">eltonminetto.dev</a></span>, curo a
+        newsletter <span class="u-link"><a href="https://asemanago.dev" target="_blank">A Semana Go</a></span> e
+        entrevisto engenheiros Staff+ no <span class="u-link"><a href="https://maisquesenior.dev" target="_blank">Mais
+            que Senior</a></span>.</p>
+      <p class="ink" style="margin: 0; font-size: 17px; line-height: 1.7; color: #141414; font-weight: 600;">Já paguei o
+        preço de decisão técnica errada. Contratar minhas palestras é pular a parte de aprender isso na marra.</p>
     </div>
   </div>
 
   <!-- TEMAS -->
-  <div id="temas" style="padding: 88px 0; background: #F3EFE8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2;">
+  <div id="temas"
+    style="padding: 88px 0; background: #F3EFE8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2;">
     <div class="wrap" style="max-width: 1160px; margin: 0 auto; padding: 0 64px;">
-      <h2 class="ink" style="margin: 0 0 10px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414; max-width: 600px;">Alguns temas que já apresentei — direto ao ponto.</h2>
-      <p class="ink-soft" style="margin: 0 0 44px; font-size: 16px; color: #4D4D4D; max-width: 600px;">Não é lista fechada. Se o seu evento pede outro ângulo, montamos o tema juntos. Formato e duração se ajustam — keynote, workshop ou painel.</p>
+      <h2 class="ink"
+        style="margin: 0 0 10px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414; max-width: 600px;">
+        Alguns temas que já apresentei — direto ao ponto.</h2>
+      <p class="ink-soft" style="margin: 0 0 44px; font-size: 16px; color: #4D4D4D; max-width: 600px;">Não é lista
+        fechada. Se o seu evento pede outro ângulo, montamos o tema juntos. Formato e duração se ajustam — keynote,
+        workshop ou painel.</p>
 
       <div>
         <div class="row">
           <div class="row-num">01</div>
           <div class="row-title">As leis da arquitetura frugal</div>
-          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Decisão de arquitetura que cabe no orçamento e no time que você tem — não na escala do Google.</p>
+          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Decisão de
+            arquitetura que cabe no orçamento e no time que você tem — não na escala do Google.</p>
         </div>
         <div class="row">
           <div class="row-num">02</div>
           <div class="row-title">A arte e a ciência de tomar decisões técnicas</div>
-          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Um jeito de decidir com dado, contexto de negócio e a humildade de admitir o que você não sabe.</p>
+          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Um jeito de decidir
+            com dado, contexto de negócio e a humildade de admitir o que você não sabe.</p>
         </div>
         <div class="row">
           <div class="row-num">03</div>
           <div class="row-title">Observabilidade como pilar de grandes arquiteturas</div>
-          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Times que enxergam o próprio sistema entregam com mais confiança. O resto é sorte.</p>
+          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Times que enxergam o
+            próprio sistema entregam com mais confiança. O resto é sorte.</p>
         </div>
         <div class="row">
           <div class="row-num">04</div>
           <div class="row-title">Engenharia de plataforma</div>
-          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Tipos de plataforma, como montar o time certo e onde ela cruza com observabilidade. Quatro anos fazendo isso, não lendo sobre isso.</p>
+          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Tipos de plataforma,
+            como montar o time certo e onde ela cruza com observabilidade. Quatro anos fazendo isso, não lendo sobre
+            isso.</p>
         </div>
         <div class="row">
           <div class="row-num">05</div>
           <div class="row-title">Staff+: liderança técnica além da gestão</div>
-          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">O que o engenheiro sênior que não quis virar gestor pode entregar — e como sua empresa não desperdiça isso.</p>
+          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">O que o engenheiro
+            sênior que não quis virar gestor pode entregar — e como sua empresa não desperdiça isso.</p>
         </div>
         <div class="row" style="border-bottom: 1px solid #e7e0d2;">
           <div class="row-num">06</div>
           <div class="row-title">Reflexões sobre design de software</div>
-          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Princípios de design que não viram moda nem saem de moda — pra sistemas que precisam durar.</p>
+          <p class="ink-soft" style="margin: 0; font-size: 15px; line-height: 1.6; color: #4D4D4D;">Princípios de design
+            que não viram moda nem saem de moda — pra sistemas que precisam durar.</p>
         </div>
       </div>
     </div>
@@ -149,62 +364,84 @@
 
   <!-- TRAJETORIA -->
   <div id="trajetoria" class="wrap section-pad" style="padding: 88px 64px; max-width: 1160px; margin: 0 auto;">
-    <h2 class="ink" style="margin: 0 0 40px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414; max-width: 600px;">Algumas palestras recentes.</h2>
+    <h2 class="ink"
+      style="margin: 0 0 40px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414; max-width: 600px;">
+      Algumas palestras recentes.</h2>
 
     <div>
-      <div class="tl-row" style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
+      <div class="tl-row"
+        style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
         <div class="tl-date">Set 2026</div>
         <div class="tl-title" style="flex: 1;">As leis da arquitetura frugal</div>
         <div class="tl-where">Evento interno — PicPay &amp; Frete.com</div>
       </div>
-      <div class="tl-row" style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
+      <div class="tl-row"
+        style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
         <div class="tl-date">Set 2026</div>
         <div class="tl-title" style="flex: 1;">Go é uma plataforma</div>
         <div class="tl-where">GopherCon Latam</div>
       </div>
-      <div class="tl-row" style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
+      <div class="tl-row"
+        style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
         <div class="tl-date">Ago 2026</div>
         <div class="tl-title" style="flex: 1;">As leis da arquitetura frugal</div>
         <div class="tl-where">Codecon Summit</div>
       </div>
-      <div class="tl-row" style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
+      <div class="tl-row"
+        style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
         <div class="tl-date">Ago 2026</div>
-        <div class="tl-title" style="flex: 1;">Don't Panic: o que 20 anos de "isso vai matar a programação" já ensinou</div>
+        <div class="tl-title" style="flex: 1;">Don't Panic: o que 20 anos de "isso vai matar a programação" já ensinou
+        </div>
         <div class="tl-where">Codecon Summit</div>
       </div>
-      <div class="tl-row" style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
+      <div class="tl-row"
+        style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; align-items: baseline;">
         <div class="tl-date">Jul 2026</div>
         <div class="tl-title" style="flex: 1;">Sobre Staff+</div>
         <div class="tl-where">Evento interno — PicPay</div>
       </div>
-      <div class="tl-row" style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; align-items: baseline;">
+      <div class="tl-row"
+        style="display: flex; gap: 28px; padding: 18px 0; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; align-items: baseline;">
         <div class="tl-date">Jun 2026</div>
         <div class="tl-title" style="flex: 1;">Sobre minha carreira</div>
         <div class="tl-where">Podcast Osprogramadores</div>
       </div>
     </div>
     <div style="text-align: right; margin-top: 18px;">
-      <a href="https://eltonminetto.dev/talks/" class="u-link ink" style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;">Ver histórico completo de palestras →</a>
+      <a href="https://eltonminetto.dev/talks/" class="u-link ink"
+        style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;">Ver histórico
+        completo de palestras →</a>
     </div>
   </div>
 
   <!-- DEPOIMENTOS -->
-  <div id="depoimentos" style="padding: 88px 0; background: #F3EFE8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2;">
+  <div id="depoimentos"
+    style="padding: 88px 0; background: #F3EFE8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2;">
     <div class="wrap" style="max-width: 1160px; margin: 0 auto; padding: 0 64px;">
-      <h2 class="ink" style="margin: 0 0 40px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414; max-width: 600px;">O que dizem sobre as palestras.</h2>
+      <h2 class="ink"
+        style="margin: 0 0 40px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: #141414; max-width: 600px;">
+        O que dizem sobre as palestras.</h2>
       <div class="grid-quotes">
         <div style="display: flex; gap: 16px;">
           <div style="font-size: 48px; line-height: 1; color: #d8c93a; font-weight: 800;">&#8220;</div>
           <div>
-            <p class="ink" style="margin: 6px 0 14px; font-size: 19px; line-height: 1.5; color: #141414; font-weight: 500;">[DEPOIMENTO A CONFIRMAR — trecho curto de um organizador de evento ou cliente sobre o impacto da palestra]</p>
-            <div class="ink-soft" style="font-size: 13px; color: #4D4D4D; font-weight: 600;">[Nome, cargo — Empresa/Evento]</div>
+            <p class="ink"
+              style="margin: 6px 0 14px; font-size: 19px; line-height: 1.5; color: #141414; font-weight: 500;">
+              [DEPOIMENTO A CONFIRMAR — trecho curto de um organizador de evento ou cliente sobre o impacto da palestra]
+            </p>
+            <div class="ink-soft" style="font-size: 13px; color: #4D4D4D; font-weight: 600;">[Nome, cargo —
+              Empresa/Evento]</div>
           </div>
         </div>
         <div style="display: flex; gap: 16px;">
           <div style="font-size: 48px; line-height: 1; color: #d8c93a; font-weight: 800;">&#8220;</div>
           <div>
-            <p class="ink" style="margin: 6px 0 14px; font-size: 19px; line-height: 1.5; color: #141414; font-weight: 500;">[DEPOIMENTO A CONFIRMAR — trecho curto de um organizador de evento ou cliente sobre o impacto da palestra]</p>
-            <div class="ink-soft" style="font-size: 13px; color: #4D4D4D; font-weight: 600;">[Nome, cargo — Empresa/Evento]</div>
+            <p class="ink"
+              style="margin: 6px 0 14px; font-size: 19px; line-height: 1.5; color: #141414; font-weight: 500;">
+              [DEPOIMENTO A CONFIRMAR — trecho curto de um organizador de evento ou cliente sobre o impacto da palestra]
+            </p>
+            <div class="ink-soft" style="font-size: 13px; color: #4D4D4D; font-weight: 600;">[Nome, cargo —
+              Empresa/Evento]</div>
           </div>
         </div>
       </div>
@@ -212,23 +449,32 @@
   </div>
 
   <!-- CTA FINAL -->
-  <div class="wrap section-pad" style="padding: 96px 64px; max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-    <h2 class="ink" style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -.02em; color: #141414;">E a próxima palestra?</h2>
-    <p class="ink-soft" style="margin: 0; font-size: 17px; color: #4D4D4D; max-width: 480px;">Me conte o evento, a empresa e o que precisa resolver. Eu volto com tema, formato e duração.</p>
-    <a href="mailto:elton@minetto.dev?subject=Proposta%20de%20palestra" class="pill-primary" style="padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; margin-top: 6px;">elton@minetto.dev</a>
+  <div class="wrap section-pad"
+    style="padding: 96px 64px; max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+    <h2 class="ink" style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -.02em; color: #141414;">E a
+      próxima palestra?</h2>
+    <p class="ink-soft" style="margin: 0; font-size: 17px; color: #4D4D4D; max-width: 480px;">Me conte o evento, a
+      empresa e o que precisa resolver. Eu volto com tema, formato e duração.</p>
+    <a href="mailto:elton@minetto.dev?subject=Proposta%20de%20palestra" class="pill-primary"
+      style="padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; margin-top: 6px;">elton@minetto.dev</a>
   </div>
 
   <!-- FOOTER -->
   <div style="border-top: 1px solid #e7e0d2; padding: 36px 0;">
-    <div class="wrap" style="max-width: 1160px; margin: 0 auto; padding: 0 64px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+    <div class="wrap"
+      style="max-width: 1160px; margin: 0 auto; padding: 0 64px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
       <div class="ink-soft" style="font-size: 13px; color: #8a8378;">Elton Minetto · Florianópolis, SC</div>
       <div style="display: flex; gap: 22px;">
-        <a href="https://eltonminetto.dev" class="ink-soft" style="font-size: 13px; color: #8a8378; font-weight: 600;">Blog</a>
-        <a href="https://www.linkedin.com/in/eminetto" class="ink-soft" style="font-size: 13px; color: #8a8378; font-weight: 600;">LinkedIn</a>
-        <a href="https://eltonminetto.dev/talks/" class="ink-soft" style="font-size: 13px; color: #8a8378; font-weight: 600;">Talks</a>
+        <a href="https://eltonminetto.dev" class="ink-soft"
+          style="font-size: 13px; color: #8a8378; font-weight: 600;">Blog</a>
+        <a href="https://www.linkedin.com/in/eminetto" class="ink-soft"
+          style="font-size: 13px; color: #8a8378; font-weight: 600;">LinkedIn</a>
+        <a href="https://eltonminetto.dev/talks/" class="ink-soft"
+          style="font-size: 13px; color: #8a8378; font-weight: 600;">Talks</a>
       </div>
     </div>
   </div>
 
 </body>
+
 </html>

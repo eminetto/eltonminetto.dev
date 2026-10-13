@@ -13,6 +13,16 @@ layout = "talks"
 
 # 2026
 
+###  Go, por onde começar
+
+**Quando**: 07/10/2026
+
+**Onde**: AQUECE DevFest Porto Alegre 2026
+
+[Slides](https://eltonminetto.dev/files/talks/go_por_onde_comecar_2026.pdf)
+
+---
+
 ###  As leis da arquitetura frugal
 
 **Quando**: 18/09/2026

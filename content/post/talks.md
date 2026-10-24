@@ -13,6 +13,15 @@ layout = "talks"
 
 # 2026
 
+###  Q&A Engenharia de Plataforma
+
+**Quando**: 23/10/2026
+
+**Onde**: Evento interno da Salvy
+
+---
+
+
 ###  Go, por onde começar
 
 **Quando**: 07/10/2026

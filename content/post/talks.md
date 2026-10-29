@@ -13,6 +13,19 @@ layout = "talks"
 
 # 2026
 
+### 
+
+###  Novos paradigmas pra IA
+
+**Quando**: 29/10/2026
+
+**Onde**: Podcast Escovando Bits
+
+[Audio](https://open.spotify.com/episode/3Nh5L48WQdiw8BAOy7iq56?go=1&sp_cid=73d24d1ca79532bc759ef15e5dc707e4&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=50383216ebf04dd3)
+
+
+---
+
 ###  Q&A Engenharia de Plataforma
 
 **Quando**: 23/10/2026

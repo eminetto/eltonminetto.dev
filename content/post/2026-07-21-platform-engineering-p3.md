@@ -1,6 +1,6 @@
 ---
 title: Times de Engenharia de Plataforma
-date: 2026-07-11T20:00:43-03:00
+date: 2026-07-21T20:00:43-03:00
 draft: false
 tags:
   - platform-engineering
@@ -38,6 +38,6 @@ Em alguns textos do portal [Platform Engineering](https://platformengineering.or
 
 [![platform_teams](/images/posts/platform_teams.png)](/images/posts/platform_teams.png)
 
-Novamente, esta estrutura é apenas uma sugestão. Em [seu livro](https://a.co/d/09WvMdz3), Camile Fournier e Ian Nowland apresentam outros papéis e dedicam um capítulo ao tema de perfis e a sugestões sobre como contratá-los. Recomendo a leitura.
+Novamente, esta estrutura é apenas uma sugestão. Em [seu livro](https://a.co/d/09WvMdz3), Camille Fournier e Ian Nowland apresentam outros papéis e dedicam um capítulo ao tema de perfis e a sugestões sobre como contratá-los. Recomendo a leitura.
 
 Neste post, eu trouxe um overview de alguns conceitos que acho importantes em relação aos times de plataforma, mas, como frisei em diferentes momentos, esse é um assunto bem flexível. Ele pode mudar conforme o momento da empresa e a complexidade envolvida. Por isso, gostaria de ouvir suas opiniões sobre este assunto nos comentários deste post ou no [Linkedin](https://www.linkedin.com/in/eminetto).

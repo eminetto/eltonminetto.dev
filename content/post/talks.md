@@ -13,7 +13,17 @@ layout = "talks"
 
 # 2026
 
-### 
+###  Engenharia de plataforma
+
+**Quando**: 07/11/2026
+
+**Onde**: DevTalks
+
+[Slides](https://eltonminetto.dev/files/talks/eng_plataforma.pdf)
+
+---
+
+
 
 ###  Novos paradigmas pra IA
 
